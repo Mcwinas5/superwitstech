@@ -1,0 +1,96 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String   @id @default(cuid())
+  openId      String   @unique
+  name        String?
+  email       String?
+  role        String   @default("user")
+  loginMethod String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model AuditRequest {
+  id               String   @id @default(cuid())
+  name             String
+  businessName     String
+  businessType     String
+  website          String
+  email            String
+  whatsapp         String
+  status           String   @default("new")
+  notes            String?
+  unsubscribed     Boolean  @default(false)
+  unsubscribedAt   DateTime?
+  unsubscribeToken String   @unique
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  chatbotConversations ChatbotConversation[]
+  followupSequences    FollowupSequence[]
+  communicationLogs    CommunicationLog[]
+}
+
+model ChatbotConversation {
+  id                   String   @id @default(cuid())
+  auditRequestId       String
+  currentQuestionIndex Int      @default(0)
+  isComplete           Boolean  @default(false)
+  responses            String   @default("[]")
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  auditRequest AuditRequest      @relation(fields: [auditRequestId], references: [id], onDelete: Cascade)
+  messages    ChatbotMessage[]
+}
+
+model ChatbotMessage {
+  id             String   @id @default(cuid())
+  conversationId String
+  sender         String
+  message        String
+  questionIndex  Int?
+  createdAt      DateTime @default(now())
+
+  conversation ChatbotConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+}
+
+model FollowupSequence {
+  id              String    @id @default(cuid())
+  auditRequestId  String
+  step            Int
+  status          String    @default("pending")
+  channel         String
+  scheduledAt     DateTime
+  sentAt          DateTime?
+  errorMessage    String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  auditRequest      AuditRequest        @relation(fields: [auditRequestId], references: [id], onDelete: Cascade)
+  communicationLogs CommunicationLog[]
+}
+
+model CommunicationLog {
+  id                 String  @id @default(cuid())
+  auditRequestId     String
+  followupSequenceId String?
+  type               String
+  recipient          String
+  subject            String?
+  body               String?
+  status             String
+  errorDetails       String?
+  createdAt          DateTime @default(now())
+
+  auditRequest    AuditRequest       @relation(fields: [auditRequestId], references: [id], onDelete: Cascade)
+  followupSequence FollowupSequence? @relation(fields: [followupSequenceId], references: [id], onDelete: SetNull)
+}
