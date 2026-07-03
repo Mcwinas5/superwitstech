@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+    <meta name="theme-color" content="#07122A" />
+    <meta name="robots" content="index, follow" />
+
+    <title>Superwits Tech — Conversion Systems for Nigerian Businesses</title>
+    <meta name="description" content="I build Conversion &amp; Credibility Systems for Nigerian service businesses. Turn strangers into clients. Free website audit — 3 slots per week." />
+    <link rel="canonical" href="https://superwitstech.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Superwits Tech" />
+    <meta property="og:title" content="Superwits Tech — Conversion Systems for Nigerian Businesses" />
+    <meta property="og:description" content="I build Conversion &amp; Credibility Systems for Nigerian service businesses. Turn strangers into clients. Free website audit — 3 slots per week." />
+    <meta property="og:url" content="https://superwitstech.com/" />
+    <meta property="og:image" content="https://superwitstech.com/manus-storage/og-social-share-v2_7010b787.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@MarquisBuilds" />
+    <meta name="twitter:title" content="Superwits Tech — Conversion Systems for Nigerian Businesses" />
+    <meta name="twitter:description" content="I build Conversion &amp; Credibility Systems for Nigerian service businesses. Turn strangers into clients. Free website audit — 3 slots per week." />
+    <meta name="twitter:image" content="https://superwitstech.com/manus-storage/og-social-share-v2_7010b787.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d2xsxph8kpxj0f.cloudfront.net/310519663436896831/TXsqXLVXpGbQzymBp4kwfQ/favicon-32x32_e8db8c69.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="https://d2xsxph8kpxj0f.cloudfront.net/310519663436896831/TXsqXLVXpGbQzymBp4kwfQ/favicon-192_6b517bae.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="https://d2xsxph8kpxj0f.cloudfront.net/310519663436896831/TXsqXLVXpGbQzymBp4kwfQ/favicon-512_cb16df93.png" />
+    <meta name="msapplication-TileImage" content="https://d2xsxph8kpxj0f.cloudfront.net/310519663436896831/TXsqXLVXpGbQzymBp4kwfQ/favicon-192_6b517bae.png" />
+    <meta name="msapplication-TileColor" content="#07122A" />
+
+    <!-- Performance: DNS prefetch + preconnect for Google Fonts (must come BEFORE font stylesheet) -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- LCP hero image preload: tells browser to fetch the hero image at highest priority -->
+    <link rel="preload" href="/manus-storage/marquis-hero-v2_bbf6b9b5.webp" as="image" type="image/webp" fetchpriority="high" />
+
+    <!-- Google Fonts — non-blocking load: media=print trick defers parse until after render -->
+    <!-- onload swaps media to 'all' so fonts apply once downloaded without blocking FCP -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" /></noscript>
+
+    <!-- Critical inline CSS: above-the-fold dark background + font fallbacks prevent flash of white/unstyled text -->
+    <style>
+      html, body { background-color: #07122A; color: #F1F5F9; margin: 0; padding: 0; }
+      #root { min-height: 100vh; }
+      /* Font-display fallbacks: ensure text renders immediately with system fonts while custom fonts load */
+      h1, h2, h3, h4, h5, h6 { font-family: 'Syne', system-ui, -apple-system, sans-serif; }
+      body, p, span, a, button, input, textarea { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+      code, pre { font-family: 'DM Mono', ui-monospace, monospace; }
+    </style>
+
+    <!-- ============================================================
+         GA4 + Consent Mode v2
+         Default: all consent DENIED until user explicitly accepts.
+         The gtag script is loaded immediately (required by Consent Mode)
+         but no measurement data is sent until consent is granted.
+         GA4 Measurement ID: G-M5FP0YKFVQ — superwitstech.com
+    ============================================================ -->
+    <script>
+      // Step 1 — Initialise dataLayer and gtag helper BEFORE the gtag.js script
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      // Step 2 — Set default consent state (all denied)
+      // GA4 will honour these defaults and not send measurement data
+      gtag('consent', 'default', {
+        'ad_storage':            'denied',
+        'ad_user_data':          'denied',
+        'ad_personalization':    'denied',
+        'analytics_storage':     'denied',
+        'functionality_storage': 'granted',  // needed for site to work
+        'security_storage':      'granted',  // needed for site to work
+        'wait_for_update':       500          // ms to wait for consent update before sending
+      });
+
+      // Step 3 — Check localStorage for a previously saved consent decision
+      // If the user already accepted, immediately upgrade consent so GA4
+      // can start measuring without waiting for the banner to re-render.
+      (function() {
+        try {
+          var stored = localStorage.getItem('sw_cookie_consent');
+          if (stored) {
+            var data = JSON.parse(stored);
+            var accepted = data.accepted || {};
+            if (accepted.analytics) {
+              gtag('consent', 'update', {
+                'analytics_storage': 'granted'
+              });
+            }
+            if (accepted.marketing) {
+              gtag('consent', 'update', {
+                'ad_storage':         'granted',
+                'ad_user_data':       'granted',
+                'ad_personalization': 'granted'
+              });
+            }
+          }
+        } catch(e) {}
+      })();
+    </script>
+
+    <!-- Step 4 — Load the gtag.js library AFTER consent defaults are set -->
+    <!-- async: gtag.js loads in parallel; it does NOT block the HTML parser -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M5FP0YKFVQ"></script>
+
+    <!-- Step 5 — GA4 config + event tracking
+         defer: this script runs AFTER the document is parsed, eliminating the
+         render-blocking penalty (~1,350ms) flagged by PageSpeed Insights.
+         It is safe to defer because gtag() calls are queued in dataLayer until
+         gtag.js is ready, so no events are lost. -->
+    <script defer>
+      // Wrap in DOMContentLoaded so DOM queries (querySelectorAll) are safe
+      document.addEventListener('DOMContentLoaded', function() {
+        // Configure GA4 (respects consent state set above)
+        gtag('js', new Date());
+        gtag('config', 'G-M5FP0YKFVQ', { 'anonymize_ip': true });
+
+        // Scroll depth tracking — fires at 25%, 50%, 75%, 90% scroll
+        document.addEventListener('scroll', function() {
+          var scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+          var milestones = [25, 50, 75, 90];
+          milestones.forEach(function(m) {
+            if (scrollPercent >= m && !window['scrolled_' + m]) {
+              window['scrolled_' + m] = true;
+              gtag('event', 'scroll_depth', { 'percent_scrolled': m, 'page_path': window.location.pathname });
+            }
+          });
+        });
+
+        // Time on page — fires at 30 seconds and 60 seconds
+        setTimeout(function() {
+          gtag('event', 'time_on_page', { 'seconds': 30, 'page_path': window.location.pathname });
+        }, 30000);
+        setTimeout(function() {
+          gtag('event', 'time_on_page', { 'seconds': 60, 'page_path': window.location.pathname });
+        }, 60000);
+
+        // Outbound link tracking — fires when any external link is clicked
+        document.querySelectorAll('a[href^="http"]').forEach(function(link) {
+          if (!link.href.includes('superwitstech.com')) {
+            link.addEventListener('click', function() {
+              gtag('event', 'outbound_click', { 'destination': link.href });
+            });
+          }
+        });
+      });
+    </script>
+
+    <!-- Microsoft Clarity — session recordings and heatmaps
+         async: Clarity loads in parallel and does not block rendering.
+         The clarity() function queues calls until the library loads. -->
+    <script async type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "wnfcndjw1v");
+    </script>
+
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Superwits Tech",
+      "description": "Conversion & Credibility Systems for Nigerian service businesses",
+      "url": "https://superwitstech.com",
+      "telephone": "+2347047381879",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lagos",
+        "addressRegion": "Lagos State",
+        "addressCountry": "NG"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Marquis Festus",
+        "jobTitle": "Client Acquisition Systems Builder"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/marquisfestus",
+        "https://twitter.com/MarquisBuilds",
+        "https://www.facebook.com/marquis.festus"
+      ]
+    }
+    </script>
+
+    <!-- WebSite Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Superwits Tech",
+      "url": "https://superwitstech.com",
+      "description": "Conversion & Credibility Systems for Nigerian service businesses"
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "I've paid for websites before and they didn't work. Why will this be different?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most websites are built to look good — not to convert. Every Superwits Tech build is governed by a conversion framework: one goal, clear proof, specific CTA. The measure is conversion rate, not aesthetics."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does it cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every project is scoped after the free audit. Most builds complete within a range accessible to Nigerian SMEs. The audit is always free — no commitment, no pitch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most builds deliver within 5–10 days from strategy sign-off. Not weeks. Not months. Days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "My clients don't really use the internet to find businesses like mine.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your next client is searching online right now. Whether they find you — and whether your site convinces them you are the right choice — is what this system determines."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you work with businesses outside Nigeria?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Active clients in Nigeria, UK, US, and Canada. The system works for any service business regardless of location."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I already have a website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start with the free audit. In most cases, a conversion rebuild is faster and more cost-effective than patching an existing site. The audit will tell you exactly which path makes sense."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do I need to provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your goals, your audience, and your client results. Everything else — strategy, copy, design, and build — is handled."
+          }
+        }
+      ]
+    }
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <!-- Main app bundle — defer prevents render-blocking; module scripts are async by default but defer ensures proper execution order -->
+    <script type="module" defer src="/src/main.tsx"></script>
+    <!-- Manus analytics — defer ensures it does not block rendering -->
+    <script
+      defer
+      src="%VITE_ANALYTICS_ENDPOINT%/umami"
+      data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
+  </body>
+
+</html>

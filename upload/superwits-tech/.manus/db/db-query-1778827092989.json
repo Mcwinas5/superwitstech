@@ -1,0 +1,17 @@
+{
+  "query": "SELECT id, businessName, email, unsubscribeToken, createdAt FROM auditRequests WHERE email = 'marquis@superwitstech.com' ORDER BY createdAt DESC LIMIT 1;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway05.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2YqCD9WReZAoX2r.26b4721beed0 --database TXsqXLVXpGbQzymBp4kwfQ --execute SELECT id, businessName, email, unsubscribeToken, createdAt FROM auditRequests WHERE email = 'marquis@superwitstech.com' ORDER BY createdAt DESC LIMIT 1;",
+  "rows": [
+    {
+      "id": "30001",
+      "businessName": "Test Digital Agency",
+      "email": "marquis@superwitstech.com",
+      "unsubscribeToken": "NULL",
+      "createdAt": "2026-05-15 06:38:03"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tbusinessName\temail\tunsubscribeToken\tcreatedAt\n30001\tTest Digital Agency\tmarquis@superwitstech.com\tNULL\t2026-05-15 06:38:03\n",
+  "stderr": "",
+  "execution_time_ms": 707
+}

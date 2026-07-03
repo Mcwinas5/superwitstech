@@ -1,0 +1,12 @@
+{
+  "query": "CREATE TABLE `chatbotConversations` (\n\t`id` int AUTO_INCREMENT NOT NULL,\n\t`auditRequestId` int NOT NULL,\n\t`currentQuestionIndex` int NOT NULL DEFAULT 0,\n\t`isComplete` int NOT NULL DEFAULT 0,\n\t`responses` text NOT NULL DEFAULT ('[]'),\n\t`createdAt` timestamp NOT NULL DEFAULT (now()),\n\t`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n\tCONSTRAINT `chatbotConversations_id` PRIMARY KEY(`id`)\n);\n\nCREATE TABLE `chatbotMessages` (\n\t`id` int AUTO_INCREMENT NOT NULL,\n\t`conversationId` int NOT NULL,\n\t`sender` enum('bot','user') NOT NULL,\n\t`message` text NOT NULL,\n\t`questionIndex` int,\n\t`createdAt` timestamp NOT NULL DEFAULT (now()),\n\tCONSTRAINT `chatbotMessages_id` PRIMARY KEY(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway05.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2YqCD9WReZAoX2r.26b4721beed0 --database TXsqXLVXpGbQzymBp4kwfQ --execute CREATE TABLE `chatbotConversations` (\n\t`id` int AUTO_INCREMENT NOT NULL,\n\t`auditRequestId` int NOT NULL,\n\t`currentQuestionIndex` int NOT NULL DEFAULT 0,\n\t`isComplete` int NOT NULL DEFAULT 0,\n\t`responses` text NOT NULL DEFAULT ('[]'),\n\t`createdAt` timestamp NOT NULL DEFAULT (now()),\n\t`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n\tCONSTRAINT `chatbotConversations_id` PRIMARY KEY(`id`)\n);\n\nCREATE TABLE `chatbotMessages` (\n\t`id` int AUTO_INCREMENT NOT NULL,\n\t`conversationId` int NOT NULL,\n\t`sender` enum('bot','user') NOT NULL,\n\t`message` text NOT NULL,\n\t`questionIndex` int,\n\t`createdAt` timestamp NOT NULL DEFAULT (now()),\n\tCONSTRAINT `chatbotMessages_id` PRIMARY KEY(`id`)\n);",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1064 (42000) at line 1: You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 6 column 41 near \"'[]'),",
+    "\t`createdAt` timestamp NOT NULL DEFAULT (now()),",
+    "\t`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,",
+    "\tCONSTRAINT `chatbotConversations_id` PRIMARY KEY(`id`)",
+    ")\""
+  ]
+}

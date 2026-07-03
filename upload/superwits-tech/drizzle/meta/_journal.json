@@ -1,0 +1,48 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1778257259053,
+      "tag": "0000_brave_ghost_rider",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1778623361236,
+      "tag": "0001_lean_inertia",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1778625563263,
+      "tag": "0002_shallow_reavers",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1778658973902,
+      "tag": "0003_gifted_black_widow",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1778748268450,
+      "tag": "0004_chief_joshua_kane",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1778827314048,
+      "tag": "0005_cynical_gateway",
+      "breakpoints": true
+    }
+  ]
+}
