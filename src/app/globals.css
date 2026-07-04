@@ -188,3 +188,24 @@ button, a, [role="button"] {
   background-color: #D97706;
   color: #FFFFFF;
 }
+
+/* ── Hero Portrait: responsive art-directed crop ── */
+.hero-portrait {
+  object-position: center;
+}
+/* Tablet: prioritize face + laptop */
+@media (max-width: 1023px) {
+  .hero-portrait {
+    object-position: 55% 38%;
+  }
+}
+/* Mobile: prioritize face, keep laptop edge */
+@media (max-width: 767px) {
+  .hero-portrait {
+    object-position: 58% 28%;
+  }
+  .hero-image-frame {
+    height: 360px !important;
+    max-height: 50vh;
+  }
+}

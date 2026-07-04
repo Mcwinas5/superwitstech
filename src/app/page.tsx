@@ -206,7 +206,7 @@ export default function HomePage() {
           }}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.25fr] gap-8 lg:gap-5 items-stretch">
               {/* Left Column */}
               <div className="flex flex-col justify-center">
                 {/* Headline */}
@@ -304,6 +304,7 @@ export default function HomePage() {
 
               {/* Right Column — Hero Image */}
               <div
+                className="hero-image-frame"
                 style={{
                   position: "relative",
                   borderRadius: "12px",
@@ -316,13 +317,13 @@ export default function HomePage() {
                 <img
                   src="/hero-image.png"
                   alt="Superwits Tech — Conversion & Credibility Systems for Nigerian Service Businesses"
+                  className="hero-portrait"
+                  loading="eager"
                   style={{
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
-                    objectPosition: "70% 38%",
-                    transform: "scale(1.2)",
-                    transformOrigin: "70% 38%",
+                    objectPosition: "center",
                     display: "block",
                   }}
                 />
