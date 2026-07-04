@@ -1069,18 +1069,21 @@ export default function HomePage() {
                   description:
                     "A complete website designed and built around ONE conversion goal. Every section, every word, every element exists to move visitors toward action.",
                   featured: false,
+                  cta: "Rebuild My Site for Conversion",
                 },
                 {
                   title: "Client Acquisition System",
                   description:
                     "A full-funnel system — landing page, lead magnet, follow-up automation, and conversion tracking. Not just a website. A machine.",
                   featured: true,
+                  cta: "Build My Client Acquisition System",
                 },
                 {
                   title: "Website Audit & Strategy",
                   description:
                     "A 5-minute Loom video reviewing your current site, identifying the 3 biggest conversion leaks, and giving you an action plan.",
                   featured: false,
+                  cta: "Get My Free Audit",
                 },
               ].map((svc) => (
                 <div
@@ -1150,7 +1153,7 @@ export default function HomePage() {
                     variant={svc.featured ? "solid-dark" : "outline"}
                     size="sm"
                   >
-                    {svc.featured ? "Get Started" : "Learn More"}
+                    {svc.cta}
                   </WhatsAppCTA>
                 </div>
               ))}
