@@ -206,9 +206,9 @@ export default function HomePage() {
           }}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
               {/* Left Column */}
-              <div>
+              <div className="flex flex-col justify-center">
                 {/* Headline */}
                 <h1
                   style={{
@@ -309,11 +309,8 @@ export default function HomePage() {
                   borderRadius: "12px",
                   overflow: "hidden",
                   border: `1px solid ${COLORS.border}`,
-                  minHeight: "384px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
                   backgroundColor: COLORS.card,
+                  height: "100%",
                 }}
               >
                 <img
