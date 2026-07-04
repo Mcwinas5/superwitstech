@@ -1440,7 +1440,7 @@ export default function HomePage() {
                   marginBottom: "16px",
                 }}
               >
-                Limited Availability
+                FREE — NO COMMITMENT
               </span>
 
               <h2
@@ -1453,7 +1453,7 @@ export default function HomePage() {
                   marginBottom: "16px",
                 }}
               >
-                3 Website Audit Slots Open This Week
+                Get Your Free Website Audit
               </h2>
 
               <p
@@ -1466,8 +1466,7 @@ export default function HomePage() {
                   margin: "0 auto 28px",
                 }}
               >
-                We only take on a limited number of audits each week to ensure
-                quality. Once they are filled, you go on the waitlist.
+                A free 5-minute Loom video showing exactly what is costing you clients — and the one change that would make the biggest difference. No pitch. No cost. Delivered within 48 hours.
               </p>
 
               <WhatsAppCTA size="lg">
