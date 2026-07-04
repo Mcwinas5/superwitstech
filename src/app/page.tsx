@@ -306,21 +306,26 @@ export default function HomePage() {
               <div
                 style={{
                   position: "relative",
+                  borderRadius: "12px",
+                  overflow: "hidden",
+                  border: `1px solid ${COLORS.border}`,
+                  backgroundColor: COLORS.card,
                   height: "100%",
-                  overflow: "visible",
                 }}
               >
                 <img
                   src="/hero-image.png"
                   alt="Superwits Tech — Conversion & Credibility Systems for Nigerian Service Businesses"
                   style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "contain",
-                    objectPosition: "center",
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    width: "150%",
+                    height: "150%",
+                    objectFit: "cover",
+                    objectPosition: "45% center",
+                    transform: "translate(-50%, -50%)",
                     display: "block",
-                    transform: "scale(1.25)",
-                    transformOrigin: "center center",
                   }}
                 />
               </div>
