@@ -202,7 +202,7 @@ export default function HomePage() {
             backgroundColor: COLORS.bg,
             minHeight: "90vh",
             paddingTop: "80px",
-            paddingBottom: "80px",
+            paddingBottom: "24px",
           }}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -349,7 +349,7 @@ export default function HomePage() {
             2. SOCIAL PROOF BAR
             ══════════════════════════════════════════ */}
         <section style={{ backgroundColor: COLORS.card, borderTop: `1px solid ${COLORS.border}`, borderBottom: `1px solid ${COLORS.border}` }}>
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12 md:pt-10 md:pb-16">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {[
                 {
