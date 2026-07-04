@@ -317,14 +317,12 @@ export default function HomePage() {
                   src="/hero-image.png"
                   alt="Superwits Tech — Conversion & Credibility Systems for Nigerian Service Businesses"
                   style={{
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    width: "150%",
-                    height: "150%",
+                    width: "100%",
+                    height: "100%",
                     objectFit: "cover",
-                    objectPosition: "45% center",
-                    transform: "translate(-50%, -50%)",
+                    objectPosition: "70% 38%",
+                    transform: "scale(1.2)",
+                    transformOrigin: "70% 38%",
                     display: "block",
                   }}
                 />
