@@ -3,13 +3,12 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { WA_LINK } from "@/lib/constants";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [userMenuOpen, setUserMenuOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -80,22 +79,7 @@ export default function Navigation() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-4">
-            <Link
-              href="/admin"
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                fontSize: "13px",
-                fontWeight: 500,
-                color: "#94A3B8",
-                textDecoration: "none",
-                transition: "color 0.2s ease",
-              }}
-              onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#F1F5F9")}
-              onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#94A3B8")}
-            >
-              Admin
-            </Link>
+          <div className="hidden md:flex items-center">
             <a
               href={WA_LINK}
               target="_blank"
