@@ -854,31 +854,34 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               {[
                 {
-                  label: "Aesthetic Clinic — Lagos",
+                  label: "Project: Aesthetic Clinic \u00b7 Lagos, Nigeria",
                   before: "3",
                   beforeLabel: "weekly bookings",
                   after: "18",
                   afterLabel: "weekly bookings",
                   description:
                     "A complete website rebuild focused on trust signals and a single booking CTA.",
+                  quote: "\u201cWe went from chasing referrals to waking up to booking requests.\u201d \u2014 Clinic Director",
                 },
                 {
-                  label: "Business Coach — Abuja",
+                  label: "Project: Business Coach \u00b7 Abuja, Nigeria",
                   before: "0",
                   beforeLabel: "inquiries (ever)",
                   after: "First inquiry",
                   afterLabel: "in 72 hours",
                   description:
                     "From invisible online presence to generating qualified leads in under 3 days.",
+                  quote: "\u201cThe first inbound inquiry came in 72 hours after launch.\u201d \u2014 Business Coach, Abuja",
                 },
                 {
-                  label: "E-Commerce Brand",
+                  label: "Project: E-Commerce Brand \u00b7 Nigeria",
                   before: "0.8%",
                   beforeLabel: "conversion rate",
                   after: "6.2%",
                   afterLabel: "conversion rate",
                   description:
                     "Conversion architecture overhaul turned a struggling store into a revenue engine.",
+                  quote: "\u201cSame traffic, same ads \u2014 6.2% conversion rate in three weeks.\u201d \u2014 Founder",
                 },
               ].map((cs) => (
                 <div
@@ -987,6 +990,21 @@ export default function HomePage() {
                   >
                     {cs.description}
                   </p>
+
+                  {cs.quote && (
+                    <p
+                      style={{
+                        fontFamily: FONTS.inter,
+                        fontSize: "12px",
+                        fontStyle: "italic",
+                        color: COLORS.muted,
+                        lineHeight: 1.5,
+                        margin: "0 0 16px 0",
+                      }}
+                    >
+                      {cs.quote}
+                    </p>
+                  )}
 
                   <WhatsAppCTA variant="outline" size="sm">
                     Get Similar Results
