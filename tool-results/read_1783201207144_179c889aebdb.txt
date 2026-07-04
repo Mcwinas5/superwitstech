@@ -1,0 +1,1498 @@
+     1→"use client";
+     2→
+     3→import Link from "next/link";
+     4→import Navigation from "@/components/layout/Navigation";
+     5→import Footer from "@/components/layout/Footer";
+     6→import FloatingWhatsAppButton from "@/components/layout/FloatingWhatsAppButton";
+     7→import CookieConsent from "@/components/layout/CookieConsent";
+     8→import { WA_LINK } from "@/lib/constants";
+     9→
+    10→/* ────────────────────────────────────────────────
+    11→   Shared style helpers
+    12→   ──────────────────────────────────────────────── */
+    13→const FONTS = {
+    14→  syne: "'Syne', sans-serif",
+    15→  inter: "'Inter', sans-serif",
+    16→  mono: "'DM Mono', monospace",
+    17→};
+    18→
+    19→const COLORS = {
+    20→  bg: "#07122A",
+    21→  card: "#0F1F3D",
+    22→  amber: "#D97706",
+    23→  amberHover: "#F59E0B",
+    24→  text: "#F1F5F9",
+    25→  muted: "#94A3B8",
+    26→  border: "#1A3260",
+    27→  green: "#4ADE80",
+    28→  red: "#DC2626",
+    29→};
+    30→
+    31→/* ────────────────────────────────────────────────
+    32→   Reusable CTA button
+    33→   ──────────────────────────────────────────────── */
+    34→function WhatsAppCTA({
+    35→  children = "Get My Free Website Audit",
+    36→  variant = "solid",
+    37→  size = "md",
+    38→  className = "",
+    39→}: {
+    40→  children?: React.ReactNode;
+    41→  variant?: "solid" | "solid-dark" | "outline";
+    42→  size?: "sm" | "md" | "lg";
+    43→  className?: string;
+    44→}) {
+    45→  const sizeStyles: Record<string, React.CSSProperties> = {
+    46→    sm: { padding: "10px 20px", fontSize: "14px", minHeight: "44px" },
+    47→    md: { padding: "14px 28px", fontSize: "16px", minHeight: "52px" },
+    48→    lg: { padding: "18px 36px", fontSize: "18px", minHeight: "60px" },
+    49→  };
+    50→
+    51→  const base: React.CSSProperties = {
+    52→    ...sizeStyles[size],
+    53→    display: "inline-flex",
+    54→    alignItems: "center",
+    55→    justifyContent: "center",
+    56→    gap: "8px",
+    57→    borderRadius: "8px",
+    58→    fontFamily: FONTS.inter,
+    59→    fontWeight: 600,
+    60→    textDecoration: "none",
+    61→    transition: "background-color 0.2s ease, transform 0.15s ease",
+    62→    cursor: "pointer",
+    63→  };
+    64→
+    65→  const variantStyles: Record<string, React.CSSProperties> = {
+    66→    solid: {
+    67→      ...base,
+    68→      backgroundColor: COLORS.amber,
+    69→      color: "#FFFFFF",
+    70→      border: "none",
+    71→    },
+    72→    "solid-dark": {
+    73→      ...base,
+    74→      backgroundColor: COLORS.bg,
+    75→      color: COLORS.amber,
+    76→      border: `1.5px solid ${COLORS.amber}`,
+    77→    },
+    78→    outline: {
+    79→      ...base,
+    80→      backgroundColor: "transparent",
+    81→      color: COLORS.amber,
+    82→      border: `1.5px solid ${COLORS.amber}`,
+    83→    },
+    84→  };
+    85→
+    86→  const hoverBgs: Record<string, string> = {
+    87→    solid: COLORS.amberHover,
+    88→    "solid-dark": "rgba(7,18,42,0.8)",
+    89→    outline: "rgba(217,119,6,0.1)",
+    90→  };
+    91→
+    92→  const leaveBgs: Record<string, string> = {
+    93→    solid: COLORS.amber,
+    94→    "solid-dark": COLORS.bg,
+    95→    outline: "transparent",
+    96→  };
+    97→
+    98→  return (
+    99→    <a
+   100→      href={WA_LINK}
+   101→      target="_blank"
+   102→      rel="noopener noreferrer"
+   103→      className={className}
+   104→      style={variantStyles[variant]}
+   105→      onMouseEnter={(e) => {
+   106→        (e.currentTarget as HTMLElement).style.backgroundColor = hoverBgs[variant];
+   107→      }}
+   108→      onMouseLeave={(e) => {
+   109→        (e.currentTarget as HTMLElement).style.backgroundColor = leaveBgs[variant];
+   110→      }}
+   111→    >
+   112→      {children}
+   113→    </a>
+   114→  );
+   115→}
+   116→
+   117→/* ────────────────────────────────────────────────
+   118→   Section wrapper
+   119→   ──────────────────────────────────────────────── */
+   120→function Section({
+   121→  id,
+   122→  children,
+   123→  style,
+   124→  className = "",
+   125→}: {
+   126→  id?: string;
+   127→  children: React.ReactNode;
+   128→  style?: React.CSSProperties;
+   129→  className?: string;
+   130→}) {
+   131→  return (
+   132→    <section
+   133→      id={id}
+   134→      className={`py-24 md:py-32 ${className}`}
+   135→      style={{ backgroundColor: COLORS.bg, ...style }}
+   136→    >
+   137→      {children}
+   138→    </section>
+   139→  );
+   140→}
+   141→
+   142→/* ────────────────────────────────────────────────
+   143→   Page Component
+   144→   ──────────────────────────────────────────────── */
+   145→export default function HomePage() {
+   146→  return (
+   147→    <>
+   148→      {/* ── JSON-LD Structured Data ── */}
+   149→      <script
+   150→        type="application/ld+json"
+   151→        dangerouslySetInnerHTML={{
+   152→          __html: JSON.stringify({
+   153→            "@context": "https://schema.org",
+   154→            "@type": "Organization",
+   155→            name: "Superwits Tech",
+   156→            url: "https://superwitstech.com",
+   157→            logo: "https://superwitstech.com/logo.png",
+   158→            description:
+   159→              "Conversion & Credibility Systems for Nigerian Service Businesses. We build websites that turn visitors into clients.",
+   160→            founder: {
+   161→              "@type": "Person",
+   162→              name: "Marquis Festus",
+   163→            },
+   164→            address: {
+   165→              "@type": "PostalAddress",
+   166→              addressLocality: "Lagos",
+   167→              addressCountry: "NG",
+   168→            },
+   169→            contactPoint: {
+   170→              "@type": "ContactPoint",
+   171→              telephone: "+234-704-738-1879",
+   172→              contactType: "customer service",
+   173→              availableLanguage: ["English"],
+   174→            },
+   175→            sameAs: [
+   176→              "https://www.facebook.com/marquis.festus",
+   177→              "https://www.twitter.com/MarquisBuilds",
+   178→              "https://www.linkedin.com/in/marquis-festus/",
+   179→              "https://www.instagram.com/marquisbuilds",
+   180→            ],
+   181→            areaServed: "Nigeria",
+   182→            serviceType: [
+   183→              "Website Design",
+   184→              "Conversion Optimization",
+   185→              "Client Acquisition Systems",
+   186→              "Website Audit",
+   187→            ],
+   188→          }),
+   189→        }}
+   190→      />
+   191→
+   192→      {/* ── Navigation ── */}
+   193→      <Navigation />
+   194→
+   195→      <main>
+   196→        {/* ══════════════════════════════════════════
+   197→            1. HERO SECTION
+   198→            ══════════════════════════════════════════ */}
+   199→        <section
+   200→          className="flex items-center"
+   201→          style={{
+   202→            backgroundColor: COLORS.bg,
+   203→            minHeight: "90vh",
+   204→            paddingTop: "80px",
+   205→            paddingBottom: "80px",
+   206→          }}
+   207→        >
+   208→          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+   209→            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-4 items-stretch">
+   210→              {/* Left Column */}
+   211→              <div className="flex flex-col justify-center">
+   212→                {/* Eyebrow Copy */}
+   213→                <span
+   214→                  style={{
+   215→                    fontFamily: FONTS.inter,
+   216→                    fontWeight: 700,
+   217→                    fontSize: "13px",
+   218→                    letterSpacing: "0.12em",
+   219→                    color: "#1E6FFF",
+   220→                    textTransform: "uppercase",
+   221→                    display: "block",
+   222→                    marginBottom: "14px",
+   223→                  }}
+   224→                >
+   225→                  FOR NIGERIAN CLINICS, COACHES &amp; E-COMMERCE BRANDS
+   226→                </span>
+   227→
+   228→                {/* Headline */}
+   229→                <h1
+   230→                  style={{
+   231→                    fontFamily: FONTS.syne,
+   232→                    fontWeight: 800,
+   233→                    fontSize: "clamp(28px, 4.4vw, 40px)",
+   234→                    lineHeight: 1.15,
+   235→                    color: COLORS.text,
+   236→                    marginBottom: "24px",
+   237→                  }}
+   238→                >
+   239→                  Your Website Should Be Bringing You Clients.{" "}
+   240→                  <span style={{ color: COLORS.amber }}>Right Now, It Is Not.</span>
+   241→                </h1>
+   242→
+   243→                {/* Subtitle */}
+   244→                <p
+   245→                  style={{
+   246→                    fontFamily: FONTS.inter,
+   247→                    fontSize: "clamp(16px, 2vw, 18px)",
+   248→                    lineHeight: 1.75,
+   249→                    color: COLORS.muted,
+   250→                    marginBottom: "32px",
+   251→                    maxWidth: "540px",
+   252→                  }}
+   253→                >
+   254→                  Your next client is already searching — and landing on a competitor's site. Conversion &amp; Credibility Systems fix that. Built for Nigerian clinics, coaches, and e-commerce brands. Delivered in days, not months.
+   255→                </p>
+   256→
+   257→                {/* CTA */}
+   258→                <div style={{ marginBottom: "28px" }}>
+   259→                  <WhatsAppCTA size="lg">
+   260→                    <svg
+   261→                      xmlns="http://www.w3.org/2000/svg"
+   262→                      viewBox="0 0 24 24"
+   263→                      fill="currentColor"
+   264→                      width="20"
+   265→                      height="20"
+   266→                      aria-hidden="true"
+   267→                    >
+   268→                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+   269→                    </svg>
+   270→                    Get My Free Website Audit
+   271→                  </WhatsAppCTA>
+   272→                </div>
+   273→
+   274→                {/* Trust Badges */}
+   275→                <div
+   276→                  className="flex flex-wrap gap-3"
+   277→                  style={{ marginBottom: "20px" }}
+   278→                >
+   279→                  {["Built with AI", "Delivered in Days", "Designed to Convert"].map(
+   280→                    (badge) => (
+   281→                      <span
+   282→                        key={badge}
+   283→                        style={{
+   284→                          fontFamily: FONTS.mono,
+   285→                          fontSize: "12px",
+   286→                          fontWeight: 500,
+   287→                          letterSpacing: "0.5px",
+   288→                          color: COLORS.amber,
+   289→                          backgroundColor: "rgba(217,119,6,0.12)",
+   290→                          border: `1px solid rgba(217,119,6,0.25)`,
+   291→                          borderRadius: "6px",
+   292→                          padding: "6px 14px",
+   293→                        }}
+   294→                      >
+   295→                        {badge}
+   296→                      </span>
+   297→                    )
+   298→                  )}
+   299→                </div>
+   300→
+   301→                {/* Sub-badges */}
+   302→                <p
+   303→                  style={{
+   304→                    fontFamily: FONTS.inter,
+   305→                    fontSize: "14px",
+   306→                    color: COLORS.muted,
+   307→                    display: "flex",
+   308→                    flexWrap: "wrap",
+   309→                    gap: "12px",
+   310→                    alignItems: "center",
+   311→                  }}
+   312→                >
+   313→                  <span style={{ color: COLORS.green }}>✓</span> Free
+   314→                  <span style={{ color: COLORS.green }}>✓</span> No Commitment
+   315→                  <span style={{ color: COLORS.green }}>✓</span> 5-Minute Video
+   316→                </p>
+   317→              </div>
+   318→
+   319→              {/* Right Column — Hero Image */}
+   320→              <div
+   321→                className="hero-image-frame"
+   322→                style={{
+   323→                  position: "relative",
+   324→                  overflow: "hidden",
+   325→                  height: "100%",
+   326→                }}
+   327→              >
+   328→                <img
+   329→                  src="/hero-image.png"
+   330→                  alt="Superwits Tech — Conversion & Credibility Systems for Nigerian Service Businesses"
+   331→                  className="hero-portrait"
+   332→                  loading="eager"
+   333→                  style={{
+   334→                    width: "100%",
+   335→                    height: "100%",
+   336→                    objectFit: "cover",
+   337→                    objectPosition: "53% 40%",
+   338→                    transform: "scale(1.1)",
+   339→                    transformOrigin: "53% 28%",
+   340→                    display: "block",
+   341→                  }}
+   342→                />
+   343→              </div>
+   344→            </div>
+   345→          </div>
+   346→        </section>
+   347→
+   348→        {/* ══════════════════════════════════════════
+   349→            2. SOCIAL PROOF BAR
+   350→            ══════════════════════════════════════════ */}
+   351→        <section style={{ backgroundColor: COLORS.card, borderTop: `1px solid ${COLORS.border}`, borderBottom: `1px solid ${COLORS.border}` }}>
+   352→          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+   353→            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+   354→              {[
+   355→                {
+   356→                  stat: "6–15%",
+   357→                  label: "Conversion Rate Target",
+   358→                  description: "We aim for 6–15% — not the 1% industry average.",
+   359→                },
+   360→                {
+   361→                  stat: "Days",
+   362→                  label: "Delivery Time",
+   363→                  description: "AI-accelerated builds delivered in days, not weeks.",
+   364→                },
+   365→                {
+   366→                  stat: "3 Niches",
+   367→                  label: "Specialised Focus",
+   368→                  description: "Clinics · Coaches · E-commerce",
+   369→                },
+   370→              ].map((item) => (
+   371→                <div
+   372→                  key={item.stat}
+   373→                  style={{
+   374→                    backgroundColor: COLORS.card,
+   375→                    border: `1px solid ${COLORS.border}`,
+   376→                    borderLeft: `3px solid ${COLORS.amber}`,
+   377→                    borderRadius: "8px",
+   378→                    padding: "24px",
+   379→                  }}
+   380→                >
+   381→                  <div
+   382→                    style={{
+   383→                      fontFamily: FONTS.syne,
+   384→                      fontWeight: 800,
+   385→                      fontSize: "clamp(32px, 5vw, 44px)",
+   386→                      color: COLORS.amber,
+   387→                      lineHeight: 1.1,
+   388→                      marginBottom: "8px",
+   389→                    }}
+   390→                  >
+   391→                    {item.stat}
+   392→                  </div>
+   393→                  <div
+   394→                    style={{
+   395→                      fontFamily: FONTS.mono,
+   396→                      fontSize: "11px",
+   397→                      fontWeight: 500,
+   398→                      letterSpacing: "1.5px",
+   399→                      textTransform: "uppercase",
+   400→                      color: COLORS.amber,
+   401→                      marginBottom: "6px",
+   402→                    }}
+   403→                  >
+   404→                    {item.label}
+   405→                  </div>
+   406→                  <p
+   407→                    style={{
+   408→                      fontFamily: FONTS.inter,
+   409→                      fontSize: "14px",
+   410→                      color: COLORS.muted,
+   411→                      lineHeight: 1.6,
+   412→                      margin: 0,
+   413→                    }}
+   414→                  >
+   415→                    {item.description}
+   416→                  </p>
+   417→                </div>
+   418→              ))}
+   419→            </div>
+   420→          </div>
+   421→        </section>
+   422→
+   423→        {/* ══════════════════════════════════════════
+   424→            3. PROBLEM SECTION
+   425→            ══════════════════════════════════════════ */}
+   426→        <Section>
+   427→          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+   428→            {/* Headline */}
+   429→            <h2
+   430→              style={{
+   431→                fontFamily: FONTS.syne,
+   432→                fontWeight: 700,
+   433→                fontSize: "clamp(22px, 4.5vw, 36px)",
+   434→                lineHeight: 1.3,
+   435→                color: COLORS.text,
+   436→                textAlign: "center",
+   437→                marginBottom: "16px",
+   438→              }}
+   439→            >
+   440→              The Problem Is Not Your Product.{" "}
+   441→              <span style={{ color: COLORS.amber }}>
+   442→                It Is Your Digital Presence.
+   443→              </span>
+   444→            </h2>
+   445→
+   446→            <p
+   447→              style={{
+   448→                fontFamily: FONTS.inter,
+   449→                fontSize: "18px",
+   450→                color: COLORS.muted,
+   451→                textAlign: "center",
+   452→                lineHeight: 1.75,
+   453→                maxWidth: "680px",
+   454→                margin: "0 auto 40px",
+   455→              }}
+   456→            >
+   457→              Most Nigerian service businesses have websites that look fine but
+   458→              convert below <strong style={{ color: COLORS.text }}>1%</strong>.
+   459→              That means for every 100 people who visit, fewer than 1 becomes a
+   460→              client. The product is good. The messaging is not.
+   461→            </p>
+   462→
+   463→            {/* Three paragraphs */}
+   464→            <div
+   465→              className="space-y-6 mb-12"
+   466→              style={{ maxWidth: "680px", margin: "0 auto 40px" }}
+   467→            >
+   468→              <p
+   469→                style={{
+   470→                  fontFamily: FONTS.inter,
+   471→                  fontSize: "16px",
+   472→                  color: COLORS.muted,
+   473→                  lineHeight: 1.75,
+   474→                }}
+   475→              >
+   476→                You invested in a website. You were told it would bring leads.
+   477→                Months later, you are still relying on word of mouth and
+   478→                referrals while your competitors — with worse services — rank
+   479→                higher, look more credible, and close more clients online.
+   480→              </p>
+   481→              <p
+   482→                style={{
+   483→                  fontFamily: FONTS.inter,
+   484→                  fontSize: "16px",
+   485→                  color: COLORS.muted,
+   486→                  lineHeight: 1.75,
+   487→                }}
+   488→              >
+   489→                The real issue is not aesthetics. It is architecture. Your
+   490→                website is not built to guide a visitor from curiosity to
+   491→                conviction to action. It is a brochure, not a system.
+   492→              </p>
+   493→              <p
+   494→                style={{
+   495→                  fontFamily: FONTS.inter,
+   496→                  fontSize: "16px",
+   497→                  color: COLORS.muted,
+   498→                  lineHeight: 1.75,
+   499→                }}
+   500→              >
+   501→                Nigerian service businesses — clinics, coaches, e-commerce
+   502→                brands — lose millions of naira every month to websites that
+   503→                do not convert. We fix that.
+   504→              </p>
+   505→            </div>
+   506→
+   507→            {/* Pain Point Cards */}
+   508→            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+   509→              {[
+   510→                {
+   511→                  title: "Vague Headlines",
+   512→                  description:
+   513→                    "Your headline says what you do, not why the visitor should care. They leave in 5 seconds.",
+   514→                },
+   515→                {
+   516→                  title: "Invisible Proof",
+   517→                  description:
+   518→                    "No testimonials, no case studies, no data. Visitors have no reason to trust you over the next option.",
+   519→                },
+   520→                {
+   521→                  title: "Competing CTAs",
+   522→                  description:
+   523→                    '"Call us", "Subscribe", "Follow us", "Learn more" — all fighting for attention. Nothing gets clicked.',
+   524→                },
+   525→              ].map((pain) => (
+   526→                <div
+   527→                  key={pain.title}
+   528→                  style={{
+   529→                    backgroundColor: COLORS.card,
+   530→                    border: `1.5px solid ${COLORS.red}`,
+   531→                    borderRadius: "10px",
+   532→                    padding: "28px 24px",
+   533→                  }}
+   534→                >
+   535→                  <div
+   536→                    style={{
+   537→                      fontFamily: FONTS.syne,
+   538→                      fontWeight: 700,
+   539→                      fontSize: "18px",
+   540→                      color: COLORS.red,
+   541→                      marginBottom: "10px",
+   542→                    }}
+   543→                  >
+   544→                    {pain.title}
+   545→                  </div>
+   546→                  <p
+   547→                    style={{
+   548→                      fontFamily: FONTS.inter,
+   549→                      fontSize: "15px",
+   550→                      color: COLORS.muted,
+   551→                      lineHeight: 1.7,
+   552→                      margin: 0,
+   553→                    }}
+   554→                  >
+   555→                    {pain.description}
+   556→                  </p>
+   557→                </div>
+   558→              ))}
+   559→            </div>
+   560→
+   561→            {/* CTA */}
+   562→            <div className="text-center">
+   563→              <WhatsAppCTA>Request a Free Audit &amp; Find Out Why</WhatsAppCTA>
+   564→            </div>
+   565→          </div>
+   566→        </Section>
+   567→
+   568→        {/* ══════════════════════════════════════════
+   569→            4. SYSTEM EXPLANATION
+   570→            ══════════════════════════════════════════ */}
+   571→        <Section
+   572→          style={{ backgroundColor: COLORS.card, borderTop: `1px solid ${COLORS.border}`, borderBottom: `1px solid ${COLORS.border}` }}
+   573→        >
+   574→          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+   575→            <h2
+   576→              style={{
+   577→                fontFamily: FONTS.syne,
+   578→                fontWeight: 700,
+   579→                fontSize: "clamp(22px, 4.5vw, 36px)",
+   580→                lineHeight: 1.3,
+   581→                color: COLORS.text,
+   582→                textAlign: "center",
+   583→                marginBottom: "16px",
+   584→              }}
+   585→            >
+   586→              The Superwits Tech System:{" "}
+   587→              <span style={{ color: COLORS.amber }}>
+   588→                Conversion Architecture That Works
+   589→              </span>
+   590→            </h2>
+   591→
+   592→            <p
+   593→              style={{
+   594→                fontFamily: FONTS.inter,
+   595→                fontSize: "18px",
+   596→                color: COLORS.muted,
+   597→                textAlign: "center",
+   598→                lineHeight: 1.75,
+   599→                maxWidth: "680px",
+   600→                margin: "0 auto 40px",
+   601→              }}
+   602→            >
+   603→              Every visitor who lands on your website is asking three questions —
+   604→              in this exact order. Your site must answer each one clearly before
+   605→              they move to the next.
+   606→            </p>
+   607→
+   608→            <div className="space-y-8" style={{ maxWidth: "640px", margin: "0 auto" }}>
+   609→              {[
+   610→                {
+   611→                  number: "01",
+   612→                  question: "What do you do, and is it for me?",
+   613→                  answer:
+   614→                    "In under 5 seconds, a visitor must know exactly what you offer and who it is for. Your headline, sub-headline, and above-the-fold content must be laser-specific.",
+   615→                },
+   616→                {
+   617→                  number: "02",
+   618→                  question: "Can I trust you?",
+   619→                  answer:
+   620→                    "Social proof, case studies, professional design, and clear credentials answer this. We build credibility layers into every section of the page.",
+   621→                },
+   622→                {
+   623→                  number: "03",
+   624→                  question: "What do I do next?",
+   625→                  answer:
+   626→                    "One clear action per page. No confusion, no competing buttons. We design a single, obvious next step that moves the visitor toward becoming a client.",
+   627→                },
+   628→              ].map((item) => (
+   629→                <div
+   630→                  key={item.number}
+   631→                  className="flex gap-6 items-start"
+   632→                >
+   633→                  <span
+   634→                    style={{
+   635→                      fontFamily: FONTS.mono,
+   636→                      fontSize: "14px",
+   637→                      fontWeight: 500,
+   638→                      color: COLORS.amber,
+   639→                      flexShrink: 0,
+   640→                      marginTop: "4px",
+   641→                      minWidth: "32px",
+   642→                    }}
+   643→                  >
+   644→                    {item.number}
+   645→                  </span>
+   646→                  <div>
+   647→                    <h3
+   648→                      style={{
+   649→                        fontFamily: FONTS.syne,
+   650→                        fontWeight: 700,
+   651→                        fontSize: "20px",
+   652→                        color: COLORS.text,
+   653→                        marginBottom: "8px",
+   654→                      }}
+   655→                    >
+   656→                      {item.question}
+   657→                    </h3>
+   658→                    <p
+   659→                      style={{
+   660→                        fontFamily: FONTS.inter,
+   661→                        fontSize: "16px",
+   662→                        color: COLORS.muted,
+   663→                        lineHeight: 1.75,
+   664→                        margin: 0,
+   665→                      }}
+   666→                    >
+   667→                      {item.answer}
+   668→                    </p>
+   669→                  </div>
+   670→                </div>
+   671→              ))}
+   672→            </div>
+   673→          </div>
+   674→        </Section>
+   675→
+   676→        {/* ══════════════════════════════════════════
+   677→            5. HOW IT WORKS
+   678→            ══════════════════════════════════════════ */}
+   679→        <Section id="how-it-works">
+   680→          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+   681→            <h2
+   682→              style={{
+   683→                fontFamily: FONTS.syne,
+   684→                fontWeight: 700,
+   685→                fontSize: "clamp(22px, 4.5vw, 36px)",
+   686→                lineHeight: 1.3,
+   687→                color: COLORS.text,
+   688→                textAlign: "center",
+   689→                marginBottom: "12px",
+   690→              }}
+   691→            >
+   692→              How It Works
+   693→            </h2>
+   694→            <p
+   695→              style={{
+   696→                fontFamily: FONTS.inter,
+   697→                fontSize: "18px",
+   698→                color: COLORS.muted,
+   699→                textAlign: "center",
+   700→                lineHeight: 1.75,
+   701→                maxWidth: "560px",
+   702→                margin: "0 auto 48px",
+   703→              }}
+   704→            >
+   705→              Three simple steps. No upfront payment. No commitment. Just
+   706→              results.
+   707→            </p>
+   708→
+   709→            {/* Steps */}
+   710→            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 mb-12">
+   711→              {[
+   712→                {
+   713→                  step: 1,
+   714→                  title: "Audit",
+   715→                  description:
+   716→                    "Free 5-minute Loom video reviewing your current site, identifying conversion leaks, and showing you exactly what to fix.",
+   717→                },
+   718→                {
+   719→                  step: 2,
+   720→                  title: "Strategy",
+   721→                  description:
+   722→                    "We align on ONE clear conversion goal for your site — whether that is bookings, inquiries, or purchases.",
+   723→                },
+   724→                {
+   725→                  step: 3,
+   726→                  title: "Build & Launch",
+   727→                  description:
+   728→                    "Your conversion system is built and launched in days, not weeks. AI-accelerated, human-directed.",
+   729→                },
+   730→              ].map((item, idx) => (
+   731→                <div key={item.step} className="relative flex flex-col items-center text-center px-4">
+   732→                  {/* Dashed connector (desktop only, between items) */}
+   733→                  {idx < 2 && (
+   734→                    <div
+   735→                      className="hidden md:block absolute top-8 left-[calc(50%+40px)] w-[calc(100%-80px)]"
+   736→                      style={{
+   737→                        borderTop: "2px dashed #1A3260",
+   738→                        height: 0,
+   739→                      }}
+   740→                    />
+   741→                  )}
+   742→
+   743→                  {/* Number circle */}
+   744→                  <div
+   745→                    style={{
+   746→                      width: "64px",
+   747→                      height: "64px",
+   748→                      borderRadius: "50%",
+   749→                      backgroundColor: COLORS.amber,
+   750→                      color: "#FFFFFF",
+   751→                      fontFamily: FONTS.syne,
+   752→                      fontWeight: 800,
+   753→                      fontSize: "24px",
+   754→                      display: "flex",
+   755→                      alignItems: "center",
+   756→                      justifyContent: "center",
+   757→                      marginBottom: "20px",
+   758→                      flexShrink: 0,
+   759→                      position: "relative",
+   760→                      zIndex: 1,
+   761→                    }}
+   762→                  >
+   763→                    {item.step}
+   764→                  </div>
+   765→
+   766→                  <h3
+   767→                    style={{
+   768→                      fontFamily: FONTS.syne,
+   769→                      fontWeight: 700,
+   770→                      fontSize: "22px",
+   771→                      color: COLORS.text,
+   772→                      marginBottom: "10px",
+   773→                    }}
+   774→                  >
+   775→                    {item.title}
+   776→                  </h3>
+   777→                  <p
+   778→                    style={{
+   779→                      fontFamily: FONTS.inter,
+   780→                      fontSize: "15px",
+   781→                      color: COLORS.muted,
+   782→                      lineHeight: 1.7,
+   783→                      margin: 0,
+   784→                      maxWidth: "300px",
+   785→                    }}
+   786→                  >
+   787→                    {item.description}
+   788→                  </p>
+   789→                </div>
+   790→              ))}
+   791→            </div>
+   792→
+   793→            {/* CTA */}
+   794→            <div className="text-center">
+   795→              <WhatsAppCTA>Start With a Free Audit</WhatsAppCTA>
+   796→            </div>
+   797→          </div>
+   798→        </Section>
+   799→
+   800→        {/* ══════════════════════════════════════════
+   801→            6. CASE STUDIES
+   802→            ══════════════════════════════════════════ */}
+   803→        <Section
+   804→          id="case-studies"
+   805→          style={{
+   806→            backgroundColor: COLORS.card,
+   807→            borderTop: `1px solid ${COLORS.border}`,
+   808→            borderBottom: `1px solid ${COLORS.border}`,
+   809→          }}
+   810→        >
+   811→          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+   812→            <div className="text-center mb-12">
+   813→              <span
+   814→                style={{
+   815→                  fontFamily: FONTS.mono,
+   816→                  fontSize: "12px",
+   817→                  fontWeight: 500,
+   818→                  letterSpacing: "2px",
+   819→                  textTransform: "uppercase",
+   820→                  color: COLORS.amber,
+   821→                  display: "block",
+   822→                  marginBottom: "12px",
+   823→                }}
+   824→              >
+   825→                Real Results
+   826→              </span>
+   827→              <h2
+   828→                style={{
+   829→                  fontFamily: FONTS.syne,
+   830→                  fontWeight: 700,
+   831→                  fontSize: "clamp(22px, 4.5vw, 36px)",
+   832→                  lineHeight: 1.3,
+   833→                  color: COLORS.text,
+   834→                  marginBottom: "12px",
+   835→                }}
+   836→              >
+   837→                Before &amp; After: What Our Systems Actually Do
+   838→              </h2>
+   839→              <p
+   840→                style={{
+   841→                  fontFamily: FONTS.inter,
+   842→                  fontSize: "16px",
+   843→                  color: COLORS.muted,
+   844→                  lineHeight: 1.75,
+   845→                  maxWidth: "560px",
+   846→                  margin: "0 auto",
+   847→                }}
+   848→              >
+   849→                These are real outcomes from real Nigerian businesses. No
+   850→                inflated numbers, no cherry-picked metrics.
+   851→              </p>
+   852→            </div>
+   853→
+   854→            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+   855→              {[
+   856→                {
+   857→                  label: "Aesthetic Clinic — Lagos",
+   858→                  before: "3",
+   859→                  beforeLabel: "weekly bookings",
+   860→                  after: "18",
+   861→                  afterLabel: "weekly bookings",
+   862→                  description:
+   863→                    "A complete website rebuild focused on trust signals and a single booking CTA.",
+   864→                },
+   865→                {
+   866→                  label: "Business Coach — Abuja",
+   867→                  before: "0",
+   868→                  beforeLabel: "inquiries (ever)",
+   869→                  after: "First inquiry",
+   870→                  afterLabel: "in 72 hours",
+   871→                  description:
+   872→                    "From invisible online presence to generating qualified leads in under 3 days.",
+   873→                },
+   874→                {
+   875→                  label: "E-Commerce Brand",
+   876→                  before: "0.8%",
+   877→                  beforeLabel: "conversion rate",
+   878→                  after: "6.2%",
+   879→                  afterLabel: "conversion rate",
+   880→                  description:
+   881→                    "Conversion architecture overhaul turned a struggling store into a revenue engine.",
+   882→                },
+   883→              ].map((cs) => (
+   884→                <div
+   885→                  key={cs.label}
+   886→                  style={{
+   887→                    backgroundColor: COLORS.bg,
+   888→                    border: `1px solid ${COLORS.border}`,
+   889→                    borderRadius: "10px",
+   890→                    padding: "28px 24px",
+   891→                    display: "flex",
+   892→                    flexDirection: "column",
+   893→                  }}
+   894→                >
+   895→                  {/* Label badge */}
+   896→                  <span
+   897→                    style={{
+   898→                      fontFamily: FONTS.mono,
+   899→                      fontSize: "11px",
+   900→                      fontWeight: 500,
+   901→                      letterSpacing: "1px",
+   902→                      textTransform: "uppercase",
+   903→                      backgroundColor: COLORS.amber,
+   904→                      color: "#FFFFFF",
+   905→                      borderRadius: "4px",
+   906→                      padding: "4px 12px",
+   907→                      display: "inline-block",
+   908→                      width: "fit-content",
+   909→                      marginBottom: "24px",
+   910→                    }}
+   911→                  >
+   912→                    {cs.label}
+   913→                  </span>
+   914→
+   915→                  {/* Before / After */}
+   916→                  <div className="flex items-center gap-4 mb-4">
+   917→                    <div>
+   918→                      <div
+   919→                        style={{
+   920→                          fontFamily: FONTS.syne,
+   921→                          fontWeight: 800,
+   922→                          fontSize: "28px",
+   923→                          color: COLORS.red,
+   924→                          lineHeight: 1,
+   925→                        }}
+   926→                      >
+   927→                        {cs.before}
+   928→                      </div>
+   929→                      <div
+   930→                        style={{
+   931→                          fontFamily: FONTS.mono,
+   932→                          fontSize: "11px",
+   933→                          color: COLORS.muted,
+   934→                          marginTop: "4px",
+   935→                          letterSpacing: "0.5px",
+   936→                        }}
+   937→                      >
+   938→                        {cs.beforeLabel}
+   939→                      </div>
+   940→                    </div>
+   941→
+   942→                    <span
+   943→                      style={{
+   944→                        fontFamily: FONTS.mono,
+   945→                        fontSize: "18px",
+   946→                        color: COLORS.border,
+   947→                      }}
+   948→                    >
+   949→                      →
+   950→                    </span>
+   951→
+   952→                    <div>
+   953→                      <div
+   954→                        style={{
+   955→                          fontFamily: FONTS.syne,
+   956→                          fontWeight: 800,
+   957→                          fontSize: "28px",
+   958→                          color: COLORS.green,
+   959→                          lineHeight: 1,
+   960→                        }}
+   961→                      >
+   962→                        {cs.after}
+   963→                      </div>
+   964→                      <div
+   965→                        style={{
+   966→                          fontFamily: FONTS.mono,
+   967→                          fontSize: "11px",
+   968→                          color: COLORS.muted,
+   969→                          marginTop: "4px",
+   970→                          letterSpacing: "0.5px",
+   971→                        }}
+   972→                      >
+   973→                        {cs.afterLabel}
+   974→                      </div>
+   975→                    </div>
+   976→                  </div>
+   977→
+   978→                  <p
+   979→                    style={{
+   980→                      fontFamily: FONTS.inter,
+   981→                      fontSize: "15px",
+   982→                      color: COLORS.muted,
+   983→                      lineHeight: 1.6,
+   984→                      margin: "0 auto 20px 0",
+   985→                      flex: 1,
+   986→                    }}
+   987→                  >
+   988→                    {cs.description}
+   989→                  </p>
+   990→
+   991→                  <WhatsAppCTA variant="outline" size="sm">
+   992→                    Get Similar Results
+   993→                  </WhatsAppCTA>
+   994→                </div>
+   995→              ))}
+   996→            </div>
+   997→          </div>
+   998→        </Section>
+   999→
+  1000→        {/* ══════════════════════════════════════════
+  1001→            7. SERVICES OVERVIEW
+  1002→            ══════════════════════════════════════════ */}
+  1003→        <Section id="services">
+  1004→          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  1005→            <div className="text-center mb-12">
+  1006→              <span
+  1007→                style={{
+  1008→                  fontFamily: FONTS.mono,
+  1009→                  fontSize: "12px",
+  1010→                  fontWeight: 500,
+  1011→                  letterSpacing: "2px",
+  1012→                  textTransform: "uppercase",
+  1013→                  color: COLORS.amber,
+  1014→                  display: "block",
+  1015→                  marginBottom: "12px",
+  1016→                }}
+  1017→              >
+  1018→                What We Offer
+  1019→              </span>
+  1020→              <h2
+  1021→                style={{
+  1022→                  fontFamily: FONTS.syne,
+  1023→                  fontWeight: 700,
+  1024→                  fontSize: "clamp(22px, 4.5vw, 36px)",
+  1025→                  lineHeight: 1.3,
+  1026→                  color: COLORS.text,
+  1027→                  marginBottom: "12px",
+  1028→                }}
+  1029→              >
+  1030→                Services Built for Conversion
+  1031→              </h2>
+  1032→              <p
+  1033→                style={{
+  1034→                  fontFamily: FONTS.inter,
+  1035→                  fontSize: "16px",
+  1036→                  color: COLORS.muted,
+  1037→                  lineHeight: 1.75,
+  1038→                  maxWidth: "560px",
+  1039→                  margin: "0 auto",
+  1040→                }}
+  1041→              >
+  1042→                Every service is designed with one goal: turn your website into a
+  1043→                client-getting machine.
+  1044→              </p>
+  1045→            </div>
+  1046→
+  1047→            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+  1048→              {[
+  1049→                {
+  1050→                  title: "Conversion Website Build",
+  1051→                  description:
+  1052→                    "A complete website designed and built around ONE conversion goal. Every section, every word, every element exists to move visitors toward action.",
+  1053→                  featured: false,
+  1054→                },
+  1055→                {
+  1056→                  title: "Client Acquisition System",
+  1057→                  description:
+  1058→                    "A full-funnel system — landing page, lead magnet, follow-up automation, and conversion tracking. Not just a website. A machine.",
+  1059→                  featured: true,
+  1060→                },
+  1061→                {
+  1062→                  title: "Website Audit & Strategy",
+  1063→                  description:
+  1064→                    "A 5-minute Loom video reviewing your current site, identifying the 3 biggest conversion leaks, and giving you an action plan.",
+  1065→                  featured: false,
+  1066→                },
+  1067→              ].map((svc) => (
+  1068→                <div
+  1069→                  key={svc.title}
+  1070→                  style={{
+  1071→                    backgroundColor: svc.featured ? COLORS.amber : COLORS.card,
+  1072→                    border: svc.featured
+  1073→                      ? `2px solid ${COLORS.amber}`
+  1074→                      : `1px solid ${COLORS.border}`,
+  1075→                    borderRadius: "12px",
+  1076→                    padding: "32px 28px",
+  1077→                    display: "flex",
+  1078→                    flexDirection: "column",
+  1079→                    position: "relative",
+  1080→                    overflow: "hidden",
+  1081→                  }}
+  1082→                >
+  1083→                  {svc.featured && (
+  1084→                    <span
+  1085→                      style={{
+  1086→                        fontFamily: FONTS.mono,
+  1087→                        fontSize: "11px",
+  1088→                        fontWeight: 500,
+  1089→                        letterSpacing: "1px",
+  1090→                        textTransform: "uppercase",
+  1091→                        backgroundColor: COLORS.bg,
+  1092→                        color: COLORS.amber,
+  1093→                        borderRadius: "4px",
+  1094→                        padding: "4px 12px",
+  1095→                        display: "inline-block",
+  1096→                        width: "fit-content",
+  1097→                        marginBottom: "20px",
+  1098→                      }}
+  1099→                    >
+  1100→                      Most Popular
+  1101→                    </span>
+  1102→                  )}
+  1103→
+  1104→                  <h3
+  1105→                    style={{
+  1106→                      fontFamily: FONTS.syne,
+  1107→                      fontWeight: 700,
+  1108→                      fontSize: "22px",
+  1109→                      color: svc.featured ? COLORS.bg : COLORS.text,
+  1110→                      marginBottom: "12px",
+  1111→                    }}
+  1112→                  >
+  1113→                    {svc.title}
+  1114→                  </h3>
+  1115→
+  1116→                  <p
+  1117→                    style={{
+  1118→                      fontFamily: FONTS.inter,
+  1119→                      fontSize: "15px",
+  1120→                      color: svc.featured
+  1121→                        ? "rgba(7,18,42,0.75)"
+  1122→                        : COLORS.muted,
+  1123→                      lineHeight: 1.7,
+  1124→                      margin: "0 0 24px 0",
+  1125→                      flex: 1,
+  1126→                    }}
+  1127→                  >
+  1128→                    {svc.description}
+  1129→                  </p>
+  1130→
+  1131→                  <WhatsAppCTA
+  1132→                    variant={svc.featured ? "solid-dark" : "outline"}
+  1133→                    size="sm"
+  1134→                  >
+  1135→                    {svc.featured ? "Get Started" : "Learn More"}
+  1136→                  </WhatsAppCTA>
+  1137→                </div>
+  1138→              ))}
+  1139→            </div>
+  1140→          </div>
+  1141→        </Section>
+  1142→
+  1143→        {/* ══════════════════════════════════════════
+  1144→            8. WHY SUPERWITS TECH
+  1145→            ══════════════════════════════════════════ */}
+  1146→        <Section
+  1147→          style={{
+  1148→            backgroundColor: COLORS.card,
+  1149→            borderTop: `1px solid ${COLORS.border}`,
+  1150→            borderBottom: `1px solid ${COLORS.border}`,
+  1151→          }}
+  1152→        >
+  1153→          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  1154→            <div className="text-center mb-12">
+  1155→              <h2
+  1156→                style={{
+  1157→                  fontFamily: FONTS.syne,
+  1158→                  fontWeight: 700,
+  1159→                  fontSize: "clamp(22px, 4.5vw, 36px)",
+  1160→                  lineHeight: 1.3,
+  1161→                  color: COLORS.text,
+  1162→                  marginBottom: "12px",
+  1163→                }}
+  1164→              >
+  1165→                Why Superwits Tech?
+  1166→              </h2>
+  1167→              <p
+  1168→                style={{
+  1169→                  fontFamily: FONTS.inter,
+  1170→                  fontSize: "16px",
+  1171→                  color: COLORS.muted,
+  1172→                  lineHeight: 1.75,
+  1173→                  maxWidth: "560px",
+  1174→                  margin: "0 auto",
+  1175→                }}
+  1176→              >
+  1177→                Six reasons Nigerian businesses choose us over traditional web
+  1178→                designers.
+  1179→              </p>
+  1180→            </div>
+  1181→
+  1182→            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+  1183→              {[
+  1184→                {
+  1185→                  title: "Conversion-First, Not Design-First",
+  1186→                  description:
+  1187→                    "We do not start with colors and fonts. We start with your conversion goal and build every element around it.",
+  1188→                },
+  1189→                {
+  1190→                  title: "Built with AI — Delivered in Days",
+  1191→                  description:
+  1192→                    "We use AI to accelerate development without sacrificing quality. What takes others weeks, we deliver in days.",
+  1193→                },
+  1194→                {
+  1195→                  title: "Nigerian Context. International Standard.",
+  1196→                  description:
+  1197→                    "We understand the Nigerian market — trust signals, payment preferences, mobile-first behaviour — and apply global conversion best practices.",
+  1198→                },
+  1199→                {
+  1200→                  title: "The 7 Pillars Framework",
+  1201→                  description:
+  1202→                    "Every website we build follows our proprietary 7 Pillars of Conversion Architecture. No guesswork. No shortcuts.",
+  1203→                },
+  1204→                {
+  1205→                  title: "Proof-Led, Not Promise-Led",
+  1206→                  description:
+  1207→                    "We show you real case studies, real numbers, and real outcomes before you commit to anything.",
+  1208→                },
+  1209→                {
+  1210→                  title: "One Goal Per Page",
+  1211→                  description:
+  1212→                    "No competing CTAs. No confusion. Every page has a single, measurable objective that drives the visitor toward becoming a client.",
+  1213→                },
+  1214→              ].map((diff) => (
+  1215→                <div
+  1216→                  key={diff.title}
+  1217→                  style={{
+  1218→                    backgroundColor: COLORS.bg,
+  1219→                    border: `1px solid ${COLORS.border}`,
+  1220→                    borderRadius: "10px",
+  1221→                    padding: "24px",
+  1222→                  }}
+  1223→                >
+  1224→                  <h3
+  1225→                    style={{
+  1226→                      fontFamily: FONTS.syne,
+  1227→                      fontWeight: 700,
+  1228→                      fontSize: "18px",
+  1229→                      color: COLORS.text,
+  1230→                      marginBottom: "8px",
+  1231→                    }}
+  1232→                  >
+  1233→                    {diff.title}
+  1234→                  </h3>
+  1235→                  <p
+  1236→                    style={{
+  1237→                      fontFamily: FONTS.inter,
+  1238→                      fontSize: "15px",
+  1239→                      color: COLORS.muted,
+  1240→                      lineHeight: 1.7,
+  1241→                      margin: 0,
+  1242→                    }}
+  1243→                  >
+  1244→                    {diff.description}
+  1245→                  </p>
+  1246→                </div>
+  1247→              ))}
+  1248→            </div>
+  1249→
+  1250→            {/* Mid-page CTA */}
+  1251→            <div className="text-center">
+  1252→              <p
+  1253→                style={{
+  1254→                  fontFamily: FONTS.syne,
+  1255→                  fontWeight: 700,
+  1256→                  fontSize: "clamp(18px, 3vw, 24px)",
+  1257→                  color: COLORS.amber,
+  1258→                  marginBottom: "20px",
+  1259→                }}
+  1260→              >
+  1261→                Which One Is Costing You Clients Right Now?
+  1262→              </p>
+  1263→              <WhatsAppCTA>Let&apos;s Find Out — Free Audit</WhatsAppCTA>
+  1264→            </div>
+  1265→          </div>
+  1266→        </Section>
+  1267→
+  1268→        {/* ══════════════════════════════════════════
+  1269→            9. FAQ ACCORDION
+  1270→            ══════════════════════════════════════════ */}
+  1271→        <Section>
+  1272→          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+  1273→            <div className="text-center mb-12">
+  1274→              <h2
+  1275→                style={{
+  1276→                  fontFamily: FONTS.syne,
+  1277→                  fontWeight: 700,
+  1278→                  fontSize: "clamp(22px, 4.5vw, 36px)",
+  1279→                  lineHeight: 1.3,
+  1280→                  color: COLORS.text,
+  1281→                  marginBottom: "12px",
+  1282→                }}
+  1283→              >
+  1284→                Frequently Asked Questions
+  1285→              </h2>
+  1286→              <p
+  1287→                style={{
+  1288→                  fontFamily: FONTS.inter,
+  1289→                  fontSize: "16px",
+  1290→                  color: COLORS.muted,
+  1291→                  lineHeight: 1.75,
+  1292→                }}
+  1293→              >
+  1294→                Honest answers to the questions we hear most.
+  1295→              </p>
+  1296→            </div>
+  1297→
+  1298→            <div className="space-y-4 mb-12">
+  1299→              {[
+  1300→                {
+  1301→                  q: "I've paid for websites before and they didn't work. Why will this be different?",
+  1302→                  a: "Because we do not build 'websites' — we build conversion systems. Every page has a single goal, backed by our 7 Pillars Framework. We measure success by clients acquired, not pages delivered. Plus, we start with a free audit so you can see the problems before spending a naira.",
+  1303→                },
+  1304→                {
+  1305→                  q: "How much does it cost?",
+  1306→                  a: "The free audit is, well, free — no strings attached. For full builds, pricing depends on the scope and your conversion goals. We will give you a clear quote during the strategy call with no hidden fees. Think of it this way: what is one new client worth to your business?",
+  1307→                },
+  1308→                {
+  1309→                  q: "How long does it take?",
+  1310→                  a: "AI-accelerated builds are delivered in days, not weeks. A typical Conversion Website Build takes 5–10 business days. A Client Acquisition System may take 2–3 weeks including follow-up automation setup.",
+  1311→                },
+  1312→                {
+  1313→                  q: "My clients don't really use the internet...",
+  1314→                  a: "They do — more than you think. Over 60% of Nigerians are online, and mobile internet usage is among the highest in Africa. Your ideal clients are searching Google right now for the service you offer. If they find your competitor first, they call your competitor.",
+  1315→                },
+  1316→                {
+  1317→                  q: "Can you work with businesses outside Nigeria?",
+  1318→                  a: "Yes. While our expertise is rooted in the Nigerian market, our conversion framework is universal. We have worked with businesses across West Africa and the diaspora.",
+  1319→                },
+  1320→                {
+  1321→                  q: "What if I already have a website?",
+  1322→                  a: "Perfect — that is exactly what our free audit is for. We will review your existing site, identify the conversion leaks, and show you exactly what to fix. If a rebuild makes sense, we will tell you. If a few tweaks will do it, we will tell you that too.",
+  1323→                },
+  1324→                {
+  1325→                  q: "What do I need to provide?",
+  1326→                  a: "Very little. We handle the strategy, design, copywriting, and development. You just need to share your brand assets (logo, colours if you have them), access to your domain/hosting if applicable, and 30 minutes for a strategy call. That is it.",
+  1327→                },
+  1328→              ].map((faq) => (
+  1329→                <details
+  1330→                  key={faq.q}
+  1331→                  style={{
+  1332→                    backgroundColor: COLORS.card,
+  1333→                    border: `1px solid ${COLORS.border}`,
+  1334→                    borderRadius: "8px",
+  1335→                    overflow: "hidden",
+  1336→                  }}
+  1337→                  className="group"
+  1338→                >
+  1339→                  <summary
+  1340→                    style={{
+  1341→                      fontFamily: FONTS.syne,
+  1342→                      fontWeight: 600,
+  1343→                      fontSize: "16px",
+  1344→                      color: COLORS.text,
+  1345→                      padding: "20px 24px",
+  1346→                      cursor: "pointer",
+  1347→                      listStyle: "none",
+  1348→                      display: "flex",
+  1349→                      justifyContent: "space-between",
+  1350→                      alignItems: "center",
+  1351→                      gap: "12px",
+  1352→                      userSelect: "none",
+  1353→                    }}
+  1354→                  >
+  1355→                    {faq.q}
+  1356→                    <span
+  1357→                      style={{
+  1358→                        fontFamily: FONTS.mono,
+  1359→                        fontSize: "20px",
+  1360→                        color: COLORS.amber,
+  1361→                        flexShrink: 0,
+  1362→                        transition: "transform 0.2s ease",
+  1363→                        display: "inline-block",
+  1364→                      }}
+  1365→                      className="group-open:rotate-45"
+  1366→                    >
+  1367→                      +
+  1368→                    </span>
+  1369→                  </summary>
+  1370→                  <div
+  1371→                    style={{
+  1372→                      borderTop: `1px solid ${COLORS.border}`,
+  1373→                      padding: "20px 24px",
+  1374→                    }}
+  1375→                  >
+  1376→                    <p
+  1377→                      style={{
+  1378→                        fontFamily: FONTS.inter,
+  1379→                        fontSize: "15px",
+  1380→                        color: COLORS.muted,
+  1381→                        lineHeight: 1.75,
+  1382→                        margin: 0,
+  1383→                      }}
+  1384→                    >
+  1385→                      {faq.a}
+  1386→                    </p>
+  1387→                  </div>
+  1388→                </details>
+  1389→              ))}
+  1390→            </div>
+  1391→
+  1392→            {/* CTA after FAQ */}
+  1393→            <div className="text-center">
+  1394→              <WhatsAppCTA>Still Have Questions? Ask on WhatsApp</WhatsAppCTA>
+  1395→            </div>
+  1396→          </div>
+  1397→        </Section>
+  1398→
+  1399→        {/* ══════════════════════════════════════════
+  1400→            10. FINAL CTA
+  1401→            ══════════════════════════════════════════ */}
+  1402→        <Section>
+  1403→          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+  1404→            <div
+  1405→              style={{
+  1406→                backgroundColor: COLORS.card,
+  1407→                border: `1px solid ${COLORS.border}`,
+  1408→                borderRadius: "16px",
+  1409→                padding: "clamp(32px, 6vw, 56px) clamp(24px, 5vw, 48px)",
+  1410→                textAlign: "center",
+  1411→              }}
+  1412→            >
+  1413→              <span
+  1414→                style={{
+  1415→                  fontFamily: FONTS.mono,
+  1416→                  fontSize: "12px",
+  1417→                  fontWeight: 500,
+  1418→                  letterSpacing: "2px",
+  1419→                  textTransform: "uppercase",
+  1420→                  color: COLORS.amber,
+  1421→                  display: "block",
+  1422→                  marginBottom: "16px",
+  1423→                }}
+  1424→              >
+  1425→                Limited Availability
+  1426→              </span>
+  1427→
+  1428→              <h2
+  1429→                style={{
+  1430→                  fontFamily: FONTS.syne,
+  1431→                  fontWeight: 800,
+  1432→                  fontSize: "clamp(24px, 5vw, 40px)",
+  1433→                  lineHeight: 1.2,
+  1434→                  color: COLORS.text,
+  1435→                  marginBottom: "16px",
+  1436→                }}
+  1437→              >
+  1438→                3 Website Audit Slots Open This Week
+  1439→              </h2>
+  1440→
+  1441→              <p
+  1442→                style={{
+  1443→                  fontFamily: FONTS.inter,
+  1444→                  fontSize: "17px",
+  1445→                  color: COLORS.muted,
+  1446→                  lineHeight: 1.75,
+  1447→                  maxWidth: "480px",
+  1448→                  margin: "0 auto 28px",
+  1449→                }}
+  1450→              >
+  1451→                We only take on a limited number of audits each week to ensure
+  1452→                quality. Once they are filled, you go on the waitlist.
+  1453→              </p>
+  1454→
+  1455→              <WhatsAppCTA size="lg">
+  1456→                <svg
+  1457→                  xmlns="http://www.w3.org/2000/svg"
+  1458→                  viewBox="0 0 24 24"
+  1459→                  fill="currentColor"
+  1460→                  width="20"
+  1461→                  height="20"
+  1462→                  aria-hidden="true"
+  1463→                >
+  1464→                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+  1465→                </svg>
+  1466→                Claim Your Free Audit Slot
+  1467→              </WhatsAppCTA>
+  1468→
+  1469→              <p
+  1470→                style={{
+  1471→                  fontFamily: FONTS.inter,
+  1472→                  fontSize: "13px",
+  1473→                  color: COLORS.muted,
+  1474→                  lineHeight: 1.6,
+  1475→                  marginTop: "16px",
+  1476→                  fontStyle: "italic",
+  1477→                }}
+  1478→              >
+  1479→                P.S. If your current website converts below 3%, you are leaving
+  1480→                money on the table every single day. Let us show you exactly
+  1481→                where.
+  1482→              </p>
+  1483→            </div>
+  1484→          </div>
+  1485→        </Section>
+  1486→      </main>
+  1487→
+  1488→      {/* ── Footer ── */}
+  1489→      <Footer />
+  1490→
+  1491→      {/* ── Floating WhatsApp Button (renders conditionally) ── */}
+  1492→      <FloatingWhatsAppButton />
+  1493→
+  1494→      {/* ── Cookie Consent (renders conditionally) ── */}
+  1495→      <CookieConsent />
+  1496→    </>
+  1497→  );
+  1498→}

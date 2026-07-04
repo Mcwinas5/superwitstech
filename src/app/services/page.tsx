@@ -195,29 +195,7 @@ export default function ServicesPage() {
                     href={WA_LINK}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block text-center rounded-md transition-colors"
-                    style={{
-                      padding: "14px 24px",
-                      backgroundColor: "#D97706",
-                      color: "#FFFFFF",
-                      fontFamily: "'Inter', sans-serif",
-                      fontSize: "15px",
-                      fontWeight: 600,
-                      textDecoration: "none",
-                      minHeight: "48px",
-                      lineHeight: "20px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                    onMouseEnter={(e) =>
-                      ((e.currentTarget as HTMLElement).style.backgroundColor =
-                        "#F59E0B")
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.currentTarget as HTMLElement).style.backgroundColor =
-                        "#D97706")
-                    }
+                    className="about-cta-btn"
                   >
                     {service.cost ? "Get My Free Audit" : "Get Started on WhatsApp"}
                   </a>
@@ -243,26 +221,7 @@ export default function ServicesPage() {
               href={WA_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block rounded-md transition-colors"
-              style={{
-                padding: "16px 32px",
-                backgroundColor: "#D97706",
-                color: "#FFFFFF",
-                fontFamily: "'Inter', sans-serif",
-                fontSize: "16px",
-                fontWeight: 600,
-                textDecoration: "none",
-                minHeight: "48px",
-                lineHeight: "22px",
-              }}
-              onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLElement).style.backgroundColor =
-                  "#F59E0B")
-              }
-              onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLElement).style.backgroundColor =
-                  "#D97706")
-              }
+              className="about-cta-btn"
             >
               Request Your Free Website Audit
             </a>

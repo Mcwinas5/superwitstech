@@ -215,3 +215,21 @@ button, a, [role="button"] {
     max-height: 50vh;
   }
 }
+
+.about-cta-btn {
+  display: inline-block;
+  padding: 16px 32px;
+  background-color: #D97706;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  min-height: 48px;
+  line-height: 22px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+.about-cta-btn:hover {
+  background-color: #F59E0B;
+}

@@ -166,22 +166,7 @@ export default async function UnsubscribePage({ params }: UnsubscribePageProps) 
 
         <Link
           href="/"
-          style={{
-            display: "inline-block",
-            padding: "12px 32px",
-            backgroundColor: "#D97706",
-            color: "#FFFFFF",
-            fontFamily: "'Inter', sans-serif",
-            fontSize: "15px",
-            fontWeight: 600,
-            borderRadius: "8px",
-            textDecoration: "none",
-            transition: "background-color 0.2s",
-            minHeight: "44px",
-            lineHeight: "20px",
-          }}
-          onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#F59E0B")}
-          onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#D97706")}
+          className="about-cta-btn"
         >
           Back to Home
         </Link>
