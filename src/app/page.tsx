@@ -206,7 +206,7 @@ export default function HomePage() {
           }}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.25fr] gap-8 lg:gap-5 items-stretch">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-4 items-stretch">
               {/* Left Column */}
               <div className="flex flex-col justify-center">
                 {/* Headline */}
@@ -312,6 +312,7 @@ export default function HomePage() {
                   border: `1px solid ${COLORS.border}`,
                   backgroundColor: COLORS.card,
                   height: "100%",
+                  boxShadow: "0 0 0 1px rgba(217,119,6,0.08), 0 8px 40px -8px rgba(0,0,0,0.5), 0 0 80px -20px rgba(217,119,6,0.06)",
                 }}
               >
                 <img
@@ -323,7 +324,9 @@ export default function HomePage() {
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
-                    objectPosition: "center",
+                    objectPosition: "53% 40%",
+                    transform: "scale(1.1)",
+                    transformOrigin: "53% 28%",
                     display: "block",
                   }}
                 />

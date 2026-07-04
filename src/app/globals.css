@@ -191,18 +191,24 @@ button, a, [role="button"] {
 
 /* ── Hero Portrait: responsive art-directed crop ── */
 .hero-portrait {
-  object-position: center;
+  object-position: 53% 40%;
+  transform: scale(1.1);
+  transform-origin: 53% 28%;
 }
-/* Tablet: prioritize face + laptop */
+/* Tablet: prioritize face + laptop, reduce scale */
 @media (max-width: 1023px) {
   .hero-portrait {
-    object-position: 55% 38%;
+    object-position: 50% 38%;
+    transform: scale(1.05);
+    transform-origin: 50% 35%;
   }
 }
-/* Mobile: prioritize face, keep laptop edge */
+/* Mobile: prioritize face, keep laptop edge, minimal scale */
 @media (max-width: 767px) {
   .hero-portrait {
-    object-position: 58% 28%;
+    object-position: 52% 32%;
+    transform: scale(1.02);
+    transform-origin: 52% 30%;
   }
   .hero-image-frame {
     height: 360px !important;
