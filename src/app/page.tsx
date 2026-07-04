@@ -302,28 +302,30 @@ export default function HomePage() {
                 </p>
               </div>
 
-              {/* Right Column — Hero Image Placeholder */}
+              {/* Right Column — Hero Image */}
               <div
                 style={{
-                  backgroundColor: COLORS.card,
+                  position: "relative",
                   borderRadius: "12px",
+                  overflow: "hidden",
+                  border: `1px solid ${COLORS.border}`,
                   minHeight: "384px",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  border: `1px solid ${COLORS.border}`,
+                  backgroundColor: COLORS.card,
                 }}
               >
-                <span
+                <img
+                  src="/hero-image.png"
+                  alt="Superwits Tech — Conversion & Credibility Systems for Nigerian Service Businesses"
                   style={{
-                    fontFamily: FONTS.mono,
-                    fontSize: "14px",
-                    color: COLORS.muted,
-                    letterSpacing: "1px",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    display: "block",
                   }}
-                >
-                  Hero Image
-                </span>
+                />
               </div>
             </div>
           </div>
