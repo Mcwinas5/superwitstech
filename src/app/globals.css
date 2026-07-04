@@ -245,3 +245,19 @@ button, a, [role="button"] {
 .about-cta-btn:hover {
   background-color: #F59E0B;
 }
+
+/* ── Scroll Reveal Animation ── */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    will-change: opacity, transform;
+    transition: opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),
+                transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+    will-change: auto;
+  }
+}

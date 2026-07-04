@@ -5,6 +5,7 @@ import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import FloatingWhatsAppButton from "@/components/layout/FloatingWhatsAppButton";
 import CookieConsent from "@/components/layout/CookieConsent";
+import ScrollReveal from "@/components/layout/ScrollReveal";
 import { WA_LINK } from "@/lib/constants";
 
 /* ────────────────────────────────────────────────
@@ -354,22 +355,27 @@ export default function HomePage() {
               {[
                 {
                   stat: "6–15%",
+                  _delay: "0",
                   label: "Conversion Rate Target",
                   description: "We aim for 6–15% — not the 1% industry average.",
                 },
                 {
                   stat: "Days",
+                  _delay: "80",
                   label: "Delivery Time",
                   description: "AI-accelerated builds delivered in days, not weeks.",
                 },
                 {
                   stat: "3 Niches",
+                  _delay: "160",
                   label: "Specialised Focus",
                   description: "Clinics · Coaches · E-commerce",
                 },
               ].map((item) => (
                 <div
                   key={item.stat}
+                  className="reveal"
+                  data-delay={item._delay}
                   style={{
                     backgroundColor: COLORS.card,
                     border: `1px solid ${COLORS.border}`,
@@ -427,6 +433,7 @@ export default function HomePage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Headline */}
             <h2
+              className="reveal"
               style={{
                 fontFamily: FONTS.syne,
                 fontWeight: 700,
@@ -522,9 +529,11 @@ export default function HomePage() {
                   description:
                     '"Call us", "Subscribe", "Follow us", "Learn more" — all fighting for attention. Nothing gets clicked.',
                 },
-              ].map((pain) => (
+              ].map((pain, idx) => (
                 <div
                   key={pain.title}
+                  className="reveal"
+                  data-delay={String(idx * 80)}
                   style={{
                     backgroundColor: COLORS.card,
                     border: `1.5px solid ${COLORS.red}`,
@@ -573,6 +582,7 @@ export default function HomePage() {
         >
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2
+              className="reveal"
               style={{
                 fontFamily: FONTS.syne,
                 fontWeight: 700,
@@ -625,10 +635,11 @@ export default function HomePage() {
                   answer:
                     "One clear action per page. No confusion, no competing buttons. We design a single, obvious next step that moves the visitor toward becoming a client.",
                 },
-              ].map((item) => (
+              ].map((item, idx) => (
                 <div
                   key={item.number}
-                  className="flex gap-6 items-start"
+                  className="reveal flex gap-6 items-start"
+                  data-delay={String(idx * 80)}
                 >
                   <span
                     style={{
@@ -679,6 +690,7 @@ export default function HomePage() {
         <Section id="how-it-works">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2
+              className="reveal"
               style={{
                 fontFamily: FONTS.syne,
                 fontWeight: 700,
@@ -728,7 +740,7 @@ export default function HomePage() {
                     "Your conversion system is built and launched in days, not weeks. AI-accelerated, human-directed.",
                 },
               ].map((item, idx) => (
-                <div key={item.step} className="relative flex flex-col items-center text-center px-4">
+                <div key={item.step} className="reveal relative flex flex-col items-center text-center px-4" data-delay={String(idx * 80)}>
                   {/* Dashed connector (desktop only, between items) */}
                   {idx < 2 && (
                     <div
@@ -825,6 +837,7 @@ export default function HomePage() {
                 Real Results
               </span>
               <h2
+                className="reveal"
                 style={{
                   fontFamily: FONTS.syne,
                   fontWeight: 700,
@@ -883,9 +896,11 @@ export default function HomePage() {
                     "Conversion architecture overhaul turned a struggling store into a revenue engine.",
                   quote: "\u201cSame traffic, same ads \u2014 6.2% conversion rate in three weeks.\u201d \u2014 Founder",
                 },
-              ].map((cs) => (
+              ].map((cs, idx) => (
                 <div
                   key={cs.label}
+                  className="reveal"
+                  data-delay={String(idx * 80)}
                   style={{
                     backgroundColor: COLORS.bg,
                     border: `1px solid ${COLORS.border}`,
@@ -1036,6 +1051,7 @@ export default function HomePage() {
                 What We Offer
               </span>
               <h2
+                className="reveal"
                 style={{
                   fontFamily: FONTS.syne,
                   fontWeight: 700,
@@ -1085,9 +1101,11 @@ export default function HomePage() {
                   featured: false,
                   cta: "Get My Free Audit",
                 },
-              ].map((svc) => (
+              ].map((svc, idx) => (
                 <div
                   key={svc.title}
+                  className="reveal"
+                  data-delay={String(idx * 80)}
                   style={{
                     backgroundColor: svc.featured ? COLORS.amber : COLORS.card,
                     border: svc.featured
@@ -1174,6 +1192,7 @@ export default function HomePage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2
+                className="reveal"
                 style={{
                   fontFamily: FONTS.syne,
                   fontWeight: 700,
@@ -1232,9 +1251,14 @@ export default function HomePage() {
                   description:
                     "No competing CTAs. No confusion. Every page has a single, measurable objective that drives the visitor toward becoming a client.",
                 },
-              ].map((diff) => (
+              ].map((diff, idx) => {
+                const pairDelay = Math.floor(idx / 2) * 80;
+                const inPairDelay = (idx % 2) * 80;
+                return (
                 <div
                   key={diff.title}
+                  className="reveal"
+                  data-delay={String(pairDelay + inPairDelay)}
                   style={{
                     backgroundColor: COLORS.bg,
                     border: `1px solid ${COLORS.border}`,
@@ -1265,7 +1289,8 @@ export default function HomePage() {
                     {diff.description}
                   </p>
                 </div>
-              ))}
+              );
+              })}
             </div>
 
             {/* Mid-page CTA */}
@@ -1447,6 +1472,7 @@ export default function HomePage() {
               </span>
 
               <h2
+                className="reveal"
                 style={{
                   fontFamily: FONTS.syne,
                   fontWeight: 800,
@@ -1513,6 +1539,7 @@ export default function HomePage() {
 
       {/* ── Cookie Consent (renders conditionally) ── */}
       <CookieConsent />
+      <ScrollReveal />
     </>
   );
 }
