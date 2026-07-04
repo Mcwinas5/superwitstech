@@ -306,11 +306,8 @@ export default function HomePage() {
               <div
                 style={{
                   position: "relative",
-                  borderRadius: "12px",
-                  overflow: "hidden",
-                  border: `1px solid ${COLORS.border}`,
-                  backgroundColor: COLORS.card,
                   height: "100%",
+                  overflow: "visible",
                 }}
               >
                 <img
@@ -319,9 +316,11 @@ export default function HomePage() {
                   style={{
                     width: "100%",
                     height: "100%",
-                    objectFit: "cover",
-                    objectPosition: "right center",
+                    objectFit: "contain",
+                    objectPosition: "center",
                     display: "block",
+                    transform: "scale(1.25)",
+                    transformOrigin: "center center",
                   }}
                 />
               </div>
