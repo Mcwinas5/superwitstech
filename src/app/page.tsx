@@ -316,8 +316,8 @@ export default function HomePage() {
                   style={{
                     fontFamily: FONTS.inter,
                     fontWeight: 700,
-                    fontSize: "13px",
-                    letterSpacing: "0.12em",
+                    fontSize: "11px",
+                    letterSpacing: "0.14em",
                     color: "#1E6FFF",
                     textTransform: "uppercase",
                     display: "block",
@@ -492,6 +492,7 @@ export default function HomePage() {
                       fontSize: "clamp(32px, 5vw, 44px)",
                       color: COLORS.amber,
                       lineHeight: 1.1,
+                      letterSpacing: "-0.03em",
                       marginBottom: "8px",
                     }}
                   >
@@ -501,8 +502,8 @@ export default function HomePage() {
                     style={{
                       fontFamily: FONTS.mono,
                       fontSize: "11px",
-                      fontWeight: 500,
-                      letterSpacing: "1.5px",
+                      fontWeight: 700,
+                      letterSpacing: "0.10em",
                       textTransform: "uppercase",
                       color: COLORS.amber,
                       marginBottom: "6px",
@@ -539,7 +540,8 @@ export default function HomePage() {
                 fontFamily: FONTS.syne,
                 fontWeight: 700,
                 fontSize: "clamp(22px, 4.5vw, 36px)",
-                lineHeight: 1.3,
+                lineHeight: 1.15,
+                letterSpacing: "-0.02em",
                 color: COLORS.text,
                 textAlign: "center",
                 marginBottom: "16px",
@@ -648,6 +650,8 @@ export default function HomePage() {
                       fontWeight: 700,
                       fontSize: "18px",
                       color: COLORS.red,
+                      letterSpacing: "-0.01em",
+                      lineHeight: 1.3,
                       marginBottom: "10px",
                     }}
                   >
@@ -688,7 +692,8 @@ export default function HomePage() {
                 fontFamily: FONTS.syne,
                 fontWeight: 700,
                 fontSize: "clamp(22px, 4.5vw, 36px)",
-                lineHeight: 1.3,
+                lineHeight: 1.15,
+                letterSpacing: "-0.02em",
                 color: COLORS.text,
                 textAlign: "center",
                 marginBottom: "16px",
@@ -762,6 +767,8 @@ export default function HomePage() {
                         fontWeight: 700,
                         fontSize: "20px",
                         color: COLORS.text,
+                        letterSpacing: "-0.01em",
+                        lineHeight: 1.3,
                         marginBottom: "8px",
                       }}
                     >
@@ -796,7 +803,8 @@ export default function HomePage() {
                 fontFamily: FONTS.syne,
                 fontWeight: 700,
                 fontSize: "clamp(22px, 4.5vw, 36px)",
-                lineHeight: 1.3,
+                lineHeight: 1.15,
+                letterSpacing: "-0.02em",
                 color: COLORS.text,
                 textAlign: "center",
                 marginBottom: "12px",
@@ -882,6 +890,8 @@ export default function HomePage() {
                       fontWeight: 700,
                       fontSize: "22px",
                       color: COLORS.text,
+                      letterSpacing: "-0.01em",
+                      lineHeight: 1.3,
                       marginBottom: "10px",
                     }}
                   >
@@ -926,9 +936,9 @@ export default function HomePage() {
               <span
                 style={{
                   fontFamily: FONTS.mono,
-                  fontSize: "12px",
-                  fontWeight: 500,
-                  letterSpacing: "2px",
+                  fontSize: "11px",
+                  fontWeight: 700,
+                  letterSpacing: "0.14em",
                   textTransform: "uppercase",
                   color: COLORS.amber,
                   display: "block",
@@ -943,7 +953,8 @@ export default function HomePage() {
                   fontFamily: FONTS.syne,
                   fontWeight: 700,
                   fontSize: "clamp(22px, 4.5vw, 36px)",
-                  lineHeight: 1.3,
+                  lineHeight: 1.15,
+                letterSpacing: "-0.02em",
                   color: COLORS.text,
                   marginBottom: "12px",
                 }}
@@ -1016,8 +1027,8 @@ export default function HomePage() {
                     style={{
                       fontFamily: FONTS.mono,
                       fontSize: "11px",
-                      fontWeight: 500,
-                      letterSpacing: "1px",
+                      fontWeight: 700,
+                      letterSpacing: "0.14em",
                       textTransform: "uppercase",
                       backgroundColor: COLORS.amber,
                       color: "#FFFFFF",
@@ -1140,9 +1151,9 @@ export default function HomePage() {
               <span
                 style={{
                   fontFamily: FONTS.mono,
-                  fontSize: "12px",
-                  fontWeight: 500,
-                  letterSpacing: "2px",
+                  fontSize: "11px",
+                  fontWeight: 700,
+                  letterSpacing: "0.14em",
                   textTransform: "uppercase",
                   color: COLORS.amber,
                   display: "block",
@@ -1157,7 +1168,8 @@ export default function HomePage() {
                   fontFamily: FONTS.syne,
                   fontWeight: 700,
                   fontSize: "clamp(22px, 4.5vw, 36px)",
-                  lineHeight: 1.3,
+                  lineHeight: 1.15,
+                letterSpacing: "-0.02em",
                   color: COLORS.text,
                   marginBottom: "12px",
                 }}
@@ -1247,6 +1259,8 @@ export default function HomePage() {
                       fontWeight: 700,
                       fontSize: "22px",
                       color: svc.featured ? COLORS.bg : COLORS.text,
+                      letterSpacing: "-0.01em",
+                      lineHeight: 1.3,
                       marginBottom: "12px",
                     }}
                   >
@@ -1298,7 +1312,8 @@ export default function HomePage() {
                   fontFamily: FONTS.syne,
                   fontWeight: 700,
                   fontSize: "clamp(22px, 4.5vw, 36px)",
-                  lineHeight: 1.3,
+                  lineHeight: 1.15,
+                letterSpacing: "-0.02em",
                   color: COLORS.text,
                   marginBottom: "12px",
                 }}
@@ -1373,6 +1388,8 @@ export default function HomePage() {
                       fontWeight: 700,
                       fontSize: "18px",
                       color: COLORS.text,
+                      letterSpacing: "-0.01em",
+                      lineHeight: 1.3,
                       marginBottom: "8px",
                     }}
                   >
@@ -1423,7 +1440,8 @@ export default function HomePage() {
                   fontFamily: FONTS.syne,
                   fontWeight: 700,
                   fontSize: "clamp(22px, 4.5vw, 36px)",
-                  lineHeight: 1.3,
+                  lineHeight: 1.15,
+                letterSpacing: "-0.02em",
                   color: COLORS.text,
                   marginBottom: "12px",
                 }}
@@ -1507,9 +1525,9 @@ export default function HomePage() {
               <span
                 style={{
                   fontFamily: FONTS.mono,
-                  fontSize: "12px",
-                  fontWeight: 500,
-                  letterSpacing: "2px",
+                  fontSize: "11px",
+                  fontWeight: 700,
+                  letterSpacing: "0.14em",
                   textTransform: "uppercase",
                   color: COLORS.amber,
                   display: "block",
@@ -1525,7 +1543,8 @@ export default function HomePage() {
                   fontFamily: FONTS.syne,
                   fontWeight: 800,
                   fontSize: "clamp(24px, 5vw, 40px)",
-                  lineHeight: 1.2,
+                  lineHeight: 1.15,
+                  letterSpacing: "-0.02em",
                   color: COLORS.text,
                   marginBottom: "16px",
                 }}
