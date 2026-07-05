@@ -35,12 +35,13 @@ export default function Navigation() {
         borderBottom: scrolled ? "1px solid #1A3260" : "none",
       }}
     >
+      <style>{`.nav-logo-wrap{height:56px!important;display:flex!important;align-items:center!important;overflow:hidden!important}.nav-logo-img{height:230px!important;width:auto!important;max-width:none!important;transform:translateY(-85px)!important}@media(max-width:767px){.nav-logo-wrap{height:40px!important}.nav-logo-img{height:164px!important;transform:translateY(-61px)!important}}`}</style>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center" style={{ height: "clamp(64px, 10vw, 72px)" }}>
           {/* Logo */}
           <Link href="/" className="nav-logo-wrap">
             <img
-              src="/logo.png"
+              src="/logo.png?v=2"
               alt="Superwits Tech"
               className="nav-logo-img"
             />

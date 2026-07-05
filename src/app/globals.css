@@ -404,18 +404,20 @@ button, a, [role="button"] {
   height: 56px !important;
   display: flex !important;
   align-items: center !important;
-  overflow: visible !important;
+  overflow: hidden !important;
 }
 .nav-logo-img {
-  height: 56px !important;
+  height: 230px !important;
   width: auto !important;
   max-width: none !important;
+  transform: translateY(-85px) !important;
 }
 @media (max-width: 767px) {
   .nav-logo-wrap {
     height: 40px !important;
   }
   .nav-logo-img {
-    height: 40px !important;
+    height: 164px !important;
+    transform: translateY(-61px) !important;
   }
 }

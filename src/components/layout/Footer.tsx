@@ -23,7 +23,7 @@ export default function Footer() {
               <div className="mb-6">
                 <Link href="/">
                   <img
-                    src="/logo.png"
+                    src="/logo.png?v=2"
                     alt="Superwits Tech"
                     style={{ height: "36px", width: "auto" }}
                   />
