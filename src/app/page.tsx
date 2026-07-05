@@ -1433,7 +1433,7 @@ export default function HomePage() {
               >
                 Which One Is Costing You Clients Right Now?
               </p>
-              <WhatsAppCTA>Let&apos;s Find Out — Free Audit</WhatsAppCTA>
+              <WhatsAppCTA>Get My Free Website Audit</WhatsAppCTA>
             </div>
           </div>
         </Section>
