@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
@@ -124,9 +125,126 @@ function Section({
 }
 
 /* ────────────────────────────────────────────────
+   FAQ Accordion Item
+   ──────────────────────────────────────────────── */
+function FaqItem({
+  question,
+  answer,
+  isOpen,
+  onToggle,
+}: {
+  question: string;
+  answer: string;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  const bodyRef = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState(0);
+  const [reduced, setReduced] = useState(false);
+
+  useEffect(() => {
+    setReduced(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  }, []);
+
+  useEffect(() => {
+    if (isOpen && bodyRef.current) {
+      setHeight(bodyRef.current.scrollHeight);
+    }
+  }, [isOpen]);
+
+  return (
+    <div
+      className={`faq-item${isOpen ? " faq-item--open" : ""}`}
+      style={{
+        backgroundColor: COLORS.card,
+        border: `1px solid ${COLORS.border}`,
+        borderRadius: "8px",
+        overflow: "hidden",
+      }}
+    >
+      <button
+        onClick={onToggle}
+        aria-expanded={isOpen}
+        className="faq-trigger"
+        style={{
+          fontFamily: FONTS.syne,
+          fontWeight: 600,
+          fontSize: "16px",
+          color: COLORS.text,
+          padding: "20px 24px",
+          cursor: "pointer",
+          border: "none",
+          background: "none",
+          width: "100%",
+          textAlign: "left",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          gap: "12px",
+        }}
+      >
+        {question}
+        <span
+          className="faq-icon"
+          aria-hidden="true"
+          style={{
+            fontFamily: FONTS.mono,
+            fontSize: "20px",
+            color: COLORS.amber,
+            flexShrink: 0,
+            display: "inline-block",
+            lineHeight: 1,
+          }}
+        >
+          +
+        </span>
+      </button>
+      <div
+        ref={bodyRef}
+        className="faq-body"
+        style={{
+          maxHeight: isOpen ? height : 0,
+          overflow: "hidden",
+          transition: reduced
+            ? "none"
+            : isOpen
+              ? "max-height 320ms cubic-bezier(0.4, 0, 0.2, 1)"
+              : "max-height 260ms cubic-bezier(0.4, 0, 0.2, 1)",
+        }}
+      >
+        <div
+          style={{
+            borderTop: `1px solid ${COLORS.border}`,
+            padding: "20px 24px",
+          }}
+        >
+          <p
+            className="faq-answer"
+            style={{
+              fontFamily: FONTS.inter,
+              fontSize: "15px",
+              color: COLORS.muted,
+              lineHeight: 1.75,
+              margin: 0,
+            }}
+          >
+            {answer}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ────────────────────────────────────────────────
    Page Component
    ──────────────────────────────────────────────── */
 export default function HomePage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const toggleFaq = useCallback((idx: number) => {
+    setOpenFaq((prev) => (prev === idx ? null : idx));
+  }, []);
+
   return (
     <>
       {/* ── JSON-LD Structured Data ── */}
@@ -1332,15 +1450,15 @@ export default function HomePage() {
                 },
                 {
                   q: "How much does it cost?",
-                  a: "The free audit is, well, free — no strings attached. For full builds, pricing depends on the scope and your conversion goals. We will give you a clear quote during the strategy call with no hidden fees. Think of it this way: what is one new client worth to your business?",
+                  a: "The free audit is, well, free \u2014 no strings attached. For full builds, pricing depends on the scope and your conversion goals. We will give you a clear quote during the strategy call with no hidden fees. Think of it this way: what is one new client worth to your business?",
                 },
                 {
                   q: "How long does it take?",
-                  a: "AI-accelerated builds are delivered in days, not weeks. A typical Conversion Website Build takes 5–10 business days. A Client Acquisition System may take 2–3 weeks including follow-up automation setup.",
+                  a: "AI-accelerated builds are delivered in days, not weeks. A typical Conversion Website Build takes 5\u201310 business days. A Client Acquisition System may take 2\u20133 weeks including follow-up automation setup.",
                 },
                 {
                   q: "My clients don't really use the internet...",
-                  a: "They do — more than you think. Over 60% of Nigerians are online, and mobile internet usage is among the highest in Africa. Your ideal clients are searching Google right now for the service you offer. If they find your competitor first, they call your competitor.",
+                  a: "They do \u2014 more than you think. Over 60% of Nigerians are online, and mobile internet usage is among the highest in Africa. Your ideal clients are searching Google right now for the service you offer. If they find your competitor first, they call your competitor.",
                 },
                 {
                   q: "Can you work with businesses outside Nigeria?",
@@ -1348,73 +1466,20 @@ export default function HomePage() {
                 },
                 {
                   q: "What if I already have a website?",
-                  a: "Perfect — that is exactly what our free audit is for. We will review your existing site, identify the conversion leaks, and show you exactly what to fix. If a rebuild makes sense, we will tell you. If a few tweaks will do it, we will tell you that too.",
+                  a: "Perfect \u2014 that is exactly what our free audit is for. We will review your existing site, identify the conversion leaks, and show you exactly what to fix. If a rebuild makes sense, we will tell you. If a few tweaks will do it, we will tell you that too.",
                 },
                 {
                   q: "What do I need to provide?",
                   a: "Very little. We handle the strategy, design, copywriting, and development. You just need to share your brand assets (logo, colours if you have them), access to your domain/hosting if applicable, and 30 minutes for a strategy call. That is it.",
                 },
-              ].map((faq) => (
-                <details
+              ].map((faq, idx) => (
+                <FaqItem
                   key={faq.q}
-                  style={{
-                    backgroundColor: COLORS.card,
-                    border: `1px solid ${COLORS.border}`,
-                    borderRadius: "8px",
-                    overflow: "hidden",
-                  }}
-                  className="group"
-                >
-                  <summary
-                    style={{
-                      fontFamily: FONTS.syne,
-                      fontWeight: 600,
-                      fontSize: "16px",
-                      color: COLORS.text,
-                      padding: "20px 24px",
-                      cursor: "pointer",
-                      listStyle: "none",
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      gap: "12px",
-                      userSelect: "none",
-                    }}
-                  >
-                    {faq.q}
-                    <span
-                      style={{
-                        fontFamily: FONTS.mono,
-                        fontSize: "20px",
-                        color: COLORS.amber,
-                        flexShrink: 0,
-                        transition: "transform 0.2s ease",
-                        display: "inline-block",
-                      }}
-                      className="group-open:rotate-45"
-                    >
-                      +
-                    </span>
-                  </summary>
-                  <div
-                    style={{
-                      borderTop: `1px solid ${COLORS.border}`,
-                      padding: "20px 24px",
-                    }}
-                  >
-                    <p
-                      style={{
-                        fontFamily: FONTS.inter,
-                        fontSize: "15px",
-                        color: COLORS.muted,
-                        lineHeight: 1.75,
-                        margin: 0,
-                      }}
-                    >
-                      {faq.a}
-                    </p>
-                  </div>
-                </details>
+                  question={faq.q}
+                  answer={faq.a}
+                  isOpen={openFaq === idx}
+                  onToggle={() => toggleFaq(idx)}
+                />
               ))}
             </div>
 

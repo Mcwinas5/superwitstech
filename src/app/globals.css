@@ -290,6 +290,42 @@ button, a, [role="button"] {
   background-color: rgba(240, 180, 41, 0.06) !important;
 }
 
+/* ── FAQ Accordion ── */
+.faq-trigger {
+  transition: border-left-color 200ms ease;
+  border-left: 3px solid transparent;
+  margin-left: -3px;
+  padding-left: 27px;
+}
+.faq-item--open .faq-trigger {
+  border-left-color: #D97706;
+}
+
+.faq-icon {
+  transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.faq-item--open .faq-icon {
+  transform: rotate(45deg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .faq-answer {
+    opacity: 0;
+    transition: opacity 240ms ease 80ms;
+  }
+  .faq-item--open .faq-answer {
+    opacity: 1;
+  }
+  .faq-item:not(.faq-item--open) .faq-answer {
+    opacity: 0;
+    transition: opacity 120ms ease;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .faq-icon { transition: none; }
+  .faq-trigger { transition: none; }
+}
+
 /* ── Reduced motion: keep glow, remove transforms ── */
 @media (prefers-reduced-motion: reduce) {
   .cta-solid:hover,
