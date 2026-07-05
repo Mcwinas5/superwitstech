@@ -38,11 +38,11 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center" style={{ height: "clamp(64px, 10vw, 72px)" }}>
           {/* Logo */}
-          <Link href="/">
+          <Link href="/" className="nav-logo-wrap">
             <img
               src="/logo.png"
               alt="Superwits Tech"
-              style={{ height: "clamp(44px, 7vw, 52px)", width: "auto" }}
+              className="nav-logo-img"
             />
           </Link>
 
