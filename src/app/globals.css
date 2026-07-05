@@ -399,25 +399,18 @@ button, a, [role="button"] {
   background: linear-gradient(90deg, transparent, rgba(30, 111, 255, 0.2), transparent);
 }
 
-/* ── Nav Logo Sizing (override any constraints) ── */
+/* ── Nav Logo Sizing ── */
 .nav-logo-wrap {
-  height: 56px !important;
-  display: flex !important;
-  align-items: center !important;
-  overflow: hidden !important;
+  display: flex;
+  align-items: center;
 }
 .nav-logo-img {
-  height: 230px !important;
+  height: 56px !important;
   width: auto !important;
   max-width: none !important;
-  transform: translateY(-85px) !important;
 }
 @media (max-width: 767px) {
-  .nav-logo-wrap {
-    height: 40px !important;
-  }
   .nav-logo-img {
-    height: 164px !important;
-    transform: translateY(-61px) !important;
+    height: 40px !important;
   }
 }
