@@ -355,3 +355,46 @@ button, a, [role="button"] {
     will-change: auto;
   }
 }
+
+/* ── Hero Ambient Gradient Orbs (static, CSS-only) ── */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse 600px 500px at 15% 40%, rgba(30, 111, 255, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse 400px 400px at 85% 60%, rgba(240, 180, 41, 0.07) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+/* Mobile: reduce orb prominence by 40% */
+@media (max-width: 767px) {
+  .hero-section::before {
+    background: radial-gradient(ellipse 600px 500px at 15% 40%, rgba(30, 111, 255, 0.072) 0%, transparent 70%);
+  }
+  .hero-section::after {
+    background: radial-gradient(ellipse 400px 400px at 85% 60%, rgba(240, 180, 41, 0.042) 0%, transparent 65%);
+  }
+}
+
+/* ── Subtle Section Separator Lines ── */
+.section-separator {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(30, 111, 255, 0.2), transparent);
+}

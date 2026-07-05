@@ -299,7 +299,7 @@ export default function HomePage() {
             1. HERO SECTION
             ══════════════════════════════════════════ */}
         <section
-          className="flex items-center"
+          className="hero-section flex items-center"
           style={{
             backgroundColor: COLORS.bg,
             minHeight: "90vh",
@@ -307,7 +307,7 @@ export default function HomePage() {
             paddingBottom: "24px",
           }}
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative" style={{ zIndex: 1 }}>
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-4 items-stretch">
               {/* Left Column */}
               <div className="flex flex-col justify-center">
@@ -447,6 +447,9 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* ── Section separator ── */}
+        <div className="section-separator" aria-hidden="true"></div>
+
         {/* ══════════════════════════════════════════
             2. SOCIAL PROOF BAR
             ══════════════════════════════════════════ */}
@@ -527,6 +530,9 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* ── Section separator ── */}
+        <div className="section-separator" aria-hidden="true"></div>
 
         {/* ══════════════════════════════════════════
             3. PROBLEM SECTION
@@ -678,6 +684,9 @@ export default function HomePage() {
             </div>
           </div>
         </Section>
+
+        {/* ── Section separator ── */}
+        <div className="section-separator" aria-hidden="true"></div>
 
         {/* ══════════════════════════════════════════
             4. SYSTEM EXPLANATION
