@@ -42,7 +42,7 @@ export default function Navigation() {
             <img
               src="/logo.png"
               alt="Superwits Tech"
-              style={{ height: "clamp(30px, 5vw, 36px)", width: "auto" }}
+              style={{ height: "clamp(40px, 6vw, 48px)", width: "auto" }}
             />
           </Link>
 
