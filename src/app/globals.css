@@ -240,10 +240,64 @@ button, a, [role="button"] {
   min-height: 48px;
   line-height: 22px;
   border-radius: 6px;
-  transition: background-color 0.2s ease;
+  transition: all 220ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .about-cta-btn:hover {
   background-color: #F59E0B;
+  box-shadow: 0 0 0 3px rgba(240, 180, 41, 0.25), 0 8px 32px rgba(240, 180, 41, 0.30);
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+.about-cta-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 0 0 2px rgba(240, 180, 41, 0.4);
+  transition: all 80ms ease;
+}
+
+/* ── Primary CTA Buttons (solid amber) ── */
+.cta-solid {
+  transition: all 220ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cta-solid:hover {
+  background-color: #F59E0B !important;
+  box-shadow: 0 0 0 3px rgba(240, 180, 41, 0.25), 0 8px 32px rgba(240, 180, 41, 0.30);
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+.cta-solid:active {
+  transform: translateY(0);
+  box-shadow: 0 0 0 2px rgba(240, 180, 41, 0.4);
+  transition: all 80ms ease;
+}
+
+/* ── Solid-dark CTA (amber border, dark fill) ── */
+.cta-solid-dark {
+  transition: all 220ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cta-solid-dark:hover {
+  background-color: rgba(7,18,42,0.8) !important;
+  border-color: #F59E0B !important;
+  color: #F59E0B !important;
+}
+
+/* ── Outline CTA (amber border, transparent fill) ── */
+.cta-outline {
+  transition: all 200ms ease;
+}
+.cta-outline:hover {
+  border-color: #D97706 !important;
+  color: #D97706 !important;
+  background-color: rgba(240, 180, 41, 0.06) !important;
+}
+
+/* ── Reduced motion: keep glow, remove transforms ── */
+@media (prefers-reduced-motion: reduce) {
+  .cta-solid:hover,
+  .cta-solid:active,
+  .about-cta-btn:hover,
+  .about-cta-btn:active {
+    transform: none;
+  }
 }
 
 /* ── Scroll Reveal Animation ── */

@@ -59,7 +59,6 @@ function WhatsAppCTA({
     fontFamily: FONTS.inter,
     fontWeight: 600,
     textDecoration: "none",
-    transition: "background-color 0.2s ease, transform 0.15s ease",
     cursor: "pointer",
   };
 
@@ -84,31 +83,15 @@ function WhatsAppCTA({
     },
   };
 
-  const hoverBgs: Record<string, string> = {
-    solid: COLORS.amberHover,
-    "solid-dark": "rgba(7,18,42,0.8)",
-    outline: "rgba(217,119,6,0.1)",
-  };
-
-  const leaveBgs: Record<string, string> = {
-    solid: COLORS.amber,
-    "solid-dark": COLORS.bg,
-    outline: "transparent",
-  };
+  const variantClass = `cta-${variant}`;
 
   return (
     <a
       href={WA_LINK}
       target="_blank"
       rel="noopener noreferrer"
-      className={className}
+      className={`${variantClass} ${className}`}
       style={variantStyles[variant]}
-      onMouseEnter={(e) => {
-        (e.currentTarget as HTMLElement).style.backgroundColor = hoverBgs[variant];
-      }}
-      onMouseLeave={(e) => {
-        (e.currentTarget as HTMLElement).style.backgroundColor = leaveBgs[variant];
-      }}
     >
       {children}
     </a>

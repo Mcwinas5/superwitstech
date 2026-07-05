@@ -84,6 +84,7 @@ export default function Navigation() {
               href={WA_LINK}
               target="_blank"
               rel="noopener noreferrer"
+              className="cta-solid nav-cta"
               style={{
                 display: "inline-block",
                 padding: "8px 20px",
@@ -96,10 +97,7 @@ export default function Navigation() {
                 textDecoration: "none",
                 minHeight: "40px",
                 lineHeight: "24px",
-                transition: "background-color 0.2s ease",
               }}
-              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#F59E0B")}
-              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#D97706")}
             >
               Get Free Audit
             </a>
