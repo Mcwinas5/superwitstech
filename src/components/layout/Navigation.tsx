@@ -39,18 +39,11 @@ export default function Navigation() {
         <div className="flex justify-between items-center" style={{ height: "clamp(64px, 10vw, 72px)" }}>
           {/* Logo */}
           <Link href="/">
-            <span
-              style={{
-                fontFamily: "'Syne', sans-serif",
-                fontWeight: 800,
-                fontSize: "clamp(16px, 4vw, 20px)",
-                cursor: "pointer",
-                whiteSpace: "nowrap",
-              }}
-            >
-              <span style={{ color: "#F1F5F9" }}>Superwits</span>
-              <span style={{ color: "#D97706" }}> tech</span>
-            </span>
+            <img
+              src="/logo.png"
+              alt="Superwits Tech"
+              style={{ height: "clamp(30px, 5vw, 36px)", width: "auto" }}
+            />
           </Link>
 
           {/* Desktop Nav Links */}

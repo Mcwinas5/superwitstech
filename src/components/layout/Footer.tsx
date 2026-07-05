@@ -22,10 +22,11 @@ export default function Footer() {
             <div>
               <div className="mb-6">
                 <Link href="/">
-                  <span style={{ fontFamily: "'Syne', sans-serif", fontSize: "20px", fontWeight: 800, cursor: "pointer", display: "inline-block" }}>
-                    <span style={{ color: "#F1F5F9" }}>Superwits</span>
-                    <span style={{ color: "#D97706" }}> tech</span>
-                  </span>
+                  <img
+                    src="/logo.png"
+                    alt="Superwits Tech"
+                    style={{ height: "36px", width: "auto" }}
+                  />
                 </Link>
                 <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", color: "#94A3B8", lineHeight: 1.6, marginTop: "8px" }}>
                   Conversion &amp; Credibility Systems for Nigerian Service Businesses
