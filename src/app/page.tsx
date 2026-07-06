@@ -407,6 +407,20 @@ export default function HomePage() {
                   </WhatsAppCTA>
                 </div>
 
+                {/* Budget objection line */}
+                <p
+                  style={{
+                    fontFamily: FONTS.inter,
+                    fontSize: "12px",
+                    color: "rgba(148,163,184,0.8)",
+                    marginTop: "10px",
+                    marginBottom: "0",
+                    textAlign: "left",
+                  }}
+                >
+                  No retainers. No monthly fees. No commitment. You pay only if you decide to build.
+                </p>
+
                 {/* Trust Badges */}
                 <div
                   className="flex flex-wrap gap-3"
