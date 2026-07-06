@@ -421,6 +421,37 @@ export default function HomePage() {
                   No retainers. No monthly fees. No commitment. You pay only if you decide to build.
                 </p>
 
+                {/* Named social proof line */}
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    marginTop: "10px",
+                    marginBottom: "0",
+                  }}
+                >
+                  <span
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      minWidth: "20px",
+                      borderRadius: "50%",
+                      backgroundColor: COLORS.amber,
+                      display: "inline-block",
+                    }}
+                  />
+                  <span
+                    style={{
+                      fontFamily: FONTS.inter,
+                      fontSize: "11px",
+                      color: "rgba(217,119,6,0.75)",
+                    }}
+                  >
+                    Emeka O., Business Coach, Abuja — first inbound inquiry in 72 hours after rebuild.
+                  </span>
+                </div>
+
                 {/* Trust Badges */}
                 <div
                   className="flex flex-wrap gap-3"
