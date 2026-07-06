@@ -356,6 +356,24 @@ export default function HomePage() {
                   Your next client is already searching — and landing on a competitor's site. Conversion &amp; Credibility Systems fix that. Built for Nigerian clinics, coaches, and e-commerce brands. Delivered in days, not months.
                 </p>
 
+                {/* Fear-buster micro-copy — above CTA */}
+                <p
+                  style={{
+                    fontFamily: FONTS.inter,
+                    fontSize: "14px",
+                    color: COLORS.muted,
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "12px",
+                    alignItems: "center",
+                    marginBottom: "12px",
+                  }}
+                >
+                  <span style={{ color: COLORS.green }}>✓</span> Free
+                  <span style={{ color: COLORS.green }}>✓</span> No Commitment
+                  <span style={{ color: COLORS.green }}>✓</span> 5-Minute Video
+                </p>
+
                 {/* CTA */}
                 <div style={{ marginBottom: "28px" }}>
                   <WhatsAppCTA size="lg">
@@ -399,23 +417,6 @@ export default function HomePage() {
                     )
                   )}
                 </div>
-
-                {/* Sub-badges */}
-                <p
-                  style={{
-                    fontFamily: FONTS.inter,
-                    fontSize: "14px",
-                    color: COLORS.muted,
-                    display: "flex",
-                    flexWrap: "wrap",
-                    gap: "12px",
-                    alignItems: "center",
-                  }}
-                >
-                  <span style={{ color: COLORS.green }}>✓</span> Free
-                  <span style={{ color: COLORS.green }}>✓</span> No Commitment
-                  <span style={{ color: COLORS.green }}>✓</span> 5-Minute Video
-                </p>
               </div>
 
               {/* Right Column — Hero Image */}
