@@ -356,6 +356,22 @@ export default function HomePage() {
                   Your next client is already searching — and landing on a competitor's site. Conversion &amp; Credibility Systems fix that. Built for Nigerian clinics, coaches, and e-commerce brands. Delivered in days, not months.
                 </p>
 
+                {/* Proof line */}
+                <p
+                  style={{
+                    fontFamily: FONTS.inter,
+                    fontSize: "13px",
+                    fontStyle: "italic",
+                    color: "rgba(241,245,249,0.65)",
+                    borderLeft: "2px solid #F0B429",
+                    paddingLeft: "10px",
+                    margin: "20px 0 24px 0",
+                    maxWidth: "480px",
+                  }}
+                >
+                  A Lagos clinic went from 3 to 18 weekly bookings after a rebuild. Same traffic. Zero ad spend.
+                </p>
+
                 {/* Fear-buster micro-copy — above CTA */}
                 <p
                   style={{
