@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Instagram, Settings } from "lucide-react";
 import { WA_LINK, SOCIAL_LINKS } from "@/lib/constants";
 
 export default function Footer() {
@@ -95,7 +95,11 @@ export default function Footer() {
           <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "#8B9CB6" }}>
             &copy; 2026 Superwits Tech. All rights reserved.
           </p>
-          <div className="flex gap-6">
+          <div className="flex gap-6 items-center">
+            <Link href="/admin/dashboard" aria-label="Admin" className="hover:text-amber-500 transition-colors" style={{ color: "#8B9CB6" }}>
+              <Settings size={14} />
+            </Link>
+            <span style={{ color: "#1A3260" }}>|</span>
             <Link href="/privacy" className="hover:text-slate-100 transition-colors" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "#8B9CB6", textDecoration: "none" }}>Privacy Policy</Link>
             <span style={{ color: "#8B9CB6" }}>|</span>
             <Link href="/terms" className="hover:text-slate-100 transition-colors" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "#8B9CB6", textDecoration: "none" }}>Terms of Service</Link>
