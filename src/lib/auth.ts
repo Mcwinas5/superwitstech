@@ -1,6 +1,5 @@
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
-import { db } from "@/lib/db";
 import { COOKIE_NAME } from "@/lib/constants";
 
 const secret = new TextEncoder().encode(

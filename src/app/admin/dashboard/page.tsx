@@ -86,6 +86,9 @@ export default function AdminDashboardPage() {
           return;
         }
         fetchData();
+      })
+      .catch(() => {
+        router.push("/admin");
       });
   }, [router, fetchData]);
 

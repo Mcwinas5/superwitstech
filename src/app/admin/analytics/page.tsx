@@ -15,6 +15,9 @@ export default function AdminAnalyticsPage() {
         if (!d.user || d.user.role !== "admin") {
           router.push("/admin");
         }
+      })
+      .catch(() => {
+        router.push("/admin");
       });
   }, [router]);
 
