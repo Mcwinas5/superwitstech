@@ -307,6 +307,8 @@ export default function HomePage() {
             paddingBottom: "24px",
           }}
         >
+          {/* Diagonal light sweep */}
+          <div className="hero-sweep" aria-hidden="true" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative" style={{ zIndex: 1 }}>
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-4 items-stretch">
               {/* Left Column */}

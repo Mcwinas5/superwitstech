@@ -404,6 +404,49 @@ button, a, [role="button"] {
   }
 }
 
+/* ── Diagonal Light Sweep ── */
+.hero-sweep {
+  position: absolute;
+  top: -100%;
+  left: -15%;
+  width: 7%;
+  height: 300%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(30, 111, 255, 0.10) 40%,
+    rgba(30, 111, 255, 0.06) 60%,
+    transparent 100%
+  );
+  transform: skewX(-22deg);
+  pointer-events: none;
+  z-index: 0;
+  animation: heroSweep 5s ease-in-out infinite;
+}
+@keyframes heroSweep {
+  0%   { left: -15%; opacity: 0; }
+  5%   { opacity: 1; }
+  95%  { opacity: 0.85; }
+  100% { left: 112%; opacity: 0; }
+}
+@media (max-width: 767px) {
+  .hero-sweep {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(30, 111, 255, 0.06) 40%,
+      rgba(30, 111, 255, 0.03) 60%,
+      transparent 100%
+    );
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-sweep {
+    animation: none;
+    opacity: 0;
+  }
+}
+
 /* ── Subtle Section Separator Lines ── */
 .section-separator {
   height: 1px;
