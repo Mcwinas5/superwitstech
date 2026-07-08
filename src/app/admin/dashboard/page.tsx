@@ -67,11 +67,17 @@ export default function AdminDashboardPage() {
         router.push("/admin");
         return;
       }
+      if (!res.ok) {
+        setData([]);
+        setTotal(0);
+        return;
+      }
       const json: FetchResponse = await res.json();
       setData(json.items);
       setTotal(json.total);
     } catch {
-      /* ignore */
+      setData([]);
+      setTotal(0);
     } finally {
       setLoading(false);
     }
