@@ -1052,34 +1052,32 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               {[
                 {
-                  label: "Project: Aesthetic Clinic \u00b7 Lagos, Nigeria",
+                  label: "Aesthetic Clinic \u00b7 Lagos, Nigeria",
                   before: "3",
                   beforeLabel: "weekly bookings",
+                  delta: "+500%",
                   after: "18",
-                  afterLabel: "weekly bookings",
-                  description:
-                    "A complete website rebuild focused on trust signals and a single booking CTA.",
-                  quote: "\u201cWe went from chasing referrals to waking up to booking requests.\u201d \u2014 Clinic Director",
+                  afterLabel: "bookings per week",
+                  how: "Conversion-focused website rebuild with booking integration and proof placed above the fold.",
                 },
                 {
-                  label: "Project: Business Coach \u00b7 Abuja, Nigeria",
-                  before: "0",
-                  beforeLabel: "inquiries (ever)",
-                  after: "First inquiry",
+                  label: "Business Coach \u00b7 Abuja, Nigeria",
+                  before: "Zero",
+                  beforeLabel: "inbound inquiries",
+                  delta: null,
+                  deltaBadge: "FIRST INQUIRY",
+                  after: "First call",
                   afterLabel: "in 72 hours",
-                  description:
-                    "From invisible online presence to generating qualified leads in under 3 days.",
-                  quote: "\u201cThe first inbound inquiry came in 72 hours after launch.\u201d \u2014 Business Coach, Abuja",
+                  how: "Headline rewritten to name a specific outcome; case studies moved above the fold.",
                 },
                 {
-                  label: "Project: E-Commerce Brand \u00b7 Nigeria",
+                  label: "E-Commerce Brand \u00b7 Nigeria",
                   before: "0.8%",
                   beforeLabel: "conversion rate",
+                  delta: "+675%",
                   after: "6.2%",
                   afterLabel: "conversion rate",
-                  description:
-                    "Conversion architecture overhaul turned a struggling store into a revenue engine.",
-                  quote: "\u201cSame traffic, same ads \u2014 6.2% conversion rate in three weeks.\u201d \u2014 Founder",
+                  how: "Product page restructure with outcome-led copy and a mobile checkout fix.",
                 },
               ].map((cs, idx) => (
                 <div
@@ -1095,116 +1093,125 @@ export default function HomePage() {
                     flexDirection: "column",
                   }}
                 >
-                  {/* Label badge */}
+                  {/* Project label */}
                   <span
                     style={{
                       fontFamily: FONTS.mono,
-                      fontSize: "11px",
-                      fontWeight: 700,
-                      letterSpacing: "0.14em",
+                      fontSize: "10px",
+                      fontWeight: 500,
+                      letterSpacing: "0.12em",
                       textTransform: "uppercase",
-                      backgroundColor: COLORS.amber,
-                      color: "#FFFFFF",
-                      borderRadius: "4px",
-                      padding: "4px 12px",
-                      display: "inline-block",
-                      width: "fit-content",
-                      marginBottom: "24px",
+                      color: COLORS.muted,
+                      marginBottom: "20px",
+                      display: "block",
                     }}
                   >
-                    {cs.label}
+                    PROJECT &mdash; {cs.label}
                   </span>
 
-                  {/* Before / After */}
-                  <div className="flex items-center gap-4 mb-4">
-                    <div>
-                      <div
-                        style={{
-                          fontFamily: FONTS.syne,
-                          fontWeight: 800,
-                          fontSize: "28px",
-                          color: COLORS.red,
-                          lineHeight: 1,
-                        }}
-                      >
-                        {cs.before}
-                      </div>
-                      <div
-                        style={{
-                          fontFamily: FONTS.mono,
-                          fontSize: "11px",
-                          color: COLORS.muted,
-                          marginTop: "4px",
-                          letterSpacing: "0.5px",
-                        }}
-                      >
-                        {cs.beforeLabel}
-                      </div>
-                    </div>
-
+                  {/* Before stat — small, muted */}
+                  <div style={{ marginBottom: "6px" }}>
                     <span
                       style={{
                         fontFamily: FONTS.mono,
-                        fontSize: "18px",
-                        color: COLORS.border,
+                        fontSize: "12px",
+                        color: COLORS.muted,
+                        letterSpacing: "0.5px",
                       }}
                     >
-                      →
+                      BEFORE:{" "}
                     </span>
+                    <span
+                      style={{
+                        fontFamily: FONTS.mono,
+                        fontSize: "12px",
+                        color: COLORS.red,
+                        fontWeight: 600,
+                      }}
+                    >
+                      {cs.before} {cs.beforeLabel}
+                    </span>
+                  </div>
 
-                    <div>
-                      <div
+                  {/* Delta — dominant element */}
+                  <div style={{ margin: "12px 0 6px 0" }}>
+                    {cs.delta ? (
+                      <span
                         style={{
                           fontFamily: FONTS.syne,
                           fontWeight: 800,
-                          fontSize: "28px",
-                          color: COLORS.green,
+                          fontSize: "clamp(36px, 6vw, 48px)",
                           lineHeight: 1,
+                          color: COLORS.amber,
+                          display: "block",
                         }}
                       >
-                        {cs.after}
-                      </div>
-                      <div
+                        {cs.delta}
+                      </span>
+                    ) : cs.deltaBadge ? (
+                      <span
                         style={{
-                          fontFamily: FONTS.mono,
-                          fontSize: "11px",
-                          color: COLORS.muted,
-                          marginTop: "4px",
-                          letterSpacing: "0.5px",
+                          fontFamily: FONTS.syne,
+                          fontWeight: 800,
+                          fontSize: "clamp(22px, 4vw, 28px)",
+                          lineHeight: 1,
+                          color: COLORS.amber,
+                          letterSpacing: "0.04em",
+                          display: "block",
                         }}
                       >
-                        {cs.afterLabel}
-                      </div>
-                    </div>
+                        {cs.deltaBadge}
+                      </span>
+                    ) : null}
                   </div>
 
+                  {/* After stat — secondary to delta */}
+                  <div style={{ marginBottom: "16px" }}>
+                    <span
+                      style={{
+                        fontFamily: FONTS.mono,
+                        fontSize: "12px",
+                        color: COLORS.muted,
+                        letterSpacing: "0.5px",
+                      }}
+                    >
+                      AFTER:{" "}
+                    </span>
+                    <span
+                      style={{
+                        fontFamily: FONTS.mono,
+                        fontSize: "12px",
+                        color: COLORS.green,
+                        fontWeight: 600,
+                      }}
+                    >
+                      {cs.after} {cs.afterLabel}
+                    </span>
+                  </div>
+
+                  {/* Divider */}
+                  <div
+                    style={{
+                      height: "1px",
+                      backgroundColor: COLORS.border,
+                      marginBottom: "16px",
+                    }}
+                  />
+
+                  {/* How line */}
                   <p
                     style={{
                       fontFamily: FONTS.inter,
-                      fontSize: "15px",
+                      fontSize: "13px",
                       color: COLORS.muted,
                       lineHeight: 1.6,
                       margin: "0 auto 20px 0",
                       flex: 1,
                     }}
                   >
-                    {cs.description}
+                    <span style={{ fontWeight: 600, color: "rgba(241,245,249,0.7)" }}>How: </span>
+                    {cs.how}
                   </p>
-
-                  {cs.quote && (
-                    <p
-                      style={{
-                        fontFamily: FONTS.inter,
-                        fontSize: "12px",
-                        fontStyle: "italic",
-                        color: COLORS.muted,
-                        lineHeight: 1.5,
-                        margin: "0 0 16px 0",
-                      }}
-                    >
-                      {cs.quote}
-                    </p>
-                  )}
 
                   <WhatsAppCTA variant="outline" size="sm">
                     Get Similar Results
