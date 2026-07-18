@@ -370,7 +370,7 @@ export default function HomePage() {
                     fontFamily: FONTS.inter,
                     fontSize: "13px",
                     fontStyle: "italic",
-                    color: "rgba(241,245,249,0.65)",
+                    color: "var(--sw-text-muted)",
                     borderLeft: "2px solid #F0B429",
                     paddingLeft: "10px",
                     margin: "20px 0 24px 0",
@@ -1224,7 +1224,7 @@ export default function HomePage() {
                       flex: 1,
                     }}
                   >
-                    <span style={{ fontWeight: 600, color: "rgba(241,245,249,0.7)" }}>How: </span>
+                    <span style={{ fontWeight: 600, color: "var(--sw-text)" }}>How: </span>
                     {cs.how}
                   </p>
 
