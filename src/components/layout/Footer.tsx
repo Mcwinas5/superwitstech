@@ -3,8 +3,10 @@
 import Link from "next/link";
 import { Facebook, Twitter, Linkedin, Instagram, Settings } from "lucide-react";
 import { WA_LINK, SOCIAL_LINKS } from "@/lib/constants";
+import { useTheme } from "@/components/layout/ThemeProvider";
 
 export default function Footer() {
+  const { theme } = useTheme();
   const socialLinks = [
     { icon: Facebook, label: "Facebook", href: SOCIAL_LINKS.facebook },
     { icon: Twitter, label: "Twitter", href: SOCIAL_LINKS.twitter },
@@ -23,7 +25,7 @@ export default function Footer() {
               <div className="mb-6">
                 <Link href="/">
                   <img
-                    src="/logo.png?v=3"
+                    src={theme === "light" ? "/logo-dark.png" : "/logo.png?v=3"}
                     alt="Superwits Tech"
                     style={{ height: "36px", width: "auto" }}
                   />
@@ -35,13 +37,13 @@ export default function Footer() {
               <address style={{ fontFamily: "'Inter', sans-serif", fontSize: "13px", color: "var(--sw-text-tertiary)", lineHeight: 1.7, fontStyle: "normal", marginBottom: "16px" }}>
                 <span style={{ display: "block" }}>Superwits Tech</span>
                 <span style={{ display: "block" }}>Lagos, Nigeria</span>
-                <a href="tel:+2347047381879" className="hover:text-amber-500 transition-colors" style={{ color: "var(--sw-text-tertiary)", textDecoration: "none" }}>+234 704 738 1879</a>
+                <a href="tel:+2347047381879" style={{ color: "var(--sw-text-tertiary)", textDecoration: "none", transition: "color 200ms ease" }} onMouseEnter={(e) => (e.currentTarget.style.color = "var(--sw-gold-text)")} onMouseLeave={(e) => (e.currentTarget.style.color = "var(--sw-text-tertiary)")}>+234 704 738 1879</a>
               </address>
               <div className="flex gap-4">
                 {socialLinks.map((social) => {
                   const Icon = social.icon;
                   return (
-                    <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className="hover:text-amber-500 transition-colors" style={{ color: "var(--sw-text-muted)" }}>
+                    <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} style={{ color: "var(--sw-text-muted)", transition: "color 200ms ease" }} onMouseEnter={(e) => (e.currentTarget.style.color = "var(--sw-gold-text)")} onMouseLeave={(e) => (e.currentTarget.style.color = "var(--sw-text-muted)")}>
                       <Icon size={20} />
                     </a>
                   );
@@ -56,9 +58,9 @@ export default function Footer() {
                 {["Conversion Website Build", "Client Acquisition System", "Free Website Audit"].map((item) => (
                   <li key={item}>
                     {item === "Free Website Audit" ? (
-                      <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="hover:text-slate-100 transition-colors" style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", color: "var(--sw-text-muted)", textDecoration: "none" }}>{item}</a>
+                      <a href={WA_LINK} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", color: "var(--sw-text-muted)", textDecoration: "none", transition: "color 200ms ease" }} onMouseEnter={(e) => (e.currentTarget.style.color = "var(--sw-text)")} onMouseLeave={(e) => (e.currentTarget.style.color = "var(--sw-text-muted)")}>{item}</a>
                     ) : (
-                      <Link href="/services" className="hover:text-slate-100 transition-colors" style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", color: "var(--sw-text-muted)", textDecoration: "none" }}>{item}</Link>
+                      <Link href="/services" style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", color: "var(--sw-text-muted)", textDecoration: "none", transition: "color 200ms ease" }} onMouseEnter={(e) => (e.currentTarget.style.color = "var(--sw-text)")} onMouseLeave={(e) => (e.currentTarget.style.color = "var(--sw-text-muted)")}>{item}</Link>
                     )}
                   </li>
                 ))}
@@ -71,7 +73,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 {[{ label: "About", href: "/about" }, { label: "Results", href: "/results" }, { label: "Contact", href: "/contact" }].map((item) => (
                   <li key={item.label}>
-                    <Link href={item.href} className="hover:text-slate-100 transition-colors" style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", color: "var(--sw-text-muted)", textDecoration: "none" }}>{item.label}</Link>
+                    <Link href={item.href} style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", color: "var(--sw-text-muted)", textDecoration: "none", transition: "color 200ms ease" }} onMouseEnter={(e) => (e.currentTarget.style.color = "var(--sw-text)")} onMouseLeave={(e) => (e.currentTarget.style.color = "var(--sw-text-muted)")}>{item.label}</Link>
                   </li>
                 ))}
               </ul>
@@ -96,13 +98,13 @@ export default function Footer() {
             &copy; 2026 Superwits Tech. All rights reserved.
           </p>
           <div className="flex gap-6 items-center">
-            <Link href="/admin/dashboard" aria-label="Admin" className="hover:text-amber-500 transition-colors" style={{ color: "var(--sw-text-tertiary)" }}>
+            <Link href="/admin/dashboard" aria-label="Admin" style={{ color: "var(--sw-text-tertiary)", transition: "color 200ms ease" }} onMouseEnter={(e) => (e.currentTarget.style.color = "var(--sw-gold-text)")} onMouseLeave={(e) => (e.currentTarget.style.color = "var(--sw-text-tertiary)")}>
               <Settings size={14} />
             </Link>
             <span style={{ color: "var(--sw-border)" }}>|</span>
-            <Link href="/privacy" className="hover:text-slate-100 transition-colors" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "var(--sw-text-tertiary)", textDecoration: "none" }}>Privacy Policy</Link>
+            <Link href="/privacy" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "var(--sw-text-tertiary)", textDecoration: "none", transition: "color 200ms ease" }} onMouseEnter={(e) => (e.currentTarget.style.color = "var(--sw-text)")} onMouseLeave={(e) => (e.currentTarget.style.color = "var(--sw-text-tertiary)")}>Privacy Policy</Link>
             <span style={{ color: "var(--sw-text-tertiary)" }}>|</span>
-            <Link href="/terms" className="hover:text-slate-100 transition-colors" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "var(--sw-text-tertiary)", textDecoration: "none" }}>Terms of Service</Link>
+            <Link href="/terms" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "var(--sw-text-tertiary)", textDecoration: "none", transition: "color 200ms ease" }} onMouseEnter={(e) => (e.currentTarget.style.color = "var(--sw-text)")} onMouseLeave={(e) => (e.currentTarget.style.color = "var(--sw-text-tertiary)")}>Terms of Service</Link>
             <span style={{ color: "var(--sw-text-tertiary)" }}>|</span>
             <button onClick={() => { localStorage.removeItem("sw_cookie_consent"); window.location.reload(); }} style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "var(--sw-text-tertiary)", background: "none", border: "none", padding: 0, cursor: "pointer" }} aria-label="Manage cookie preferences">Cookie Settings</button>
           </div>

@@ -37,7 +37,7 @@ export default function CookieConsent() {
 
   return (
     <div role="dialog" aria-modal="true" aria-label="Cookie consent" style={{ position: "fixed", bottom: 0, left: 0, right: 0, zIndex: 9999, backgroundColor: "var(--sw-bg-secondary)", borderTop: "1px solid var(--sw-border)", padding: "20px clamp(16px, 4vw, 40px)", boxShadow: "0 -4px 24px var(--sw-overlay)", animation: "sw-slide-up 0.45s cubic-bezier(0.22, 1, 0.36, 1) both" }}>
-      <button onClick={() => { localStorage.setItem(STORAGE_KEY, JSON.stringify({ dismissed: true, timestamp: Date.now() })); setVisible(false); }} aria-label="Close cookie consent banner" className="hover:text-slate-100 transition-colors" style={{ position: "absolute", top: "12px", right: "16px", background: "none", border: "none", cursor: "pointer", color: "#475569", padding: "4px", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "4px", minHeight: "32px", minWidth: "32px" }}>
+      <button onClick={() => { localStorage.setItem(STORAGE_KEY, JSON.stringify({ dismissed: true, timestamp: Date.now() })); setVisible(false); }} aria-label="Close cookie consent banner" className="transition-colors" style={{ position: "absolute", top: "12px", right: "16px", background: "none", border: "none", cursor: "pointer", color: "var(--sw-text-muted)", padding: "4px", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "4px", minHeight: "32px", minWidth: "32px" }}>
         <X size={18} />
       </button>
 

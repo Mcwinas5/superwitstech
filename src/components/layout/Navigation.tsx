@@ -40,10 +40,10 @@ export default function Navigation() {
       <style>{`.nav-logo-wrap{display:flex;align-items:center}.nav-logo-img{height:56px!important;width:auto!important;max-width:none!important}@media(max-width:767px){.nav-logo-img{height:40px!important}}`}</style>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center" style={{ height: "clamp(64px, 10vw, 72px)" }}>
-          {/* Logo */}
+          {/* Logo — theme-aware: white version (dark bg) / dark version (light bg) */}
           <Link href="/" className="nav-logo-wrap">
             <img
-              src="/logo.png?v=3"
+              src={theme === "light" ? "/logo-dark.png" : "/logo.png?v=3"}
               alt="Superwits Tech"
               className="nav-logo-img"
             />
