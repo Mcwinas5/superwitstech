@@ -92,7 +92,7 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Navigation />
-      <main style={{ backgroundColor: "#0A0E27" }}>
+      <main style={{ backgroundColor: "var(--sw-bg)" }}>
         {/* Hero */}
         <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
@@ -106,21 +106,21 @@ export default function AboutPage() {
         {/* The Problem I Solve */}
         <section
           className="pb-20 px-4 sm:px-6 lg:px-8"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
+          style={{ borderTop: "1px solid var(--sw-border)" }}
         >
           <div className="max-w-3xl mx-auto">
             <h2 className="mb-6">The Problem I Solve</h2>
             <div className="space-y-4">
-              <p style={{ color: "#CBD5E1", fontSize: "17px", lineHeight: 1.8 }}>
+              <p style={{ color: "var(--sw-text-body)", fontSize: "17px", lineHeight: 1.8 }}>
                 The average Nigerian service business website converts at less than
                 1%. That means for every 100 visitors, fewer than 1 takes action.
               </p>
-              <p style={{ color: "#CBD5E1", fontSize: "17px", lineHeight: 1.8 }}>
+              <p style={{ color: "var(--sw-text-body)", fontSize: "17px", lineHeight: 1.8 }}>
                 These aren&apos;t bad businesses. They have great services, happy
                 clients, and strong reputations offline. But their websites were
                 built to look professional — not to generate leads.
               </p>
-              <p style={{ color: "#CBD5E1", fontSize: "17px", lineHeight: 1.8 }}>
+              <p style={{ color: "var(--sw-text-body)", fontSize: "17px", lineHeight: 1.8 }}>
                 I fix that. I rebuild websites around conversion architecture:
                 clear value propositions, trust signals above the fold, frictionless
                 inquiry paths, and WhatsApp integration for instant connection. The
@@ -133,7 +133,7 @@ export default function AboutPage() {
         {/* Who I Am */}
         <section
           className="pb-20 px-4 sm:px-6 lg:px-8"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
+          style={{ borderTop: "1px solid var(--sw-border)" }}
         >
           <div className="max-w-6xl mx-auto">
             <h2 className="mb-10 text-center">Who I Am</h2>
@@ -142,16 +142,16 @@ export default function AboutPage() {
               <div>
                 <p
                   className="mb-6"
-                  style={{ color: "#F5F5F0", fontSize: "17px", lineHeight: 1.85 }}
+                  style={{ color: "var(--sw-text)", fontSize: "17px", lineHeight: 1.85 }}
                 >
-                  <strong style={{ color: "#F5F5F0" }}>Marquis Festus</strong> —
+                  <strong style={{ color: "var(--sw-text)" }}>Marquis Festus</strong> —
                   Client Acquisition Systems Builder and Vibe-Coder at Superwits
                   Tech. I build Conversion &amp; Credibility Systems for Nigerian
                   service businesses.
                 </p>
                 <p
                   className="mb-6"
-                  style={{ color: "#CBD5E1", fontSize: "16px", lineHeight: 1.8 }}
+                  style={{ color: "var(--sw-text-body)", fontSize: "16px", lineHeight: 1.8 }}
                 >
                   I specialise in three niches: aesthetic clinics and wellness
                   centres, business coaches and consultants, and e-commerce brands.
@@ -161,7 +161,7 @@ export default function AboutPage() {
                 </p>
                 <p
                   className="mb-6"
-                  style={{ color: "#CBD5E1", fontSize: "16px", lineHeight: 1.8 }}
+                  style={{ color: "var(--sw-text-body)", fontSize: "16px", lineHeight: 1.8 }}
                 >
                   My approach is different from traditional web designers. I don&apos;t
                   start with wireframes or mood boards. I start with your conversion
@@ -170,7 +170,7 @@ export default function AboutPage() {
                   conversations.
                 </p>
                 <p
-                  style={{ color: "#CBD5E1", fontSize: "16px", lineHeight: 1.8 }}
+                  style={{ color: "var(--sw-text-body)", fontSize: "16px", lineHeight: 1.8 }}
                 >
                   Every engagement starts with a free audit. I record a personalised
                   5-minute Loom video walking through your site&apos;s biggest
@@ -200,7 +200,7 @@ export default function AboutPage() {
         {/* What Makes This Different */}
         <section
           className="pb-20 px-4 sm:px-6 lg:px-8"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
+          style={{ borderTop: "1px solid var(--sw-border)" }}
         >
           <div className="max-w-5xl mx-auto">
             <h2 className="mb-10 text-center">What Makes This Different</h2>
@@ -209,21 +209,21 @@ export default function AboutPage() {
                 <div
                   key={item.heading}
                   className="rounded-lg p-6"
-                  style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "16px", boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)", backdropFilter: "blur(18px)", WebkitBackdropFilter: "blur(18px)" }}
+                  style={{ backgroundColor: "var(--sw-surface)", border: "1px solid var(--sw-border)", borderRadius: "16px", boxShadow: "0 8px 32px var(--sw-shadow-card), inset 0 1px 0 var(--sw-inset-highlight)", backdropFilter: "blur(18px)", WebkitBackdropFilter: "blur(18px)" }}
                 >
                   <h3
                     className="mb-3"
                     style={{
                       fontSize: "18px",
                       fontWeight: 700,
-                      color: "#F5F5F0",
+                      color: "var(--sw-text)",
                     }}
                   >
                     {item.heading}
                   </h3>
                   <p
                     style={{
-                      color: "#A8B2C7",
+                      color: "var(--sw-text-muted)",
                       fontSize: "15px",
                       lineHeight: 1.7,
                     }}
@@ -239,7 +239,7 @@ export default function AboutPage() {
         {/* By The Numbers */}
         <section
           className="pb-20 px-4 sm:px-6 lg:px-8"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
+          style={{ borderTop: "1px solid var(--sw-border)" }}
         >
           <div className="max-w-5xl mx-auto">
             <h2 className="mb-10 text-center">By The Numbers</h2>
@@ -249,10 +249,10 @@ export default function AboutPage() {
                   key={stat.label}
                   className="rounded-lg p-6 text-center"
                   style={{
-                    backgroundColor: "rgba(255,255,255,0.06)",
-                    border: "1px solid rgba(255,255,255,0.12)",
+                    backgroundColor: "var(--sw-surface)",
+                    border: "1px solid var(--sw-border)",
                     borderRadius: "16px",
-                    boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)",
+                    boxShadow: "0 8px 32px var(--sw-shadow-card), inset 0 1px 0 var(--sw-inset-highlight)",
                     backdropFilter: "blur(18px)",
                     WebkitBackdropFilter: "blur(18px)",
                   }}
@@ -276,7 +276,7 @@ export default function AboutPage() {
                       fontWeight: 500,
                       letterSpacing: "1px",
                       textTransform: "uppercase",
-                      color: "#F5F5F0",
+                      color: "var(--sw-text)",
                       marginBottom: "8px",
                     }}
                   >
@@ -284,7 +284,7 @@ export default function AboutPage() {
                   </p>
                   <p
                     style={{
-                      color: "#A8B2C7",
+                      color: "var(--sw-text-muted)",
                       fontSize: "14px",
                       lineHeight: 1.6,
                     }}
@@ -300,11 +300,11 @@ export default function AboutPage() {
         {/* Bottom CTA */}
         <section
           className="py-20 px-4 sm:px-6 lg:px-8"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
+          style={{ borderTop: "1px solid var(--sw-border)" }}
         >
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="mb-4">Let&apos;s See What&apos;s Blocking Your Conversions</h2>
-            <p className="mb-8" style={{ color: "#A8B2C7" }}>
+            <p className="mb-8" style={{ color: "var(--sw-text-muted)" }}>
               Start with a free audit. I&apos;ll review your website and send you a
               personalised 5-minute Loom video with your top 3 conversion blockers
               and how to fix them.

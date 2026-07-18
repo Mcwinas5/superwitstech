@@ -20,12 +20,12 @@ export default function FloatingWhatsAppButton() {
   return (
     <div style={{ position: "fixed", bottom: "24px", right: "24px", zIndex: 100, display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "8px" }}>
       {hovered && (
-        <div style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "6px", padding: "8px 14px", fontFamily: "'Inter', sans-serif", fontSize: "13px", fontWeight: 500, color: "#F5F5F0", whiteSpace: "nowrap", boxShadow: "0 4px 16px rgba(0,0,0,0.4)", animation: "fadeInUp 0.15s ease" }}>
+        <div style={{ backgroundColor: "var(--sw-surface)", border: "1px solid var(--sw-border)", borderRadius: "6px", padding: "8px 14px", fontFamily: "'Inter', sans-serif", fontSize: "13px", fontWeight: 500, color: "var(--sw-text)", whiteSpace: "nowrap", boxShadow: "0 4px 16px var(--sw-overlay)", animation: "fadeInUp 0.15s ease" }}>
           Chat on WhatsApp
         </div>
       )}
       <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-        <button onClick={() => setDismissed(true)} aria-label="Dismiss WhatsApp button" className="hover:bg-blue-800 transition-colors" style={{ width: "24px", height: "24px", borderRadius: "50%", backgroundColor: "#1A3260", border: "1px solid #2A4280", color: "#94A3B8", fontSize: "14px", lineHeight: 1, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>&times;</button>
+        <button onClick={() => setDismissed(true)} aria-label="Dismiss WhatsApp button" className="hover:bg-blue-800 transition-colors" style={{ width: "24px", height: "24px", borderRadius: "50%", backgroundColor: "var(--sw-dismiss-bg)", border: "1px solid var(--sw-dismiss-border)", color: "var(--sw-text-tertiary)", fontSize: "14px", lineHeight: 1, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>&times;</button>
         <div style={{ position: "relative" }}>
           <span style={{ position: "absolute", inset: "-4px", borderRadius: "50%", border: "2px solid #D4A017", animation: "whatsappPulse 2s ease-out infinite", pointerEvents: "none" }} />
           <a href={WA_LINK} target="_blank" rel="noopener noreferrer" aria-label="Chat with Superwits Tech on WhatsApp" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} className="transition-all duration-200" style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "56px", height: "56px", borderRadius: "50%", backgroundColor: hovered ? "#E8B30E" : "#D4A017", boxShadow: "0 4px 20px rgba(212, 160, 23, 0.45)", transform: hovered ? "scale(1.08)" : "scale(1)", textDecoration: "none", flexShrink: 0 }}>

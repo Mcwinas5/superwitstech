@@ -41,9 +41,9 @@ const inputStyle: React.CSSProperties = {
   width: "100%",
   padding: "12px 16px",
   borderRadius: "16px",
-  backgroundColor: "rgba(255,255,255,0.06)",
-  border: "1px solid rgba(255,255,255,0.12)",
-  color: "#F5F5F0",
+  backgroundColor: "var(--sw-surface)",
+  border: "1px solid var(--sw-border)",
+  color: "var(--sw-text)",
   fontFamily: "'Inter', sans-serif",
   fontSize: "15px",
   outline: "none",
@@ -61,7 +61,7 @@ const labelStyle: React.CSSProperties = {
   fontFamily: "'Inter', sans-serif",
   fontSize: "14px",
   fontWeight: 500,
-  color: "#F5F5F0",
+  color: "var(--sw-text)",
   marginBottom: "6px",
 };
 
@@ -175,7 +175,7 @@ export default function ContactPage() {
     return (
       <>
         <Navigation />
-        <main style={{ backgroundColor: "#0A0E27" }}>
+        <main style={{ backgroundColor: "var(--sw-bg)" }}>
           <section className="py-24 px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto">
               <div
@@ -201,7 +201,7 @@ export default function ContactPage() {
                 <h2 className="mb-4" style={{ fontSize: "28px" }}>
                   I&apos;ll Be In Touch Soon
                 </h2>
-                <p style={{ color: "#CBD5E1", fontSize: "16px", lineHeight: 1.7 }}>
+                <p style={{ color: "var(--sw-text-body)", fontSize: "16px", lineHeight: 1.7 }}>
                   Audit request received. I&apos;ll review your website and send you a
                   personalised 5-minute Loom video within 24 hours.
                 </p>
@@ -217,14 +217,14 @@ export default function ContactPage() {
   return (
     <>
       <Navigation />
-      <main style={{ backgroundColor: "#0A0E27" }}>
+      <main style={{ backgroundColor: "var(--sw-bg)" }}>
         {/* Hero */}
         <section className="py-20 md:py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="mb-4">Get Your Free Website Audit</h1>
             <p
               className="mx-auto max-w-2xl"
-              style={{ color: "#A8B2C7", fontSize: "18px", lineHeight: 1.75 }}
+              style={{ color: "var(--sw-text-muted)", fontSize: "18px", lineHeight: 1.75 }}
             >
               I&apos;ll review your website, identify the top 3 conversion blockers,
               and send you a personalised 5-minute Loom video within 24 hours.
@@ -238,7 +238,7 @@ export default function ContactPage() {
             <div
               className="rounded-lg p-8 text-center"
               style={{
-                backgroundColor: "rgba(255,255,255,0.06)",
+                backgroundColor: "var(--sw-surface)",
                 border: "2px solid #D4A017",
               }}
             >
@@ -261,7 +261,7 @@ export default function ContactPage() {
               <p
                 className="mb-6"
                 style={{
-                  color: "#A8B2C7",
+                  color: "var(--sw-text-muted)",
                   fontSize: "15px",
                   lineHeight: 1.7,
                 }}
@@ -306,8 +306,8 @@ export default function ContactPage() {
             <div
               className="rounded-lg p-6 md:p-8"
               style={{
-                backgroundColor: "rgba(255,255,255,0.06)",
-                border: "1px solid rgba(255,255,255,0.12)",
+                backgroundColor: "var(--sw-surface)",
+                border: "1px solid var(--sw-border)",
               }}
             >
               <h2 className="mb-2 text-left" style={{ fontSize: "24px" }}>
@@ -316,7 +316,7 @@ export default function ContactPage() {
               <p
                 className="mb-8 text-left"
                 style={{
-                  color: "#A8B2C7",
+                  color: "var(--sw-text-muted)",
                   fontSize: "15px",
                   lineHeight: 1.7,
                 }}
@@ -542,7 +542,7 @@ export default function ContactPage() {
         {/* What Happens Next */}
         <section
           className="pb-20 px-4 sm:px-6 lg:px-8"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
+          style={{ borderTop: "1px solid var(--sw-border)" }}
         >
           <div className="max-w-3xl mx-auto">
             <h2 className="mb-10 text-center">What Happens Next</h2>
@@ -588,14 +588,14 @@ export default function ContactPage() {
                       style={{
                         fontSize: "18px",
                         fontWeight: 700,
-                        color: "#F5F5F0",
+                        color: "var(--sw-text)",
                       }}
                     >
                       {item.title}
                     </h3>
                     <p
                       style={{
-                        color: "#A8B2C7",
+                        color: "var(--sw-text-muted)",
                         fontSize: "15px",
                         lineHeight: 1.7,
                       }}
@@ -612,14 +612,14 @@ export default function ContactPage() {
         {/* NAP Block */}
         <section
           className="pb-20 px-4 sm:px-6 lg:px-8"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
+          style={{ borderTop: "1px solid var(--sw-border)" }}
         >
           <div className="max-w-3xl mx-auto">
             <div
               className="rounded-lg p-6 md:p-8"
               style={{
-                backgroundColor: "rgba(255,255,255,0.06)",
-                border: "1px solid rgba(255,255,255,0.12)",
+                backgroundColor: "var(--sw-surface)",
+                border: "1px solid var(--sw-border)",
               }}
             >
               <h2
@@ -627,7 +627,7 @@ export default function ContactPage() {
                 style={{
                   fontSize: "20px",
                   fontWeight: 700,
-                  color: "#F5F5F0",
+                  color: "var(--sw-text)",
                 }}
               >
                 Contact Information
@@ -637,13 +637,13 @@ export default function ContactPage() {
                 style={{
                   fontFamily: "'Inter', sans-serif",
                   fontStyle: "normal",
-                  color: "#A8B2C7",
+                  color: "var(--sw-text-muted)",
                   fontSize: "15px",
                   lineHeight: 1.8,
                 }}
               >
                 <p>
-                  <strong style={{ color: "#F5F5F0" }}>Superwits Tech</strong>
+                  <strong style={{ color: "var(--sw-text)" }}>Superwits Tech</strong>
                 </p>
                 <p>Lagos, Nigeria</p>
                 <p>

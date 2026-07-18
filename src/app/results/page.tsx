@@ -64,14 +64,14 @@ export default function ResultsPage() {
   return (
     <>
       <Navigation />
-      <main style={{ backgroundColor: "#0A0E27" }}>
+      <main style={{ backgroundColor: "var(--sw-bg)" }}>
         {/* Hero */}
         <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="mb-6">Real Results. Real Nigerian Businesses.</h1>
             <p
               className="mx-auto max-w-2xl"
-              style={{ color: "#A8B2C7", fontSize: "18px", lineHeight: 1.75 }}
+              style={{ color: "var(--sw-text-muted)", fontSize: "18px", lineHeight: 1.75 }}
             >
               Every case study uses the Before-After-Bridge format. Real clients.
               Real numbers. Real timeframes.
@@ -87,7 +87,7 @@ export default function ResultsPage() {
                 key={study.id}
                 style={{
                   borderTop:
-                    index > 0 ? "1px solid rgba(255,255,255,0.12)" : "none",
+                    index > 0 ? "1px solid var(--sw-border)" : "none",
                   paddingTop: index > 0 ? "64px" : "0",
                 }}
               >
@@ -127,7 +127,7 @@ export default function ResultsPage() {
                 {/* Metadata - 3 cols */}
                 <div
                   className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8"
-                  style={{ color: "#A8B2C7", fontSize: "14px" }}
+                  style={{ color: "var(--sw-text-muted)", fontSize: "14px" }}
                 >
                   <div>
                     <span
@@ -188,13 +188,13 @@ export default function ResultsPage() {
                       fontWeight: 500,
                       letterSpacing: "1px",
                       textTransform: "uppercase",
-                      color: "#A8B2C7",
+                      color: "var(--sw-text-muted)",
                       marginBottom: "8px",
                     }}
                   >
                     Before
                   </h3>
-                  <p style={{ color: "#CBD5E1", lineHeight: 1.8, fontSize: "15px" }}>
+                  <p style={{ color: "var(--sw-text-body)", lineHeight: 1.8, fontSize: "15px" }}>
                     {study.before}
                   </p>
                 </div>
@@ -208,13 +208,13 @@ export default function ResultsPage() {
                       fontWeight: 500,
                       letterSpacing: "1px",
                       textTransform: "uppercase",
-                      color: "#A8B2C7",
+                      color: "var(--sw-text-muted)",
                       marginBottom: "8px",
                     }}
                   >
                     The Challenge
                   </h3>
-                  <p style={{ color: "#CBD5E1", lineHeight: 1.8, fontSize: "15px" }}>
+                  <p style={{ color: "var(--sw-text-body)", lineHeight: 1.8, fontSize: "15px" }}>
                     {study.challenge}
                   </p>
                 </div>
@@ -228,13 +228,13 @@ export default function ResultsPage() {
                       fontWeight: 500,
                       letterSpacing: "1px",
                       textTransform: "uppercase",
-                      color: "#A8B2C7",
+                      color: "var(--sw-text-muted)",
                       marginBottom: "8px",
                     }}
                   >
                     The System
                   </h3>
-                  <p style={{ color: "#CBD5E1", lineHeight: 1.8, fontSize: "15px" }}>
+                  <p style={{ color: "var(--sw-text-body)", lineHeight: 1.8, fontSize: "15px" }}>
                     {study.system}
                   </p>
                 </div>
@@ -257,7 +257,7 @@ export default function ResultsPage() {
                   >
                     After
                   </h3>
-                  <p style={{ color: "#F5F5F0", lineHeight: 1.8, fontSize: "15px" }}>
+                  <p style={{ color: "var(--sw-text)", lineHeight: 1.8, fontSize: "15px" }}>
                     {study.after}
                   </p>
                 </div>
@@ -283,7 +283,7 @@ export default function ResultsPage() {
                   >
                     Key Change
                   </h4>
-                  <p style={{ color: "#F5F5F0", lineHeight: 1.7, fontSize: "15px" }}>
+                  <p style={{ color: "var(--sw-text)", lineHeight: 1.7, fontSize: "15px" }}>
                     {study.keyChange}
                   </p>
                 </div>
@@ -295,11 +295,11 @@ export default function ResultsPage() {
         {/* Bottom CTA */}
         <section
           className="py-20 px-4 sm:px-6 lg:px-8"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
+          style={{ borderTop: "1px solid var(--sw-border)" }}
         >
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="mb-4">Want Results Like These?</h2>
-            <p className="mb-8" style={{ color: "#A8B2C7" }}>
+            <p className="mb-8" style={{ color: "var(--sw-text-muted)" }}>
               Every engagement starts with a free website audit. I&apos;ll send you
               a personalised 5-minute Loom video identifying your biggest
               conversion blockers within 24 hours.

@@ -74,7 +74,7 @@ export default function PrivacyPage() {
   return (
     <>
       <Navigation />
-      <main style={{ backgroundColor: "#0A0E27" }}>
+      <main style={{ backgroundColor: "var(--sw-bg)" }}>
         {/* Hero */}
         <section className="py-20 md:py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
@@ -83,7 +83,7 @@ export default function PrivacyPage() {
               style={{
                 fontFamily: "'DM Mono', monospace",
                 fontSize: "13px",
-                color: "#A8B2C7",
+                color: "var(--sw-text-muted)",
                 letterSpacing: "0.5px",
               }}
             >
@@ -102,7 +102,7 @@ export default function PrivacyPage() {
                   style={{
                     fontSize: "20px",
                     fontWeight: 700,
-                    color: "#F5F5F0",
+                    color: "var(--sw-text)",
                   }}
                 >
                   {section.title}
@@ -111,7 +111,7 @@ export default function PrivacyPage() {
                 {section.content && (
                   <p
                     style={{
-                      color: "#CBD5E1",
+                      color: "var(--sw-text-body)",
                       fontSize: "15px",
                       lineHeight: 1.85,
                     }}
@@ -128,14 +128,14 @@ export default function PrivacyPage() {
                         style={{
                           fontSize: "16px",
                           fontWeight: 600,
-                          color: "#F5F5F0",
+                          color: "var(--sw-text)",
                         }}
                       >
                         {sub.subtitle}
                       </h3>
                       <p
                         style={{
-                          color: "#CBD5E1",
+                          color: "var(--sw-text-body)",
                           fontSize: "15px",
                           lineHeight: 1.85,
                         }}

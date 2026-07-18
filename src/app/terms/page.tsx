@@ -80,7 +80,7 @@ export default function TermsPage() {
   return (
     <>
       <Navigation />
-      <main style={{ backgroundColor: "#0A0E27" }}>
+      <main style={{ backgroundColor: "var(--sw-bg)" }}>
         {/* Hero */}
         <section className="py-20 md:py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
@@ -89,7 +89,7 @@ export default function TermsPage() {
               style={{
                 fontFamily: "'DM Mono', monospace",
                 fontSize: "13px",
-                color: "#A8B2C7",
+                color: "var(--sw-text-muted)",
                 letterSpacing: "0.5px",
               }}
             >
@@ -108,14 +108,14 @@ export default function TermsPage() {
                   style={{
                     fontSize: "20px",
                     fontWeight: 700,
-                    color: "#F5F5F0",
+                    color: "var(--sw-text)",
                   }}
                 >
                   {section.title}
                 </h2>
                 <p
                   style={{
-                    color: "#CBD5E1",
+                    color: "var(--sw-text-body)",
                     fontSize: "15px",
                     lineHeight: 1.85,
                   }}

@@ -3,13 +3,15 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { WA_LINK } from "@/lib/constants";
+import { useTheme } from "@/components/layout/ThemeProvider";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -30,9 +32,9 @@ export default function Navigation() {
     <nav
       className="sticky top-0 z-50 transition-all duration-300"
       style={{
-        backgroundColor: "#0A0E27",
+        backgroundColor: "var(--sw-bg)",
         backdropFilter: scrolled ? "blur(12px)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.12)" : "none",
+        borderBottom: scrolled ? "1px solid var(--sw-border)" : "none",
       }}
     >
       <style>{`.nav-logo-wrap{display:flex;align-items:center}.nav-logo-img{height:56px!important;width:auto!important;max-width:none!important}@media(max-width:767px){.nav-logo-img{height:40px!important}}`}</style>
@@ -58,22 +60,29 @@ export default function Navigation() {
                   fontFamily: "'Inter', sans-serif",
                   fontSize: "15px",
                   fontWeight: 500,
-                  color: isActive(link.path) ? "#F5F5F0" : "#A8B2C7",
+                  color: isActive(link.path) ? "var(--sw-text)" : "var(--sw-text-muted)",
                   textDecoration: isActive(link.path) ? "underline" : "none",
-                  textDecorationColor: isActive(link.path) ? "#D4A017" : "transparent",
+                  textDecorationColor: "#D4A017",
                   textDecorationThickness: "2px",
                   textUnderlineOffset: "6px",
                 }}
-                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#F5F5F0")}
-                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = isActive(link.path) ? "#F5F5F0" : "#A8B2C7")}
+                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "var(--sw-text)")}
+                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = isActive(link.path) ? "var(--sw-text)" : "var(--sw-text-muted)")}
               >
                 {link.label}
               </Link>
             ))}
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center">
+          {/* Desktop: Theme Toggle + CTA */}
+          <div className="hidden md:flex items-center gap-3">
+            <button
+              onClick={toggleTheme}
+              className="theme-toggle"
+              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            >
+              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
             <a
               href={WA_LINK}
               target="_blank"
@@ -98,7 +107,15 @@ export default function Navigation() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={toggleTheme}
+              className="theme-toggle"
+              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+              style={{ width: "36px", height: "36px", minWidth: "36px", minHeight: "36px" }}
+            >
+              {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+            </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2"
@@ -115,7 +132,7 @@ export default function Navigation() {
       {mobileMenuOpen && (
         <div
           className="md:hidden fixed inset-0 z-40 flex flex-col items-center justify-center"
-          style={{ backgroundColor: "#0A0E27" }}
+          style={{ backgroundColor: "var(--sw-bg)" }}
         >
           <button
             onClick={() => setMobileMenuOpen(false)}
@@ -135,7 +152,7 @@ export default function Navigation() {
                   fontFamily: "'Inter', sans-serif",
                   fontSize: "20px",
                   fontWeight: 500,
-                  color: isActive(link.path) ? "#D4A017" : "#A8B2C7",
+                  color: isActive(link.path) ? "#D4A017" : "var(--sw-text-muted)",
                   cursor: "pointer",
                   display: "block",
                 }}

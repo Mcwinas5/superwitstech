@@ -19,13 +19,13 @@ const FONTS = {
 };
 
 const COLORS = {
-  bg: "#0A0E27",
-  card: "rgba(255,255,255,0.06)",
+  bg: "var(--sw-bg)",
+  card: "var(--sw-surface)",
   amber: "#D4A017",
   amberHover: "#E8B30E",
-  text: "#F5F5F0",
-  muted: "#A8B2C7",
-  border: "rgba(255,255,255,0.12)",
+  text: "var(--sw-text)",
+  muted: "var(--sw-text-muted)",
+  border: "var(--sw-border)",
   green: "#4ADE80",
   red: "#DC2626",
 };
@@ -156,10 +156,10 @@ function FaqItem({
     <div
       className={`faq-item${isOpen ? " faq-item--open" : ""}`}
       style={{
-        backgroundColor: "rgba(255,255,255,0.06)",
-        border: "1px solid rgba(255,255,255,0.12)",
+        backgroundColor: "var(--sw-surface)",
+        border: "1px solid var(--sw-border)",
         borderRadius: "16px",
-        boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)",
+        boxShadow: "0 8px 32px var(--sw-shadow-card), inset 0 1px 0 var(--sw-inset-highlight)",
         backdropFilter: "blur(18px)",
         WebkitBackdropFilter: "blur(18px)",
         overflow: "hidden",
@@ -550,11 +550,11 @@ export default function HomePage() {
                   className="reveal"
                   data-delay={item._delay}
                   style={{
-                    backgroundColor: "rgba(255,255,255,0.06)",
-                    border: "1px solid rgba(255,255,255,0.12)",
+                    backgroundColor: "var(--sw-surface)",
+                    border: "1px solid var(--sw-border)",
                     borderLeft: `3px solid ${COLORS.amber}`,
                     borderRadius: "16px",
-                    boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)",
+                    boxShadow: "0 8px 32px var(--sw-shadow-card), inset 0 1px 0 var(--sw-inset-highlight)",
                     backdropFilter: "blur(18px)",
                     WebkitBackdropFilter: "blur(18px)",
                     padding: "24px",
@@ -716,10 +716,10 @@ export default function HomePage() {
                   className="reveal"
                   data-delay={String(idx * 80)}
                   style={{
-                    backgroundColor: "rgba(255,255,255,0.06)",
+                    backgroundColor: "var(--sw-surface)",
                     border: `1.5px solid ${COLORS.red}`,
                     borderRadius: "16px",
-                    boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)",
+                    boxShadow: "0 8px 32px var(--sw-shadow-card), inset 0 1px 0 var(--sw-inset-highlight)",
                     backdropFilter: "blur(18px)",
                     WebkitBackdropFilter: "blur(18px)",
                     padding: "28px 24px",
@@ -939,7 +939,7 @@ export default function HomePage() {
                     <div
                       className="hidden md:block absolute top-8 left-[calc(50%+40px)] w-[calc(100%-80px)]"
                       style={{
-                        borderTop: "2px dashed rgba(255,255,255,0.12)",
+                        borderTop: "2px dashed var(--sw-border)",
                         height: 0,
                       }}
                     />
@@ -1096,10 +1096,10 @@ export default function HomePage() {
                   className="reveal"
                   data-delay={String(idx * 80)}
                   style={{
-                    backgroundColor: "rgba(255,255,255,0.06)",
-                    border: "1px solid rgba(255,255,255,0.12)",
+                    backgroundColor: "var(--sw-surface)",
+                    border: "1px solid var(--sw-border)",
                     borderRadius: "16px",
-                    boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)",
+                    boxShadow: "0 8px 32px var(--sw-shadow-card), inset 0 1px 0 var(--sw-inset-highlight)",
                     backdropFilter: "blur(18px)",
                     WebkitBackdropFilter: "blur(18px)",
                     padding: "28px 24px",
@@ -1314,12 +1314,12 @@ export default function HomePage() {
                   className="reveal"
                   data-delay={String(idx * 80)}
                   style={{
-                    backgroundColor: svc.featured ? COLORS.amber : "rgba(255,255,255,0.06)",
+                    backgroundColor: svc.featured ? COLORS.amber : "var(--sw-surface)",
                     border: svc.featured
                       ? `2px solid ${COLORS.amber}`
-                      : "1px solid rgba(255,255,255,0.12)",
+                      : "1px solid var(--sw-border)",
                     borderRadius: "16px",
-                    boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)",
+                    boxShadow: "0 8px 32px var(--sw-shadow-card), inset 0 1px 0 var(--sw-inset-highlight)",
                     backdropFilter: "blur(18px)",
                     WebkitBackdropFilter: "blur(18px)",
                     padding: "32px 28px",
@@ -1473,10 +1473,10 @@ export default function HomePage() {
                   className="reveal"
                   data-delay={String(pairDelay + inPairDelay)}
                   style={{
-                    backgroundColor: "rgba(255,255,255,0.06)",
-                    border: "1px solid rgba(255,255,255,0.12)",
+                    backgroundColor: "var(--sw-surface)",
+                    border: "1px solid var(--sw-border)",
                     borderRadius: "16px",
-                    boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)",
+                    boxShadow: "0 8px 32px var(--sw-shadow-card), inset 0 1px 0 var(--sw-inset-highlight)",
                     backdropFilter: "blur(18px)",
                     WebkitBackdropFilter: "blur(18px)",
                     padding: "24px",
@@ -1615,10 +1615,10 @@ export default function HomePage() {
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div
               style={{
-                backgroundColor: "rgba(255,255,255,0.06)",
-                border: "1px solid rgba(255,255,255,0.12)",
+                backgroundColor: "var(--sw-surface)",
+                border: "1px solid var(--sw-border)",
                 borderRadius: "20px",
-                boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)",
+                boxShadow: "0 8px 32px var(--sw-shadow-card), inset 0 1px 0 var(--sw-inset-highlight)",
                 backdropFilter: "blur(24px)",
                 WebkitBackdropFilter: "blur(24px)",
                 padding: "clamp(32px, 6vw, 56px) clamp(24px, 5vw, 48px)",
