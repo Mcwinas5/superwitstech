@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Syne, DM_Mono } from "next/font/google";
+import { Inter, Outfit, DM_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 
@@ -9,8 +9,8 @@ const inter = Inter({
   display: "swap",
 });
 
-const syne = Syne({
-  variable: "--font-syne",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
   display: "swap",
   weight: ["700", "800"],
@@ -85,7 +85,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${syne.variable} ${dmMono.variable} antialiased`}>
+      <body className={`${inter.variable} ${outfit.variable} ${dmMono.variable} antialiased`}>
         {children}
         <Toaster />
       </body>

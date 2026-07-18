@@ -15,7 +15,7 @@ export default function Footer() {
   return (
     <footer style={{ backgroundColor: "#0C1421" }}>
       {/* Main Footer */}
-      <div className="py-16 md:py-20 border-t" style={{ borderColor: "#1A3260" }}>
+      <div className="py-16 md:py-20 border-t" style={{ borderColor: "rgba(255,255,255,0.12)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
             {/* Brand */}
@@ -28,7 +28,7 @@ export default function Footer() {
                     style={{ height: "36px", width: "auto" }}
                   />
                 </Link>
-                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", color: "#94A3B8", lineHeight: 1.6, marginTop: "8px" }}>
+                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", color: "#A8B2C7", lineHeight: 1.6, marginTop: "8px" }}>
                   Conversion &amp; Credibility Systems for Nigerian Service Businesses
                 </p>
               </div>
@@ -41,7 +41,7 @@ export default function Footer() {
                 {socialLinks.map((social) => {
                   const Icon = social.icon;
                   return (
-                    <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className="hover:text-amber-500 transition-colors" style={{ color: "#94A3B8" }}>
+                    <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className="hover:text-amber-500 transition-colors" style={{ color: "#A8B2C7" }}>
                       <Icon size={20} />
                     </a>
                   );
@@ -51,14 +51,14 @@ export default function Footer() {
 
             {/* Services */}
             <div>
-              <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, letterSpacing: "2px", color: "#D97706", textTransform: "uppercase", marginBottom: "16px" }}>Services</h3>
+              <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, letterSpacing: "2px", color: "#D4A017", textTransform: "uppercase", marginBottom: "16px" }}>Services</h3>
               <ul className="space-y-3">
                 {["Conversion Website Build", "Client Acquisition System", "Free Website Audit"].map((item) => (
                   <li key={item}>
                     {item === "Free Website Audit" ? (
-                      <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="hover:text-slate-100 transition-colors" style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", color: "#94A3B8", textDecoration: "none" }}>{item}</a>
+                      <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="hover:text-slate-100 transition-colors" style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", color: "#A8B2C7", textDecoration: "none" }}>{item}</a>
                     ) : (
-                      <Link href="/services" className="hover:text-slate-100 transition-colors" style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", color: "#94A3B8", textDecoration: "none" }}>{item}</Link>
+                      <Link href="/services" className="hover:text-slate-100 transition-colors" style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", color: "#A8B2C7", textDecoration: "none" }}>{item}</Link>
                     )}
                   </li>
                 ))}
@@ -67,11 +67,11 @@ export default function Footer() {
 
             {/* Company */}
             <div>
-              <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, letterSpacing: "2px", color: "#D97706", textTransform: "uppercase", marginBottom: "16px" }}>Company</h3>
+              <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, letterSpacing: "2px", color: "#D4A017", textTransform: "uppercase", marginBottom: "16px" }}>Company</h3>
               <ul className="space-y-3">
                 {[{ label: "About", href: "/about" }, { label: "Results", href: "/results" }, { label: "Contact", href: "/contact" }].map((item) => (
                   <li key={item.label}>
-                    <Link href={item.href} className="hover:text-slate-100 transition-colors" style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", color: "#94A3B8", textDecoration: "none" }}>{item.label}</Link>
+                    <Link href={item.href} className="hover:text-slate-100 transition-colors" style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", color: "#A8B2C7", textDecoration: "none" }}>{item.label}</Link>
                   </li>
                 ))}
               </ul>
@@ -79,9 +79,9 @@ export default function Footer() {
 
             {/* CTA */}
             <div>
-              <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, letterSpacing: "2px", color: "#D97706", textTransform: "uppercase", marginBottom: "16px" }}>Ready to Convert?</h3>
-              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", color: "#94A3B8", marginBottom: "16px", lineHeight: 1.6 }}>Free audit. No commitment. Delivered in 48 hours.</p>
-              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="cta-solid footer-cta block text-center" style={{ width: "100%", padding: "12px 24px", borderRadius: "6px", fontFamily: "'Inter', sans-serif", fontSize: "14px", fontWeight: 600, backgroundColor: "#D97706", color: "#FFFFFF", textDecoration: "none", minHeight: "44px", lineHeight: "20px" }}>
+              <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, letterSpacing: "2px", color: "#D4A017", textTransform: "uppercase", marginBottom: "16px" }}>Ready to Convert?</h3>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", color: "#A8B2C7", marginBottom: "16px", lineHeight: 1.6 }}>Free audit. No commitment. Delivered in 48 hours.</p>
+              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="cta-solid footer-cta block text-center" style={{ width: "100%", padding: "12px 24px", borderRadius: "16px", fontFamily: "'Inter', sans-serif", fontSize: "14px", fontWeight: 600, backgroundColor: "#D4A017", color: "#FFFFFF", textDecoration: "none", minHeight: "44px", lineHeight: "20px" }}>
                 Get My Free Website Audit
               </a>
             </div>
@@ -90,7 +90,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="py-3 border-t" style={{ backgroundColor: "#07122A", borderColor: "#1A3260", minHeight: "48px", display: "flex", alignItems: "center" }}>
+      <div className="py-3 border-t" style={{ backgroundColor: "#0A0E27", borderColor: "rgba(255,255,255,0.12)", minHeight: "48px", display: "flex", alignItems: "center" }}>
         <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row justify-between items-center gap-4 px-4 sm:px-6 lg:px-8">
           <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "#8B9CB6" }}>
             &copy; 2026 Superwits Tech. All rights reserved.
@@ -99,7 +99,7 @@ export default function Footer() {
             <Link href="/admin/dashboard" aria-label="Admin" className="hover:text-amber-500 transition-colors" style={{ color: "#8B9CB6" }}>
               <Settings size={14} />
             </Link>
-            <span style={{ color: "#1A3260" }}>|</span>
+            <span style={{ color: "rgba(255,255,255,0.12)" }}>|</span>
             <Link href="/privacy" className="hover:text-slate-100 transition-colors" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "#8B9CB6", textDecoration: "none" }}>Privacy Policy</Link>
             <span style={{ color: "#8B9CB6" }}>|</span>
             <Link href="/terms" className="hover:text-slate-100 transition-colors" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "#8B9CB6", textDecoration: "none" }}>Terms of Service</Link>

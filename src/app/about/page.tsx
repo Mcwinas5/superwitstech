@@ -92,7 +92,7 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Navigation />
-      <main style={{ backgroundColor: "#07122A" }}>
+      <main style={{ backgroundColor: "#0A0E27" }}>
         {/* Hero */}
         <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
@@ -106,7 +106,7 @@ export default function AboutPage() {
         {/* The Problem I Solve */}
         <section
           className="pb-20 px-4 sm:px-6 lg:px-8"
-          style={{ borderTop: "1px solid #1A3260" }}
+          style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
         >
           <div className="max-w-3xl mx-auto">
             <h2 className="mb-6">The Problem I Solve</h2>
@@ -133,7 +133,7 @@ export default function AboutPage() {
         {/* Who I Am */}
         <section
           className="pb-20 px-4 sm:px-6 lg:px-8"
-          style={{ borderTop: "1px solid #1A3260" }}
+          style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
         >
           <div className="max-w-6xl mx-auto">
             <h2 className="mb-10 text-center">Who I Am</h2>
@@ -142,9 +142,9 @@ export default function AboutPage() {
               <div>
                 <p
                   className="mb-6"
-                  style={{ color: "#F1F5F9", fontSize: "17px", lineHeight: 1.85 }}
+                  style={{ color: "#F5F5F0", fontSize: "17px", lineHeight: 1.85 }}
                 >
-                  <strong style={{ color: "#F1F5F9" }}>Marquis Festus</strong> —
+                  <strong style={{ color: "#F5F5F0" }}>Marquis Festus</strong> —
                   Client Acquisition Systems Builder and Vibe-Coder at Superwits
                   Tech. I build Conversion &amp; Credibility Systems for Nigerian
                   service businesses.
@@ -200,7 +200,7 @@ export default function AboutPage() {
         {/* What Makes This Different */}
         <section
           className="pb-20 px-4 sm:px-6 lg:px-8"
-          style={{ borderTop: "1px solid #1A3260" }}
+          style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
         >
           <div className="max-w-5xl mx-auto">
             <h2 className="mb-10 text-center">What Makes This Different</h2>
@@ -209,21 +209,21 @@ export default function AboutPage() {
                 <div
                   key={item.heading}
                   className="rounded-lg p-6"
-                  style={{ backgroundColor: "#0F1F3D", border: "1px solid #1A3260" }}
+                  style={{ backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "16px", boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)", backdropFilter: "blur(18px)", WebkitBackdropFilter: "blur(18px)" }}
                 >
                   <h3
                     className="mb-3"
                     style={{
                       fontSize: "18px",
                       fontWeight: 700,
-                      color: "#F1F5F9",
+                      color: "#F5F5F0",
                     }}
                   >
                     {item.heading}
                   </h3>
                   <p
                     style={{
-                      color: "#94A3B8",
+                      color: "#A8B2C7",
                       fontSize: "15px",
                       lineHeight: 1.7,
                     }}
@@ -239,7 +239,7 @@ export default function AboutPage() {
         {/* By The Numbers */}
         <section
           className="pb-20 px-4 sm:px-6 lg:px-8"
-          style={{ borderTop: "1px solid #1A3260" }}
+          style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
         >
           <div className="max-w-5xl mx-auto">
             <h2 className="mb-10 text-center">By The Numbers</h2>
@@ -249,16 +249,20 @@ export default function AboutPage() {
                   key={stat.label}
                   className="rounded-lg p-6 text-center"
                   style={{
-                    backgroundColor: "#0F1F3D",
-                    border: "1px solid #1A3260",
+                    backgroundColor: "rgba(255,255,255,0.06)",
+                    border: "1px solid rgba(255,255,255,0.12)",
+                    borderRadius: "16px",
+                    boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)",
+                    backdropFilter: "blur(18px)",
+                    WebkitBackdropFilter: "blur(18px)",
                   }}
                 >
                   <p
                     style={{
-                      fontFamily: "'Syne', sans-serif",
+                      fontFamily: "'Outfit', sans-serif",
                       fontSize: "42px",
                       fontWeight: 800,
-                      color: "#D97706",
+                      color: "#D4A017",
                       lineHeight: 1.2,
                       marginBottom: "12px",
                     }}
@@ -272,7 +276,7 @@ export default function AboutPage() {
                       fontWeight: 500,
                       letterSpacing: "1px",
                       textTransform: "uppercase",
-                      color: "#F1F5F9",
+                      color: "#F5F5F0",
                       marginBottom: "8px",
                     }}
                   >
@@ -280,7 +284,7 @@ export default function AboutPage() {
                   </p>
                   <p
                     style={{
-                      color: "#94A3B8",
+                      color: "#A8B2C7",
                       fontSize: "14px",
                       lineHeight: 1.6,
                     }}
@@ -296,11 +300,11 @@ export default function AboutPage() {
         {/* Bottom CTA */}
         <section
           className="py-20 px-4 sm:px-6 lg:px-8"
-          style={{ borderTop: "1px solid #1A3260" }}
+          style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
         >
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="mb-4">Let&apos;s See What&apos;s Blocking Your Conversions</h2>
-            <p className="mb-8" style={{ color: "#94A3B8" }}>
+            <p className="mb-8" style={{ color: "#A8B2C7" }}>
               Start with a free audit. I&apos;ll review your website and send you a
               personalised 5-minute Loom video with your top 3 conversion blockers
               and how to fix them.

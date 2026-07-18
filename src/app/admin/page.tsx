@@ -39,14 +39,14 @@ export default function AdminLoginPage() {
   return (
     <main
       className="min-h-screen flex items-center justify-center px-4"
-      style={{ backgroundColor: "#07122A" }}
+      style={{ backgroundColor: "#0A0E27" }}
     >
       <div
         className="w-full max-w-sm"
         style={{
-          backgroundColor: "#0F1F3D",
-          border: "1px solid #1A3260",
-          borderRadius: "12px",
+          backgroundColor: "rgba(255,255,255,0.06)",
+          border: "1px solid rgba(255,255,255,0.12)",
+          borderRadius: "16px",
           padding: "32px",
         }}
       >
@@ -54,20 +54,20 @@ export default function AdminLoginPage() {
         <div className="text-center mb-8">
           <span
             style={{
-              fontFamily: "'Syne', sans-serif",
+              fontFamily: "'Outfit', sans-serif",
               fontWeight: 800,
               fontSize: "22px",
             }}
           >
-            <span style={{ color: "#F1F5F9" }}>Superwits</span>
-            <span style={{ color: "#D97706" }}> tech</span>
+            <span style={{ color: "#F5F5F0" }}>Superwits</span>
+            <span style={{ color: "#D4A017" }}> tech</span>
           </span>
           <p
             style={{
               fontFamily: "'DM Mono', monospace",
               fontSize: "11px",
               letterSpacing: "2px",
-              color: "#94A3B8",
+              color: "#A8B2C7",
               marginTop: "8px",
               textTransform: "uppercase",
             }}
@@ -86,7 +86,7 @@ export default function AdminLoginPage() {
               fontSize: "11px",
               fontWeight: 500,
               letterSpacing: "1.5px",
-              color: "#94A3B8",
+              color: "#A8B2C7",
               textTransform: "uppercase",
               marginBottom: "8px",
             }}
@@ -104,18 +104,18 @@ export default function AdminLoginPage() {
             style={{
               width: "100%",
               padding: "12px 16px",
-              backgroundColor: "#0F1F3D",
-              border: "1px solid #1A3260",
-              borderRadius: "8px",
-              color: "#F1F5F9",
+              backgroundColor: "rgba(255,255,255,0.06)",
+              border: "1px solid rgba(255,255,255,0.12)",
+              borderRadius: "16px",
+              color: "#F5F5F0",
               fontFamily: "'Inter', sans-serif",
               fontSize: "15px",
               outline: "none",
               transition: "border-color 0.2s",
               minHeight: "44px",
             }}
-            onFocus={(e) => (e.target.style.borderColor = "#D97706")}
-            onBlur={(e) => (e.target.style.borderColor = "#1A3260")}
+            onFocus={(e) => (e.target.style.borderColor = "#D4A017")}
+            onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.12)")}
           />
 
           {error && (
@@ -139,12 +139,12 @@ export default function AdminLoginPage() {
               width: "100%",
               marginTop: "20px",
               padding: "12px 24px",
-              backgroundColor: loading || !password.trim() ? "#92400E" : "#D97706",
+              backgroundColor: loading || !password.trim() ? "#92400E" : "#D4A017",
               color: "#FFFFFF",
               fontFamily: "'Inter', sans-serif",
               fontSize: "15px",
               fontWeight: 600,
-              borderRadius: "8px",
+              borderRadius: "16px",
               border: "none",
               cursor: loading || !password.trim() ? "not-allowed" : "pointer",
               transition: "background-color 0.2s",

@@ -53,27 +53,27 @@ export function generateFollowupEmailHTML(
   const subject = subjectLines[step] || "Update from Superwits Tech";
 
   const footerLinks = unsubscribeUrl
-    ? `<p style="font-size:12px;color:#94A3B8;margin-top:24px;">
-         <a href="${unsubscribeUrl}" style="color:#D97706;">Unsubscribe</a> from these emails.
+    ? `<p style="font-size:12px;color:#A8B2C7;margin-top:24px;">
+         <a href="${unsubscribeUrl}" style="color:#D4A017;">Unsubscribe</a> from these emails.
        </p>`
     : "";
 
   return `<!DOCTYPE html>
 <html>
 <head><meta charset="utf-8"></head>
-<body style="margin:0;padding:0;background-color:#07122A;font-family:Inter,sans-serif;">
-  <div style="max-width:600px;margin:40px auto;padding:32px;background-color:#0F1F3D;border:1px solid #1A3260;border-radius:8px;">
-    <p style="font-family:Syne,sans-serif;font-size:20px;font-weight:800;color:#F1F5F9;margin-bottom:4px;">
-      <span style="color:#F1F5F9;">Superwits</span><span style="color:#D97706;"> tech</span>
+<body style="margin:0;padding:0;background-color:#0A0E27;font-family:Inter,sans-serif;">
+  <div style="max-width:600px;margin:40px auto;padding:32px;background-color:#0F1428;border:1px solid #1E2545;border-radius:16px;">
+    <p style="font-family:Outfit,sans-serif;font-size:20px;font-weight:800;color:#F5F5F0;margin-bottom:4px;">
+      <span style="color:#F5F5F0;">Superwits</span><span style="color:#D4A017;"> tech</span>
     </p>
-    <p style="font-size:14px;color:#94A3B8;margin-bottom:24px;">${subject}</p>
-    <div style="font-size:16px;color:#F1F5F9;line-height:1.75;">
+    <p style="font-size:14px;color:#A8B2C7;margin-bottom:24px;">${subject}</p>
+    <div style="font-size:16px;color:#F5F5F0;line-height:1.75;">
       <p>Hi ${name},</p>
       ${customMessage.split("\n").map((line) => `<p>${line || "&nbsp;"}</p>`).join("")}
-      <p style="margin-top:24px;">Marquis<br><span style="color:#94A3B8;">${BUSINESS_NAME}</span></p>
+      <p style="margin-top:24px;">Marquis<br><span style="color:#A8B2C7;">${BUSINESS_NAME}</span></p>
     </div>
     <div style="margin-top:32px;padding-top:24px;border-top:1px solid #1A3260;text-align:center;">
-      <a href="${SITE_URL}" style="color:#D97706;font-size:13px;">superwitstech.com</a>
+      <a href="${SITE_URL}" style="color:#D4A017;font-size:13px;">superwitstech.com</a>
     </div>
     ${footerLinks}
   </div>

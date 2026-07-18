@@ -64,14 +64,14 @@ export default function ResultsPage() {
   return (
     <>
       <Navigation />
-      <main style={{ backgroundColor: "#07122A" }}>
+      <main style={{ backgroundColor: "#0A0E27" }}>
         {/* Hero */}
         <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="mb-6">Real Results. Real Nigerian Businesses.</h1>
             <p
               className="mx-auto max-w-2xl"
-              style={{ color: "#94A3B8", fontSize: "18px", lineHeight: 1.75 }}
+              style={{ color: "#A8B2C7", fontSize: "18px", lineHeight: 1.75 }}
             >
               Every case study uses the Before-After-Bridge format. Real clients.
               Real numbers. Real timeframes.
@@ -87,7 +87,7 @@ export default function ResultsPage() {
                 key={study.id}
                 style={{
                   borderTop:
-                    index > 0 ? "1px solid #1A3260" : "none",
+                    index > 0 ? "1px solid rgba(255,255,255,0.12)" : "none",
                   paddingTop: index > 0 ? "64px" : "0",
                 }}
               >
@@ -102,8 +102,8 @@ export default function ResultsPage() {
                       letterSpacing: "1px",
                       textTransform: "uppercase",
                       backgroundColor: "#1A1508",
-                      color: "#D97706",
-                      border: "1px solid #D97706",
+                      color: "#D4A017",
+                      border: "1px solid #D4A017",
                     }}
                   >
                     {study.label}
@@ -127,7 +127,7 @@ export default function ResultsPage() {
                 {/* Metadata - 3 cols */}
                 <div
                   className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8"
-                  style={{ color: "#94A3B8", fontSize: "14px" }}
+                  style={{ color: "#A8B2C7", fontSize: "14px" }}
                 >
                   <div>
                     <span
@@ -135,7 +135,7 @@ export default function ResultsPage() {
                         display: "block",
                         fontFamily: "'DM Mono', monospace",
                         fontSize: "11px",
-                        color: "#D97706",
+                        color: "#D4A017",
                         letterSpacing: "1px",
                         textTransform: "uppercase",
                         marginBottom: "4px",
@@ -151,7 +151,7 @@ export default function ResultsPage() {
                         display: "block",
                         fontFamily: "'DM Mono', monospace",
                         fontSize: "11px",
-                        color: "#D97706",
+                        color: "#D4A017",
                         letterSpacing: "1px",
                         textTransform: "uppercase",
                         marginBottom: "4px",
@@ -167,7 +167,7 @@ export default function ResultsPage() {
                         display: "block",
                         fontFamily: "'DM Mono', monospace",
                         fontSize: "11px",
-                        color: "#D97706",
+                        color: "#D4A017",
                         letterSpacing: "1px",
                         textTransform: "uppercase",
                         marginBottom: "4px",
@@ -188,7 +188,7 @@ export default function ResultsPage() {
                       fontWeight: 500,
                       letterSpacing: "1px",
                       textTransform: "uppercase",
-                      color: "#94A3B8",
+                      color: "#A8B2C7",
                       marginBottom: "8px",
                     }}
                   >
@@ -208,7 +208,7 @@ export default function ResultsPage() {
                       fontWeight: 500,
                       letterSpacing: "1px",
                       textTransform: "uppercase",
-                      color: "#94A3B8",
+                      color: "#A8B2C7",
                       marginBottom: "8px",
                     }}
                   >
@@ -228,7 +228,7 @@ export default function ResultsPage() {
                       fontWeight: 500,
                       letterSpacing: "1px",
                       textTransform: "uppercase",
-                      color: "#94A3B8",
+                      color: "#A8B2C7",
                       marginBottom: "8px",
                     }}
                   >
@@ -257,7 +257,7 @@ export default function ResultsPage() {
                   >
                     After
                   </h3>
-                  <p style={{ color: "#F1F5F9", lineHeight: 1.8, fontSize: "15px" }}>
+                  <p style={{ color: "#F5F5F0", lineHeight: 1.8, fontSize: "15px" }}>
                     {study.after}
                   </p>
                 </div>
@@ -267,7 +267,7 @@ export default function ResultsPage() {
                   className="rounded-r-lg p-5"
                   style={{
                     backgroundColor: "#1A1508",
-                    borderLeft: "4px solid #D97706",
+                    borderLeft: "4px solid #D4A017",
                   }}
                 >
                   <h4
@@ -277,13 +277,13 @@ export default function ResultsPage() {
                       fontWeight: 500,
                       letterSpacing: "1px",
                       textTransform: "uppercase",
-                      color: "#D97706",
+                      color: "#D4A017",
                       marginBottom: "6px",
                     }}
                   >
                     Key Change
                   </h4>
-                  <p style={{ color: "#F1F5F9", lineHeight: 1.7, fontSize: "15px" }}>
+                  <p style={{ color: "#F5F5F0", lineHeight: 1.7, fontSize: "15px" }}>
                     {study.keyChange}
                   </p>
                 </div>
@@ -295,11 +295,11 @@ export default function ResultsPage() {
         {/* Bottom CTA */}
         <section
           className="py-20 px-4 sm:px-6 lg:px-8"
-          style={{ borderTop: "1px solid #1A3260" }}
+          style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
         >
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="mb-4">Want Results Like These?</h2>
-            <p className="mb-8" style={{ color: "#94A3B8" }}>
+            <p className="mb-8" style={{ color: "#A8B2C7" }}>
               Every engagement starts with a free website audit. I&apos;ll send you
               a personalised 5-minute Loom video identifying your biggest
               conversion blockers within 24 hours.

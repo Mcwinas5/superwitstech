@@ -22,13 +22,13 @@ export default function AdminAnalyticsPage() {
   }, [router]);
 
   return (
-    <div style={{ backgroundColor: "#07122A", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#0A0E27", minHeight: "100vh" }}>
       {/* Header */}
       <header
         className="sticky top-0 z-40"
         style={{
           backgroundColor: "#0C1421",
-          borderBottom: "1px solid #1A3260",
+          borderBottom: "1px solid rgba(255,255,255,0.12)",
           padding: "16px 24px",
         }}
       >
@@ -37,9 +37,9 @@ export default function AdminAnalyticsPage() {
             <Link
               href="/admin/dashboard"
               className="flex items-center gap-2 transition-colors"
-              style={{ color: "#94A3B8", textDecoration: "none" }}
-              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#F1F5F9")}
-              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#94A3B8")}
+              style={{ color: "#A8B2C7", textDecoration: "none" }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#F5F5F0")}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#A8B2C7")}
             >
               <ArrowLeft size={18} />
               <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px" }}>Dashboard</span>
@@ -48,13 +48,13 @@ export default function AdminAnalyticsPage() {
           <div className="flex items-center gap-3">
             <span
               style={{
-                fontFamily: "'Syne', sans-serif",
+                fontFamily: "'Outfit', sans-serif",
                 fontWeight: 800,
                 fontSize: "18px",
               }}
             >
-              <span style={{ color: "#F1F5F9" }}>Superwits</span>
-              <span style={{ color: "#D97706" }}> tech</span>
+              <span style={{ color: "#F5F5F0" }}>Superwits</span>
+              <span style={{ color: "#D4A017" }}> tech</span>
             </span>
           </div>
         </div>
@@ -69,17 +69,17 @@ export default function AdminAnalyticsPage() {
               height: "72px",
               borderRadius: "16px",
               backgroundColor: "#1C1306",
-              border: "1px solid #1A3260",
+              border: "1px solid rgba(255,255,255,0.12)",
             }}
           >
-            <BarChart3 size={32} style={{ color: "#D97706" }} />
+            <BarChart3 size={32} style={{ color: "#D4A017" }} />
           </div>
           <h1
             style={{
-              fontFamily: "'Syne', sans-serif",
+              fontFamily: "'Outfit', sans-serif",
               fontWeight: 800,
               fontSize: "clamp(24px, 5vw, 36px)",
-              color: "#F1F5F9",
+              color: "#F5F5F0",
               marginBottom: "16px",
             }}
           >
@@ -89,7 +89,7 @@ export default function AdminAnalyticsPage() {
             style={{
               fontFamily: "'Inter', sans-serif",
               fontSize: "16px",
-              color: "#94A3B8",
+              color: "#A8B2C7",
               maxWidth: "480px",
               lineHeight: 1.7,
             }}

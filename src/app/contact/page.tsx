@@ -40,10 +40,10 @@ const businessTypes = [
 const inputStyle: React.CSSProperties = {
   width: "100%",
   padding: "12px 16px",
-  borderRadius: "8px",
-  backgroundColor: "#0F1F3D",
-  border: "1px solid #1A3260",
-  color: "#F1F5F9",
+  borderRadius: "16px",
+  backgroundColor: "rgba(255,255,255,0.06)",
+  border: "1px solid rgba(255,255,255,0.12)",
+  color: "#F5F5F0",
   fontFamily: "'Inter', sans-serif",
   fontSize: "15px",
   outline: "none",
@@ -61,7 +61,7 @@ const labelStyle: React.CSSProperties = {
   fontFamily: "'Inter', sans-serif",
   fontSize: "14px",
   fontWeight: 500,
-  color: "#F1F5F9",
+  color: "#F5F5F0",
   marginBottom: "6px",
 };
 
@@ -175,7 +175,7 @@ export default function ContactPage() {
     return (
       <>
         <Navigation />
-        <main style={{ backgroundColor: "#07122A" }}>
+        <main style={{ backgroundColor: "#0A0E27" }}>
           <section className="py-24 px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto">
               <div
@@ -217,14 +217,14 @@ export default function ContactPage() {
   return (
     <>
       <Navigation />
-      <main style={{ backgroundColor: "#07122A" }}>
+      <main style={{ backgroundColor: "#0A0E27" }}>
         {/* Hero */}
         <section className="py-20 md:py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="mb-4">Get Your Free Website Audit</h1>
             <p
               className="mx-auto max-w-2xl"
-              style={{ color: "#94A3B8", fontSize: "18px", lineHeight: 1.75 }}
+              style={{ color: "#A8B2C7", fontSize: "18px", lineHeight: 1.75 }}
             >
               I&apos;ll review your website, identify the top 3 conversion blockers,
               and send you a personalised 5-minute Loom video within 24 hours.
@@ -238,8 +238,8 @@ export default function ContactPage() {
             <div
               className="rounded-lg p-8 text-center"
               style={{
-                backgroundColor: "#0F1F3D",
-                border: "2px solid #D97706",
+                backgroundColor: "rgba(255,255,255,0.06)",
+                border: "2px solid #D4A017",
               }}
             >
               <p
@@ -249,7 +249,7 @@ export default function ContactPage() {
                   fontWeight: 500,
                   letterSpacing: "1px",
                   textTransform: "uppercase",
-                  color: "#D97706",
+                  color: "#D4A017",
                   marginBottom: "12px",
                 }}
               >
@@ -261,7 +261,7 @@ export default function ContactPage() {
               <p
                 className="mb-6"
                 style={{
-                  color: "#94A3B8",
+                  color: "#A8B2C7",
                   fontSize: "15px",
                   lineHeight: 1.7,
                 }}
@@ -306,8 +306,8 @@ export default function ContactPage() {
             <div
               className="rounded-lg p-6 md:p-8"
               style={{
-                backgroundColor: "#0F1F3D",
-                border: "1px solid #1A3260",
+                backgroundColor: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.12)",
               }}
             >
               <h2 className="mb-2 text-left" style={{ fontSize: "24px" }}>
@@ -316,7 +316,7 @@ export default function ContactPage() {
               <p
                 className="mb-8 text-left"
                 style={{
-                  color: "#94A3B8",
+                  color: "#A8B2C7",
                   fontSize: "15px",
                   lineHeight: 1.7,
                 }}
@@ -330,7 +330,7 @@ export default function ContactPage() {
                   {/* Full Name */}
                   <div>
                     <label htmlFor="fullName" style={labelStyle}>
-                      Full Name <span style={{ color: "#D97706" }}>*</span>
+                      Full Name <span style={{ color: "#D4A017" }}>*</span>
                     </label>
                     <input
                       type="text"
@@ -356,7 +356,7 @@ export default function ContactPage() {
                   {/* Business Name */}
                   <div>
                     <label htmlFor="businessName" style={labelStyle}>
-                      Business Name <span style={{ color: "#D97706" }}>*</span>
+                      Business Name <span style={{ color: "#D4A017" }}>*</span>
                     </label>
                     <input
                       type="text"
@@ -382,7 +382,7 @@ export default function ContactPage() {
                   {/* Business Type */}
                   <div>
                     <label htmlFor="businessType" style={labelStyle}>
-                      Business Type <span style={{ color: "#D97706" }}>*</span>
+                      Business Type <span style={{ color: "#D4A017" }}>*</span>
                     </label>
                     <select
                       id="businessType"
@@ -412,7 +412,7 @@ export default function ContactPage() {
                   {/* Website URL */}
                   <div>
                     <label htmlFor="websiteUrl" style={labelStyle}>
-                      Website URL <span style={{ color: "#D97706" }}>*</span>
+                      Website URL <span style={{ color: "#D4A017" }}>*</span>
                     </label>
                     <input
                       type="url"
@@ -438,7 +438,7 @@ export default function ContactPage() {
                   {/* Email */}
                   <div>
                     <label htmlFor="email" style={labelStyle}>
-                      Email <span style={{ color: "#D97706" }}>*</span>
+                      Email <span style={{ color: "#D4A017" }}>*</span>
                     </label>
                     <input
                       type="email"
@@ -464,7 +464,7 @@ export default function ContactPage() {
                   {/* WhatsApp Number */}
                   <div>
                     <label htmlFor="whatsappNumber" style={labelStyle}>
-                      WhatsApp Number <span style={{ color: "#D97706" }}>*</span>
+                      WhatsApp Number <span style={{ color: "#D4A017" }}>*</span>
                     </label>
                     <input
                       type="tel"
@@ -519,7 +519,7 @@ export default function ContactPage() {
                     className="flex-1 rounded-md transition-colors flex items-center justify-center"
                     style={{
                       padding: "14px 24px",
-                      backgroundColor: "#D97706",
+                      backgroundColor: "#D4A017",
                       color: "#FFFFFF",
                       fontFamily: "'Inter', sans-serif",
                       fontSize: "15px",
@@ -542,7 +542,7 @@ export default function ContactPage() {
         {/* What Happens Next */}
         <section
           className="pb-20 px-4 sm:px-6 lg:px-8"
-          style={{ borderTop: "1px solid #1A3260" }}
+          style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
         >
           <div className="max-w-3xl mx-auto">
             <h2 className="mb-10 text-center">What Happens Next</h2>
@@ -573,7 +573,7 @@ export default function ContactPage() {
                     style={{
                       width: "48px",
                       height: "48px",
-                      backgroundColor: "#D97706",
+                      backgroundColor: "#D4A017",
                       fontFamily: "'DM Mono', monospace",
                       fontSize: "18px",
                       fontWeight: 500,
@@ -588,14 +588,14 @@ export default function ContactPage() {
                       style={{
                         fontSize: "18px",
                         fontWeight: 700,
-                        color: "#F1F5F9",
+                        color: "#F5F5F0",
                       }}
                     >
                       {item.title}
                     </h3>
                     <p
                       style={{
-                        color: "#94A3B8",
+                        color: "#A8B2C7",
                         fontSize: "15px",
                         lineHeight: 1.7,
                       }}
@@ -612,14 +612,14 @@ export default function ContactPage() {
         {/* NAP Block */}
         <section
           className="pb-20 px-4 sm:px-6 lg:px-8"
-          style={{ borderTop: "1px solid #1A3260" }}
+          style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
         >
           <div className="max-w-3xl mx-auto">
             <div
               className="rounded-lg p-6 md:p-8"
               style={{
-                backgroundColor: "#0F1F3D",
-                border: "1px solid #1A3260",
+                backgroundColor: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.12)",
               }}
             >
               <h2
@@ -627,7 +627,7 @@ export default function ContactPage() {
                 style={{
                   fontSize: "20px",
                   fontWeight: 700,
-                  color: "#F1F5F9",
+                  color: "#F5F5F0",
                 }}
               >
                 Contact Information
@@ -637,19 +637,19 @@ export default function ContactPage() {
                 style={{
                   fontFamily: "'Inter', sans-serif",
                   fontStyle: "normal",
-                  color: "#94A3B8",
+                  color: "#A8B2C7",
                   fontSize: "15px",
                   lineHeight: 1.8,
                 }}
               >
                 <p>
-                  <strong style={{ color: "#F1F5F9" }}>Superwits Tech</strong>
+                  <strong style={{ color: "#F5F5F0" }}>Superwits Tech</strong>
                 </p>
                 <p>Lagos, Nigeria</p>
                 <p>
                   <a
                     href="tel:+2347047381879"
-                    style={{ color: "#D97706", textDecoration: "none" }}
+                    style={{ color: "#D4A017", textDecoration: "none" }}
                   >
                     +234 704 738 1879
                   </a>
@@ -657,7 +657,7 @@ export default function ContactPage() {
                 <p>
                   <a
                     href="mailto:contact@superwitstech.com"
-                    style={{ color: "#D97706", textDecoration: "none" }}
+                    style={{ color: "#D4A017", textDecoration: "none" }}
                   >
                     contact@superwitstech.com
                   </a>

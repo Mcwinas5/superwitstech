@@ -30,9 +30,9 @@ export default function Navigation() {
     <nav
       className="sticky top-0 z-50 transition-all duration-300"
       style={{
-        backgroundColor: "#07122A",
+        backgroundColor: "#0A0E27",
         backdropFilter: scrolled ? "blur(12px)" : "none",
-        borderBottom: scrolled ? "1px solid #1A3260" : "none",
+        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.12)" : "none",
       }}
     >
       <style>{`.nav-logo-wrap{display:flex;align-items:center}.nav-logo-img{height:56px!important;width:auto!important;max-width:none!important}@media(max-width:767px){.nav-logo-img{height:40px!important}}`}</style>
@@ -58,14 +58,14 @@ export default function Navigation() {
                   fontFamily: "'Inter', sans-serif",
                   fontSize: "15px",
                   fontWeight: 500,
-                  color: isActive(link.path) ? "#F1F5F9" : "#94A3B8",
+                  color: isActive(link.path) ? "#F5F5F0" : "#A8B2C7",
                   textDecoration: isActive(link.path) ? "underline" : "none",
-                  textDecorationColor: isActive(link.path) ? "#D97706" : "transparent",
+                  textDecorationColor: isActive(link.path) ? "#D4A017" : "transparent",
                   textDecorationThickness: "2px",
                   textUnderlineOffset: "6px",
                 }}
-                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#F1F5F9")}
-                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = isActive(link.path) ? "#F1F5F9" : "#94A3B8")}
+                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#F5F5F0")}
+                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = isActive(link.path) ? "#F5F5F0" : "#A8B2C7")}
               >
                 {link.label}
               </Link>
@@ -86,7 +86,7 @@ export default function Navigation() {
                 fontFamily: "'Inter', sans-serif",
                 fontSize: "14px",
                 fontWeight: 600,
-                backgroundColor: "#D97706",
+                backgroundColor: "#D4A017",
                 color: "#FFFFFF",
                 textDecoration: "none",
                 minHeight: "40px",
@@ -102,7 +102,7 @@ export default function Navigation() {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2"
-              style={{ color: "#D97706", background: "none", border: "none", minWidth: "48px", minHeight: "48px", display: "flex", alignItems: "center", justifyContent: "center" }}
+              style={{ color: "#D4A017", background: "none", border: "none", minWidth: "48px", minHeight: "48px", display: "flex", alignItems: "center", justifyContent: "center" }}
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -115,12 +115,12 @@ export default function Navigation() {
       {mobileMenuOpen && (
         <div
           className="md:hidden fixed inset-0 z-40 flex flex-col items-center justify-center"
-          style={{ backgroundColor: "#07122A" }}
+          style={{ backgroundColor: "#0A0E27" }}
         >
           <button
             onClick={() => setMobileMenuOpen(false)}
             className="absolute top-5 right-4 p-2"
-            style={{ color: "#D97706", background: "none", border: "none" }}
+            style={{ color: "#D4A017", background: "none", border: "none" }}
             aria-label="Close menu"
           >
             <X size={24} />
@@ -135,7 +135,7 @@ export default function Navigation() {
                   fontFamily: "'Inter', sans-serif",
                   fontSize: "20px",
                   fontWeight: 500,
-                  color: isActive(link.path) ? "#D97706" : "#94A3B8",
+                  color: isActive(link.path) ? "#D4A017" : "#A8B2C7",
                   cursor: "pointer",
                   display: "block",
                 }}
@@ -156,7 +156,7 @@ export default function Navigation() {
                 fontFamily: "'Inter', sans-serif",
                 fontSize: "16px",
                 fontWeight: 600,
-                backgroundColor: "#D97706",
+                backgroundColor: "#D4A017",
                 color: "#FFFFFF",
                 textDecoration: "none",
                 textAlign: "center",

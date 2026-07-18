@@ -179,14 +179,14 @@ export function QualifyingChatbot({
       <div
         className="text-white p-4 rounded-t-lg flex justify-between items-center"
         style={{
-          background: "linear-gradient(to right, #07122A, #0C1421)",
+          background: "linear-gradient(to right, #0A0E27, #0C1421)",
         }}
       >
         <div>
           <h3 className="font-semibold text-white" style={{ fontFamily: "'Inter', sans-serif" }}>
             Superwits Tech Audit
           </h3>
-          <p className="text-xs" style={{ color: "#94A3B8" }}>
+          <p className="text-xs" style={{ color: "#A8B2C7" }}>
             {Math.min(currentQuestionIndex + 1, QUALIFYING_QUESTIONS.length)} of{" "}
             {QUALIFYING_QUESTIONS.length}
           </p>
@@ -194,7 +194,7 @@ export function QualifyingChatbot({
         <button
           onClick={onClose}
           className="hover:bg-white/20 p-1 rounded transition-colors"
-          style={{ color: "#F1F5F9", background: "none", border: "none" }}
+          style={{ color: "#F5F5F0", background: "none", border: "none" }}
           aria-label="Close chatbot"
         >
           <X size={20} />
@@ -218,7 +218,7 @@ export function QualifyingChatbot({
                       border: "1px solid #E5E7EB",
                     }
                   : {
-                      backgroundColor: "#D97706",
+                      backgroundColor: "#D4A017",
                       color: "#FFFFFF",
                       border: "none",
                     }
@@ -301,7 +301,7 @@ export function QualifyingChatbot({
                 color: "#111827",
                 outline: "none",
               }}
-              onFocus={(e) => (e.target.style.borderColor = "#D97706")}
+              onFocus={(e) => (e.target.style.borderColor = "#D4A017")}
               onBlur={(e) => (e.target.style.borderColor = "#E5E7EB")}
             />
           ) : (
@@ -323,7 +323,7 @@ export function QualifyingChatbot({
                 outline: "none",
                 minHeight: "42px",
               }}
-              onFocus={(e) => (e.target.style.borderColor = "#D97706")}
+              onFocus={(e) => (e.target.style.borderColor = "#D4A017")}
               onBlur={(e) => (e.target.style.borderColor = "#E5E7EB")}
               onKeyDown={(e) => {
                 if (e.key === "Enter" && !isLoading && conversationReady) {
@@ -340,7 +340,7 @@ export function QualifyingChatbot({
             style={{
               padding: "10px 20px",
               backgroundColor:
-                !currentInput.trim() || isLoading || !conversationReady ? "#92400E" : "#D97706",
+                !currentInput.trim() || isLoading || !conversationReady ? "#92400E" : "#D4A017",
               border: "none",
               cursor:
                 !currentInput.trim() || isLoading || !conversationReady ? "not-allowed" : "pointer",
@@ -375,7 +375,7 @@ export function QualifyingChatbot({
             className="w-full flex items-center justify-center gap-2 text-white font-semibold rounded-lg transition-colors"
             style={{
               padding: "10px 20px",
-              backgroundColor: "#D97706",
+              backgroundColor: "#D4A017",
               border: "none",
               cursor: "pointer",
               fontFamily: "'Inter', sans-serif",

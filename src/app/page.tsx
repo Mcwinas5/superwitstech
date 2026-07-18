@@ -13,19 +13,19 @@ import { WA_LINK } from "@/lib/constants";
    Shared style helpers
    ──────────────────────────────────────────────── */
 const FONTS = {
-  syne: "'Syne', sans-serif",
+  syne: "'Outfit', sans-serif",
   inter: "'Inter', sans-serif",
   mono: "'DM Mono', monospace",
 };
 
 const COLORS = {
-  bg: "#07122A",
-  card: "#0F1F3D",
-  amber: "#D97706",
-  amberHover: "#F59E0B",
-  text: "#F1F5F9",
-  muted: "#94A3B8",
-  border: "#1A3260",
+  bg: "#0A0E27",
+  card: "rgba(255,255,255,0.06)",
+  amber: "#D4A017",
+  amberHover: "#E8B30E",
+  text: "#F5F5F0",
+  muted: "#A8B2C7",
+  border: "rgba(255,255,255,0.12)",
   green: "#4ADE80",
   red: "#DC2626",
 };
@@ -156,9 +156,12 @@ function FaqItem({
     <div
       className={`faq-item${isOpen ? " faq-item--open" : ""}`}
       style={{
-        backgroundColor: COLORS.card,
-        border: `1px solid ${COLORS.border}`,
-        borderRadius: "8px",
+        backgroundColor: "rgba(255,255,255,0.06)",
+        border: "1px solid rgba(255,255,255,0.12)",
+        borderRadius: "16px",
+        boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)",
+        backdropFilter: "blur(18px)",
+        WebkitBackdropFilter: "blur(18px)",
         overflow: "hidden",
       }}
     >
@@ -303,6 +306,8 @@ export default function HomePage() {
           style={{
             backgroundColor: COLORS.bg,
             minHeight: "90vh",
+            backdropFilter: "blur(4px)",
+            WebkitBackdropFilter: "blur(4px)",
             paddingTop: "80px",
             paddingBottom: "24px",
           }}
@@ -320,7 +325,7 @@ export default function HomePage() {
                     fontWeight: 700,
                     fontSize: "11px",
                     letterSpacing: "0.14em",
-                    color: "#1E6FFF",
+                    color: "#2563EB",
                     textTransform: "uppercase",
                     display: "block",
                     marginBottom: "14px",
@@ -545,10 +550,13 @@ export default function HomePage() {
                   className="reveal"
                   data-delay={item._delay}
                   style={{
-                    backgroundColor: COLORS.card,
-                    border: `1px solid ${COLORS.border}`,
+                    backgroundColor: "rgba(255,255,255,0.06)",
+                    border: "1px solid rgba(255,255,255,0.12)",
                     borderLeft: `3px solid ${COLORS.amber}`,
-                    borderRadius: "8px",
+                    borderRadius: "16px",
+                    boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)",
+                    backdropFilter: "blur(18px)",
+                    WebkitBackdropFilter: "blur(18px)",
                     padding: "24px",
                   }}
                 >
@@ -708,9 +716,12 @@ export default function HomePage() {
                   className="reveal"
                   data-delay={String(idx * 80)}
                   style={{
-                    backgroundColor: COLORS.card,
+                    backgroundColor: "rgba(255,255,255,0.06)",
                     border: `1.5px solid ${COLORS.red}`,
-                    borderRadius: "10px",
+                    borderRadius: "16px",
+                    boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)",
+                    backdropFilter: "blur(18px)",
+                    WebkitBackdropFilter: "blur(18px)",
                     padding: "28px 24px",
                   }}
                 >
@@ -928,7 +939,7 @@ export default function HomePage() {
                     <div
                       className="hidden md:block absolute top-8 left-[calc(50%+40px)] w-[calc(100%-80px)]"
                       style={{
-                        borderTop: "2px dashed #1A3260",
+                        borderTop: "2px dashed rgba(255,255,255,0.12)",
                         height: 0,
                       }}
                     />
@@ -1085,9 +1096,12 @@ export default function HomePage() {
                   className="reveal"
                   data-delay={String(idx * 80)}
                   style={{
-                    backgroundColor: COLORS.bg,
-                    border: `1px solid ${COLORS.border}`,
-                    borderRadius: "10px",
+                    backgroundColor: "rgba(255,255,255,0.06)",
+                    border: "1px solid rgba(255,255,255,0.12)",
+                    borderRadius: "16px",
+                    boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)",
+                    backdropFilter: "blur(18px)",
+                    WebkitBackdropFilter: "blur(18px)",
                     padding: "28px 24px",
                     display: "flex",
                     flexDirection: "column",
@@ -1300,11 +1314,14 @@ export default function HomePage() {
                   className="reveal"
                   data-delay={String(idx * 80)}
                   style={{
-                    backgroundColor: svc.featured ? COLORS.amber : COLORS.card,
+                    backgroundColor: svc.featured ? COLORS.amber : "rgba(255,255,255,0.06)",
                     border: svc.featured
                       ? `2px solid ${COLORS.amber}`
-                      : `1px solid ${COLORS.border}`,
-                    borderRadius: "12px",
+                      : "1px solid rgba(255,255,255,0.12)",
+                    borderRadius: "16px",
+                    boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)",
+                    backdropFilter: "blur(18px)",
+                    WebkitBackdropFilter: "blur(18px)",
                     padding: "32px 28px",
                     display: "flex",
                     flexDirection: "column",
@@ -1456,9 +1473,12 @@ export default function HomePage() {
                   className="reveal"
                   data-delay={String(pairDelay + inPairDelay)}
                   style={{
-                    backgroundColor: COLORS.bg,
-                    border: `1px solid ${COLORS.border}`,
-                    borderRadius: "10px",
+                    backgroundColor: "rgba(255,255,255,0.06)",
+                    border: "1px solid rgba(255,255,255,0.12)",
+                    borderRadius: "16px",
+                    boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)",
+                    backdropFilter: "blur(18px)",
+                    WebkitBackdropFilter: "blur(18px)",
                     padding: "24px",
                   }}
                 >
@@ -1595,9 +1615,12 @@ export default function HomePage() {
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div
               style={{
-                backgroundColor: COLORS.card,
-                border: `1px solid ${COLORS.border}`,
-                borderRadius: "16px",
+                backgroundColor: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.12)",
+                borderRadius: "20px",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)",
+                backdropFilter: "blur(24px)",
+                WebkitBackdropFilter: "blur(24px)",
                 padding: "clamp(32px, 6vw, 56px) clamp(24px, 5vw, 48px)",
                 textAlign: "center",
               }}

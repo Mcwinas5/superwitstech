@@ -36,13 +36,13 @@ export default async function UnsubscribePage({ params }: UnsubscribePageProps) 
   return (
     <main
       className="min-h-screen flex items-center justify-center px-4"
-      style={{ backgroundColor: "#07122A" }}
+      style={{ backgroundColor: "#0A0E27" }}
     >
       <div
         className="w-full max-w-md text-center"
         style={{
-          backgroundColor: "#0F1F3D",
-          border: "1px solid #1A3260",
+          backgroundColor: "rgba(255,255,255,0.06)",
+          border: "1px solid rgba(255,255,255,0.12)",
           borderRadius: "12px",
           padding: "40px 32px",
         }}
@@ -62,10 +62,10 @@ export default async function UnsubscribePage({ params }: UnsubscribePageProps) 
             </div>
             <h1
               style={{
-                fontFamily: "'Syne', sans-serif",
+                fontFamily: "'Outfit', sans-serif",
                 fontWeight: 800,
                 fontSize: "24px",
-                color: "#F1F5F9",
+                color: "#F5F5F0",
                 marginBottom: "12px",
               }}
             >
@@ -75,7 +75,7 @@ export default async function UnsubscribePage({ params }: UnsubscribePageProps) 
               style={{
                 fontFamily: "'Inter', sans-serif",
                 fontSize: "15px",
-                color: "#94A3B8",
+                color: "#A8B2C7",
                 lineHeight: 1.7,
                 marginBottom: "24px",
               }}
@@ -101,10 +101,10 @@ export default async function UnsubscribePage({ params }: UnsubscribePageProps) 
             </div>
             <h1
               style={{
-                fontFamily: "'Syne', sans-serif",
+                fontFamily: "'Outfit', sans-serif",
                 fontWeight: 800,
                 fontSize: "24px",
-                color: "#F1F5F9",
+                color: "#F5F5F0",
                 marginBottom: "12px",
               }}
             >
@@ -114,7 +114,7 @@ export default async function UnsubscribePage({ params }: UnsubscribePageProps) 
               style={{
                 fontFamily: "'Inter', sans-serif",
                 fontSize: "15px",
-                color: "#94A3B8",
+                color: "#A8B2C7",
                 lineHeight: 1.7,
                 marginBottom: "24px",
               }}
@@ -140,10 +140,10 @@ export default async function UnsubscribePage({ params }: UnsubscribePageProps) 
             </div>
             <h1
               style={{
-                fontFamily: "'Syne', sans-serif",
+                fontFamily: "'Outfit', sans-serif",
                 fontWeight: 800,
                 fontSize: "24px",
-                color: "#F1F5F9",
+                color: "#F5F5F0",
                 marginBottom: "12px",
               }}
             >
@@ -153,7 +153,7 @@ export default async function UnsubscribePage({ params }: UnsubscribePageProps) 
               style={{
                 fontFamily: "'Inter', sans-serif",
                 fontSize: "15px",
-                color: "#94A3B8",
+                color: "#A8B2C7",
                 lineHeight: 1.7,
                 marginBottom: "24px",
               }}

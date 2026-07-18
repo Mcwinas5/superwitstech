@@ -20,7 +20,7 @@ const services = [
     title: "Conversion Website Build",
     description:
       "A complete website rebuild engineered to convert visitors into inquiries — not just look pretty.",
-    cardStyle: { backgroundColor: "#0F1F3D" },
+    cardStyle: { backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "16px", boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)", backdropFilter: "blur(18px)", WebkitBackdropFilter: "blur(18px)" },
     bullets: [
       "Homepage rebuild focused on conversion flow",
       "Conversion copy that speaks to your ideal client's pain points",
@@ -37,7 +37,7 @@ const services = [
     title: "Client Acquisition System",
     description:
       "The full system. Everything in the Conversion Build plus automated lead capture, Google Business optimisation, and 30 days of monitoring.",
-    cardStyle: { backgroundColor: "#1A1508", border: "1px solid #D97706" },
+    cardStyle: { backgroundColor: "#1A1508", border: "1px solid #D4A017", borderRadius: "16px", boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)", backdropFilter: "blur(18px)", WebkitBackdropFilter: "blur(18px)" },
     badge: "Most Comprehensive",
     bullets: [
       "Everything in the Conversion Website Build",
@@ -55,7 +55,7 @@ const services = [
     title: "Website Audit & Strategy",
     description:
       "A personalised 5-minute Loom video walking through your site's biggest conversion killers and exactly how to fix them.",
-    cardStyle: { backgroundColor: "#0F1F3D" },
+    cardStyle: { backgroundColor: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "16px", boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)", backdropFilter: "blur(18px)", WebkitBackdropFilter: "blur(18px)" },
     bullets: [
       "Personalised 5-minute Loom video audit",
       "Top 3 conversion blockers identified",
@@ -73,7 +73,7 @@ export default function ServicesPage() {
   return (
     <>
       <Navigation />
-      <main style={{ backgroundColor: "#07122A" }}>
+      <main style={{ backgroundColor: "#0A0E27" }}>
         {/* Hero */}
         <section className="py-20 md:py-28 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
@@ -83,7 +83,7 @@ export default function ServicesPage() {
             </h1>
             <p
               className="mx-auto max-w-2xl"
-              style={{ color: "#94A3B8", fontSize: "18px", lineHeight: 1.75 }}
+              style={{ color: "#A8B2C7", fontSize: "18px", lineHeight: 1.75 }}
             >
               Every service is built around one question: will this turn more
               visitors into paying clients?
@@ -115,7 +115,7 @@ export default function ServicesPage() {
                         fontWeight: 500,
                         letterSpacing: "1px",
                         textTransform: "uppercase",
-                        backgroundColor: "#D97706",
+                        backgroundColor: "#D4A017",
                         color: "#FFFFFF",
                       }}
                     >
@@ -129,7 +129,7 @@ export default function ServicesPage() {
                   <p
                     className="mb-6"
                     style={{
-                      color: "#94A3B8",
+                      color: "#A8B2C7",
                       fontSize: "15px",
                       lineHeight: 1.7,
                     }}
@@ -142,7 +142,7 @@ export default function ServicesPage() {
                       <li key={i} className="flex items-start gap-3">
                         <span
                           style={{
-                            color: "#D97706",
+                            color: "#D4A017",
                             fontSize: "16px",
                             marginTop: "2px",
                             flexShrink: 0,
@@ -152,7 +152,7 @@ export default function ServicesPage() {
                         </span>
                         <span
                           style={{
-                            color: "#F1F5F9",
+                            color: "#F5F5F0",
                             fontSize: "14px",
                             lineHeight: 1.6,
                           }}
@@ -208,11 +208,11 @@ export default function ServicesPage() {
         {/* Bottom CTA */}
         <section
           className="py-20 px-4 sm:px-6 lg:px-8"
-          style={{ borderTop: "1px solid #1A3260" }}
+          style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}
         >
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="mb-4">Not Sure Which Service Fits?</h2>
-            <p className="mb-8" style={{ color: "#94A3B8" }}>
+            <p className="mb-8" style={{ color: "#A8B2C7" }}>
               Start with the free audit. I&apos;ll review your site, identify the
               biggest conversion blockers, and send you a personalised 5-minute
               Loom video within 24 hours.

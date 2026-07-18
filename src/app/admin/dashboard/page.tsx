@@ -159,7 +159,7 @@ export default function AdminDashboardPage() {
   };
 
   const statCards = [
-    { label: "Total Requests", value: stats.total, icon: BarChart3, color: "#D97706", bg: "#1C1306" },
+    { label: "Total Requests", value: stats.total, icon: BarChart3, color: "#D4A017", bg: "#1C1306" },
     { label: "New", value: stats.new, icon: Users, color: "#60A5FA", bg: "#0C1E3D" },
     { label: "Contacted", value: stats.contacted, icon: UserCheck, color: "#F59E0B", bg: "#1A1206" },
     { label: "Converted", value: stats.converted, icon: UserPlus, color: "#4ADE80", bg: "#052E16" },
@@ -167,13 +167,13 @@ export default function AdminDashboardPage() {
   ];
 
   return (
-    <div style={{ backgroundColor: "#07122A", minHeight: "100vh" }}>
+    <div style={{ backgroundColor: "#0A0E27", minHeight: "100vh" }}>
       {/* Header */}
       <header
         className="sticky top-0 z-40"
         style={{
           backgroundColor: "#0C1421",
-          borderBottom: "1px solid #1A3260",
+          borderBottom: "1px solid rgba(255,255,255,0.12)",
           padding: "16px 24px",
         }}
       >
@@ -182,20 +182,20 @@ export default function AdminDashboardPage() {
             <Link
               href="/"
               className="flex items-center gap-2 transition-colors"
-              style={{ color: "#94A3B8", textDecoration: "none" }}
-              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#F1F5F9")}
-              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#94A3B8")}
+              style={{ color: "#A8B2C7", textDecoration: "none" }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#F5F5F0")}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#A8B2C7")}
             >
               <ArrowLeft size={18} />
               <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px" }}>Home</span>
             </Link>
-            <span style={{ color: "#1A3260" }}>|</span>
+            <span style={{ color: "rgba(255,255,255,0.12)" }}>|</span>
             <Link
               href="/admin/analytics"
               className="flex items-center gap-2 transition-colors"
-              style={{ color: "#94A3B8", textDecoration: "none" }}
-              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#F1F5F9")}
-              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#94A3B8")}
+              style={{ color: "#A8B2C7", textDecoration: "none" }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#F5F5F0")}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#A8B2C7")}
             >
               <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px" }}>Analytics</span>
             </Link>
@@ -203,13 +203,13 @@ export default function AdminDashboardPage() {
           <div className="flex items-center gap-3">
             <span
               style={{
-                fontFamily: "'Syne', sans-serif",
+                fontFamily: "'Outfit', sans-serif",
                 fontWeight: 800,
                 fontSize: "18px",
               }}
             >
-              <span style={{ color: "#F1F5F9" }}>Superwits</span>
-              <span style={{ color: "#D97706" }}> tech</span>
+              <span style={{ color: "#F5F5F0" }}>Superwits</span>
+              <span style={{ color: "#D4A017" }}> tech</span>
             </span>
           </div>
         </div>
@@ -225,7 +225,7 @@ export default function AdminDashboardPage() {
                 key={card.label}
                 style={{
                   backgroundColor: card.bg,
-                  border: "1px solid #1A3260",
+                  border: "1px solid rgba(255,255,255,0.12)",
                   borderRadius: "10px",
                   padding: "20px",
                 }}
@@ -247,7 +247,7 @@ export default function AdminDashboardPage() {
                   style={{
                     fontFamily: "'DM Mono', monospace",
                     fontSize: "11px",
-                    color: "#94A3B8",
+                    color: "#A8B2C7",
                     textTransform: "uppercase",
                     letterSpacing: "1px",
                   }}
@@ -269,7 +269,7 @@ export default function AdminDashboardPage() {
                 left: "14px",
                 top: "50%",
                 transform: "translateY(-50%)",
-                color: "#94A3B8",
+                color: "#A8B2C7",
                 pointerEvents: "none",
               }}
             />
@@ -281,17 +281,17 @@ export default function AdminDashboardPage() {
               style={{
                 width: "100%",
                 padding: "10px 16px 10px 40px",
-                backgroundColor: "#0F1F3D",
-                border: "1px solid #1A3260",
+                backgroundColor: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.12)",
                 borderRadius: "8px",
-                color: "#F1F5F9",
+                color: "#F5F5F0",
                 fontFamily: "'Inter', sans-serif",
                 fontSize: "14px",
                 outline: "none",
                 minHeight: "42px",
               }}
-              onFocus={(e) => (e.target.style.borderColor = "#D97706")}
-              onBlur={(e) => (e.target.style.borderColor = "#1A3260")}
+              onFocus={(e) => (e.target.style.borderColor = "#D4A017")}
+              onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.12)")}
             />
           </div>
           <button
@@ -299,7 +299,7 @@ export default function AdminDashboardPage() {
             disabled={!data.length}
             style={{
               padding: "10px 20px",
-              backgroundColor: data.length ? "#D97706" : "#422006",
+              backgroundColor: data.length ? "#D4A017" : "#422006",
               color: "#FFFFFF",
               fontFamily: "'Inter', sans-serif",
               fontSize: "14px",
@@ -322,12 +322,12 @@ export default function AdminDashboardPage() {
         {/* Table */}
         {loading ? (
           <div className="flex items-center justify-center py-20">
-            <Loader2 size={32} className="animate-spin" style={{ color: "#D97706" }} />
+            <Loader2 size={32} className="animate-spin" style={{ color: "#D4A017" }} />
           </div>
         ) : !data.length ? (
           <div
             className="flex flex-col items-center justify-center py-20"
-            style={{ color: "#94A3B8" }}
+            style={{ color: "#A8B2C7" }}
           >
             <AlertCircle size={48} style={{ marginBottom: "16px", opacity: 0.5 }} />
             <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "16px" }}>
@@ -338,7 +338,7 @@ export default function AdminDashboardPage() {
           <div
             className="overflow-x-auto"
             style={{
-              border: "1px solid #1A3260",
+              border: "1px solid rgba(255,255,255,0.12)",
               borderRadius: "10px",
               maxHeight: "600px",
               overflowY: "auto",
@@ -364,10 +364,10 @@ export default function AdminDashboardPage() {
                           fontFamily: "'DM Mono', monospace",
                           fontSize: "11px",
                           fontWeight: 500,
-                          color: "#94A3B8",
+                          color: "#A8B2C7",
                           textTransform: "uppercase",
                           letterSpacing: "1px",
-                          borderBottom: "1px solid #1A3260",
+                          borderBottom: "1px solid rgba(255,255,255,0.12)",
                           whiteSpace: "nowrap",
                         }}
                       >
@@ -384,22 +384,22 @@ export default function AdminDashboardPage() {
                     <tr
                       key={row.id}
                       style={{
-                        borderBottom: "1px solid #1A3260",
-                        backgroundColor: "#0F1F3D",
+                        borderBottom: "1px solid rgba(255,255,255,0.12)",
+                        backgroundColor: "rgba(255,255,255,0.06)",
                         transition: "background-color 0.15s",
                       }}
                       onMouseEnter={(e) =>
                         ((e.currentTarget as HTMLElement).style.backgroundColor = "#142647")
                       }
                       onMouseLeave={(e) =>
-                        ((e.currentTarget as HTMLElement).style.backgroundColor = "#0F1F3D")
+                        ((e.currentTarget as HTMLElement).style.backgroundColor = "rgba(255,255,255,0.06)")
                       }
                     >
                       <td
                         style={{
                           padding: "12px 16px",
                           fontFamily: "'Inter', sans-serif",
-                          color: "#F1F5F9",
+                          color: "#F5F5F0",
                           fontWeight: 500,
                           whiteSpace: "nowrap",
                         }}
@@ -410,7 +410,7 @@ export default function AdminDashboardPage() {
                         <div
                           style={{
                             fontFamily: "'Inter', sans-serif",
-                            color: "#F1F5F9",
+                            color: "#F5F5F0",
                             marginBottom: "4px",
                           }}
                         >
@@ -421,10 +421,10 @@ export default function AdminDashboardPage() {
                             display: "inline-block",
                             padding: "2px 8px",
                             borderRadius: "4px",
-                            backgroundColor: "#1A3260",
+                            backgroundColor: "rgba(255,255,255,0.12)",
                             fontFamily: "'DM Mono', monospace",
                             fontSize: "10px",
-                            color: "#94A3B8",
+                            color: "#A8B2C7",
                             textTransform: "uppercase",
                             letterSpacing: "0.5px",
                           }}
@@ -481,7 +481,7 @@ export default function AdminDashboardPage() {
                         style={{
                           padding: "12px 16px",
                           fontFamily: "'Inter', sans-serif",
-                          color: "#94A3B8",
+                          color: "#A8B2C7",
                           fontSize: "13px",
                           whiteSpace: "nowrap",
                         }}
@@ -494,7 +494,7 @@ export default function AdminDashboardPage() {
                       </td>
                       <td style={{ padding: "12px 16px" }}>
                         {statusUpdating === row.id ? (
-                          <Loader2 size={14} className="animate-spin" style={{ color: "#D97706" }} />
+                          <Loader2 size={14} className="animate-spin" style={{ color: "#D4A017" }} />
                         ) : (
                           <select
                             value={row.status}
@@ -502,18 +502,18 @@ export default function AdminDashboardPage() {
                             aria-label={`Change status for ${row.name}`}
                             style={{
                               padding: "6px 10px",
-                              backgroundColor: "#07122A",
-                              border: "1px solid #1A3260",
+                              backgroundColor: "#0A0E27",
+                              border: "1px solid rgba(255,255,255,0.12)",
                               borderRadius: "6px",
-                              color: "#F1F5F9",
+                              color: "#F5F5F0",
                               fontFamily: "'Inter', sans-serif",
                               fontSize: "13px",
                               cursor: "pointer",
                               outline: "none",
                               minHeight: "36px",
                             }}
-                            onFocus={(e) => (e.target.style.borderColor = "#D97706")}
-                            onBlur={(e) => (e.target.style.borderColor = "#1A3260")}
+                            onFocus={(e) => (e.target.style.borderColor = "#D4A017")}
+                            onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.12)")}
                           >
                             {VALID_STATUSES.map((s) => {
                               const sCfg = STATUS_CONFIG[s];
