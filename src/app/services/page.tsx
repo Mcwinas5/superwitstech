@@ -116,7 +116,7 @@ export default function ServicesPage() {
                         letterSpacing: "1px",
                         textTransform: "uppercase",
                         backgroundColor: "#D4A017",
-                        color: "#FFFFFF",
+                        color: "#0A1128",
                       }}
                     >
                       {service.badge}

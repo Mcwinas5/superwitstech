@@ -520,7 +520,7 @@ export default function ContactPage() {
                     style={{
                       padding: "14px 24px",
                       backgroundColor: "#D4A017",
-                      color: "#FFFFFF",
+                      color: "#0A1128",
                       fontFamily: "'Inter', sans-serif",
                       fontSize: "15px",
                       fontWeight: 600,
@@ -577,7 +577,7 @@ export default function ContactPage() {
                       fontFamily: "'DM Mono', monospace",
                       fontSize: "18px",
                       fontWeight: 500,
-                      color: "#FFFFFF",
+                      color: "#0A1128",
                     }}
                   >
                     {item.step}

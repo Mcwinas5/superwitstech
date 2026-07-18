@@ -219,7 +219,7 @@ export function QualifyingChatbot({
                     }
                   : {
                       backgroundColor: "#D4A017",
-                      color: "#FFFFFF",
+                      color: "#0A1128",
                       border: "none",
                     }
               }
@@ -372,10 +372,11 @@ export function QualifyingChatbot({
           </p>
           <button
             onClick={onClose}
-            className="w-full flex items-center justify-center gap-2 text-white font-semibold rounded-lg transition-colors"
+            className="w-full flex items-center justify-center gap-2 font-semibold rounded-lg transition-colors"
             style={{
               padding: "10px 20px",
               backgroundColor: "#D4A017",
+              color: "#0A1128",
               border: "none",
               cursor: "pointer",
               fontFamily: "'Inter', sans-serif",

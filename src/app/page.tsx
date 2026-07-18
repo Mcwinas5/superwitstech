@@ -67,7 +67,7 @@ function WhatsAppCTA({
     solid: {
       ...base,
       backgroundColor: COLORS.amber,
-      color: "#FFFFFF",
+      color: "#0A1128",
       border: "none",
     },
     "solid-dark": {
@@ -952,7 +952,7 @@ export default function HomePage() {
                       height: "64px",
                       borderRadius: "50%",
                       backgroundColor: COLORS.amber,
-                      color: "#FFFFFF",
+                      color: "#0A1128",
                       fontFamily: FONTS.syne,
                       fontWeight: 800,
                       fontSize: "24px",

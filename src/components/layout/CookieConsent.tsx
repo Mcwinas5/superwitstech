@@ -51,7 +51,7 @@ export default function CookieConsent() {
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: "12px", flexShrink: 0, flexWrap: "wrap" }}>
           <button onClick={() => save({ analytics: false, marketing: false, functional: false })} className="hover:border-slate-400 transition-colors" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: "14px", color: "#F5F5F0", backgroundColor: "transparent", border: "1px solid #334155", borderRadius: "6px", padding: "10px 20px", cursor: "pointer", minHeight: "44px", whiteSpace: "nowrap" }}>Reject All</button>
-          <button onClick={() => save({ analytics: true, marketing: true, functional: true })} className="hover:bg-amber-500 transition-colors" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: "14px", color: "#FFFFFF", backgroundColor: "#D4A017", border: "none", borderRadius: "6px", padding: "10px 20px", cursor: "pointer", minHeight: "44px", whiteSpace: "nowrap" }}>Accept All</button>
+          <button onClick={() => save({ analytics: true, marketing: true, functional: true })} className="hover:bg-amber-500 transition-colors" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: "14px", color: "#0A1128", backgroundColor: "#D4A017", border: "none", borderRadius: "6px", padding: "10px 20px", cursor: "pointer", minHeight: "44px", whiteSpace: "nowrap" }}>Accept All</button>
         </div>
       </div>
 
@@ -77,7 +77,7 @@ export default function CookieConsent() {
                 </button>
               </div>
             ))}
-            <button onClick={() => save(prefs)} className="hover:bg-amber-500 transition-colors" style={{ alignSelf: "flex-start", fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: "14px", color: "#FFFFFF", backgroundColor: "#D4A017", border: "none", borderRadius: "6px", padding: "10px 24px", cursor: "pointer", minHeight: "44px" }}>Save My Preferences</button>
+            <button onClick={() => save(prefs)} className="hover:bg-amber-500 transition-colors" style={{ alignSelf: "flex-start", fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: "14px", color: "#0A1128", backgroundColor: "#D4A017", border: "none", borderRadius: "6px", padding: "10px 24px", cursor: "pointer", minHeight: "44px" }}>Save My Preferences</button>
           </div>
         )}
       </div>

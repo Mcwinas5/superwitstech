@@ -17,7 +17,7 @@ export default function NotFound() {
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "16px", color: "#A8B2C7", lineHeight: 1.7, marginBottom: "32px" }}>
             The page you&apos;re looking for doesn&apos;t exist.
           </p>
-          <Link href="/" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg font-semibold text-white no-underline transition-colors hover:bg-amber-500" style={{ backgroundColor: "#D4A017", fontFamily: "'Inter', sans-serif", fontSize: "15px", fontWeight: 600, minHeight: "48px", lineHeight: "20px", textDecoration: "none" }}>
+          <Link href="/" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg font-semibold no-underline transition-colors hover:bg-amber-500" style={{ backgroundColor: "#D4A017", color: "#0A1128", fontFamily: "'Inter', sans-serif", fontSize: "15px", fontWeight: 600, minHeight: "48px", lineHeight: "20px", textDecoration: "none" }}>
             &larr; Back to Home
           </Link>
         </div>

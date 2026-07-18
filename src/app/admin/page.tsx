@@ -140,7 +140,7 @@ export default function AdminLoginPage() {
               marginTop: "20px",
               padding: "12px 24px",
               backgroundColor: loading || !password.trim() ? "#92400E" : "#D4A017",
-              color: "#FFFFFF",
+              color: "#0A1128",
               fontFamily: "'Inter', sans-serif",
               fontSize: "15px",
               fontWeight: 600,

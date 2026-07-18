@@ -300,7 +300,7 @@ export default function AdminDashboardPage() {
             style={{
               padding: "10px 20px",
               backgroundColor: data.length ? "#D4A017" : "#422006",
-              color: "#FFFFFF",
+              color: "#0A1128",
               fontFamily: "'Inter', sans-serif",
               fontSize: "14px",
               fontWeight: 600,
