@@ -103,6 +103,7 @@ export default function ServicesPage() {
                     ...service.cardStyle,
                     transform: service.featured ? "scale(1.05)" : "none",
                     transition: "transform 0.3s ease",
+                    ...(service.featured ? { color: "var(--sw-text-on-dark)" } : {}),
                   }}
                 >
                   {/* Badge */}
@@ -129,7 +130,7 @@ export default function ServicesPage() {
                   <p
                     className="mb-6"
                     style={{
-                      color: "var(--sw-text-muted)",
+                      color: service.featured ? "rgba(245,245,240,0.7)" : "var(--sw-text-muted)",
                       fontSize: "15px",
                       lineHeight: 1.7,
                     }}
@@ -152,7 +153,7 @@ export default function ServicesPage() {
                         </span>
                         <span
                           style={{
-                            color: "var(--sw-text)",
+                            color: service.featured ? undefined : "var(--sw-text)",
                             fontSize: "14px",
                             lineHeight: 1.6,
                           }}
@@ -183,7 +184,7 @@ export default function ServicesPage() {
                     style={{
                       fontFamily: "'DM Mono', monospace",
                       fontSize: "12px",
-                      color: "var(--sw-text-tertiary)",
+                      color: service.featured ? "rgba(245,245,240,0.5)" : "var(--sw-text-tertiary)",
                       letterSpacing: "0.5px",
                     }}
                   >

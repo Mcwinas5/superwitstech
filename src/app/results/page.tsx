@@ -257,7 +257,7 @@ export default function ResultsPage() {
                   >
                     After
                   </h3>
-                  <p style={{ color: "var(--sw-text)", lineHeight: 1.8, fontSize: "15px" }}>
+                  <p style={{ color: "var(--sw-text-on-dark)", lineHeight: 1.8, fontSize: "15px" }}>
                     {study.after}
                   </p>
                 </div>
@@ -283,7 +283,7 @@ export default function ResultsPage() {
                   >
                     Key Change
                   </h4>
-                  <p style={{ color: "var(--sw-text)", lineHeight: 1.7, fontSize: "15px" }}>
+                  <p style={{ color: "var(--sw-text-on-dark)", lineHeight: 1.7, fontSize: "15px" }}>
                     {study.keyChange}
                   </p>
                 </div>
