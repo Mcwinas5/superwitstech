@@ -102,7 +102,7 @@ export default function ResultsPage() {
                       letterSpacing: "1px",
                       textTransform: "uppercase",
                       backgroundColor: "#1A1508",
-                      color: "#D4A017",
+                      color: "var(--sw-gold-text)",
                       border: "1px solid #D4A017",
                     }}
                   >
@@ -135,7 +135,7 @@ export default function ResultsPage() {
                         display: "block",
                         fontFamily: "'DM Mono', monospace",
                         fontSize: "11px",
-                        color: "#D4A017",
+                        color: "var(--sw-gold-text)",
                         letterSpacing: "1px",
                         textTransform: "uppercase",
                         marginBottom: "4px",
@@ -151,7 +151,7 @@ export default function ResultsPage() {
                         display: "block",
                         fontFamily: "'DM Mono', monospace",
                         fontSize: "11px",
-                        color: "#D4A017",
+                        color: "var(--sw-gold-text)",
                         letterSpacing: "1px",
                         textTransform: "uppercase",
                         marginBottom: "4px",
@@ -167,7 +167,7 @@ export default function ResultsPage() {
                         display: "block",
                         fontFamily: "'DM Mono', monospace",
                         fontSize: "11px",
-                        color: "#D4A017",
+                        color: "var(--sw-gold-text)",
                         letterSpacing: "1px",
                         textTransform: "uppercase",
                         marginBottom: "4px",
@@ -277,7 +277,7 @@ export default function ResultsPage() {
                       fontWeight: 500,
                       letterSpacing: "1px",
                       textTransform: "uppercase",
-                      color: "#D4A017",
+                      color: "var(--sw-gold-text)",
                       marginBottom: "6px",
                     }}
                   >

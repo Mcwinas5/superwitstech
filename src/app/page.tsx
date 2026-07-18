@@ -22,6 +22,7 @@ const COLORS = {
   bg: "var(--sw-bg)",
   card: "var(--sw-surface)",
   amber: "#D4A017",
+  goldText: "var(--sw-gold-text)",
   amberHover: "#E8B30E",
   text: "var(--sw-text)",
   muted: "var(--sw-text-muted)",
@@ -73,13 +74,13 @@ function WhatsAppCTA({
     "solid-dark": {
       ...base,
       backgroundColor: COLORS.bg,
-      color: COLORS.amber,
+      color: COLORS.goldText,
       border: `1.5px solid ${COLORS.amber}`,
     },
     outline: {
       ...base,
       backgroundColor: "transparent",
-      color: COLORS.amber,
+      color: COLORS.goldText,
       border: `1.5px solid ${COLORS.amber}`,
     },
   };
@@ -193,7 +194,7 @@ function FaqItem({
           style={{
             fontFamily: FONTS.mono,
             fontSize: "20px",
-            color: COLORS.amber,
+            color: COLORS.goldText,
             flexShrink: 0,
             display: "inline-block",
             lineHeight: 1,
@@ -346,7 +347,7 @@ export default function HomePage() {
                   }}
                 >
                   Your Website Should Be Bringing You Clients.{" "}
-                  <span style={{ color: COLORS.amber }}>Right Now, It Is Not.</span>
+                  <span style={{ color: COLORS.goldText }}>Right Now, It Is Not.</span>
                 </h1>
 
                 {/* Subtitle */}
@@ -473,7 +474,7 @@ export default function HomePage() {
                           fontSize: "12px",
                           fontWeight: 500,
                           letterSpacing: "0.5px",
-                          color: COLORS.amber,
+                          color: COLORS.goldText,
                           backgroundColor: "rgba(217,119,6,0.12)",
                           border: `1px solid rgba(217,119,6,0.25)`,
                           borderRadius: "6px",
@@ -565,7 +566,7 @@ export default function HomePage() {
                       fontFamily: FONTS.syne,
                       fontWeight: 800,
                       fontSize: "clamp(32px, 5vw, 44px)",
-                      color: COLORS.amber,
+                      color: COLORS.goldText,
                       lineHeight: 1.1,
                       letterSpacing: "-0.03em",
                       marginBottom: "8px",
@@ -580,7 +581,7 @@ export default function HomePage() {
                       fontWeight: 700,
                       letterSpacing: "0.10em",
                       textTransform: "uppercase",
-                      color: COLORS.amber,
+                      color: COLORS.goldText,
                       marginBottom: "6px",
                     }}
                   >
@@ -626,7 +627,7 @@ export default function HomePage() {
               }}
             >
               The Problem Is Not Your Product.{" "}
-              <span style={{ color: COLORS.amber }}>
+              <span style={{ color: COLORS.goldText }}>
                 It Is Your Digital Presence.
               </span>
             </h2>
@@ -784,7 +785,7 @@ export default function HomePage() {
               }}
             >
               The Superwits Tech System:{" "}
-              <span style={{ color: COLORS.amber }}>
+              <span style={{ color: COLORS.goldText }}>
                 Conversion Architecture That Works
               </span>
             </h2>
@@ -836,7 +837,7 @@ export default function HomePage() {
                       fontFamily: FONTS.mono,
                       fontSize: "14px",
                       fontWeight: 500,
-                      color: COLORS.amber,
+                      color: COLORS.goldText,
                       flexShrink: 0,
                       marginTop: "4px",
                       minWidth: "32px",
@@ -1024,7 +1025,7 @@ export default function HomePage() {
                   fontWeight: 700,
                   letterSpacing: "0.14em",
                   textTransform: "uppercase",
-                  color: COLORS.amber,
+                  color: COLORS.goldText,
                   display: "block",
                   marginBottom: "12px",
                 }}
@@ -1156,7 +1157,7 @@ export default function HomePage() {
                           fontWeight: 800,
                           fontSize: "clamp(36px, 6vw, 48px)",
                           lineHeight: 1,
-                          color: COLORS.amber,
+                          color: COLORS.goldText,
                           display: "block",
                         }}
                       >
@@ -1169,7 +1170,7 @@ export default function HomePage() {
                           fontWeight: 800,
                           fontSize: "clamp(22px, 4vw, 28px)",
                           lineHeight: 1,
-                          color: COLORS.amber,
+                          color: COLORS.goldText,
                           letterSpacing: "0.04em",
                           display: "block",
                         }}
@@ -1249,7 +1250,7 @@ export default function HomePage() {
                   fontWeight: 700,
                   letterSpacing: "0.14em",
                   textTransform: "uppercase",
-                  color: COLORS.amber,
+                  color: COLORS.goldText,
                   display: "block",
                   marginBottom: "12px",
                 }}
@@ -1338,7 +1339,7 @@ export default function HomePage() {
                         letterSpacing: "1px",
                         textTransform: "uppercase",
                         backgroundColor: COLORS.bg,
-                        color: COLORS.amber,
+                        color: COLORS.goldText,
                         borderRadius: "4px",
                         padding: "4px 12px",
                         display: "inline-block",
@@ -1518,7 +1519,7 @@ export default function HomePage() {
                   fontFamily: FONTS.syne,
                   fontWeight: 700,
                   fontSize: "clamp(18px, 3vw, 24px)",
-                  color: COLORS.amber,
+                  color: COLORS.goldText,
                   marginBottom: "20px",
                 }}
               >
@@ -1632,7 +1633,7 @@ export default function HomePage() {
                   fontWeight: 700,
                   letterSpacing: "0.14em",
                   textTransform: "uppercase",
-                  color: COLORS.amber,
+                  color: COLORS.goldText,
                   display: "block",
                   marginBottom: "16px",
                 }}

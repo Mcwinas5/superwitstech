@@ -101,6 +101,7 @@
   --sw-toggle-knob: #FFFFFF;
   --sw-dismiss-bg: #1A3260;
   --sw-dismiss-border: #2A4280;
+  --sw-gold-text: #D4A017;
   --sw-hero-orb-blue: rgba(37, 99, 235, 0.12);
   --sw-hero-orb-gold: rgba(212, 160, 23, 0.07);
   --sw-hero-sweep-mid: rgba(37, 99, 235, 0.10);
@@ -152,6 +153,7 @@
   --sw-toggle-knob: #FFFFFF;
   --sw-dismiss-bg: #E5E1D8;
   --sw-dismiss-border: #D4CFC3;
+  --sw-gold-text: #9C6D00;
   --sw-hero-orb-blue: rgba(37, 99, 235, 0.06);
   --sw-hero-orb-gold: rgba(212, 160, 23, 0.04);
   --sw-hero-sweep-mid: rgba(37, 99, 235, 0.05);

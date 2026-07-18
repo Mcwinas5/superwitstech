@@ -142,7 +142,7 @@ export default function ServicesPage() {
                       <li key={i} className="flex items-start gap-3">
                         <span
                           style={{
-                            color: "#D4A017",
+                            color: "var(--sw-gold-text)",
                             fontSize: "16px",
                             marginTop: "2px",
                             flexShrink: 0,

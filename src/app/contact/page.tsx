@@ -249,7 +249,7 @@ export default function ContactPage() {
                   fontWeight: 500,
                   letterSpacing: "1px",
                   textTransform: "uppercase",
-                  color: "#D4A017",
+                  color: "var(--sw-gold-text)",
                   marginBottom: "12px",
                 }}
               >
@@ -330,7 +330,7 @@ export default function ContactPage() {
                   {/* Full Name */}
                   <div>
                     <label htmlFor="fullName" style={labelStyle}>
-                      Full Name <span style={{ color: "#D4A017" }}>*</span>
+                      Full Name <span style={{ color: "var(--sw-gold-text)" }}>*</span>
                     </label>
                     <input
                       type="text"
@@ -356,7 +356,7 @@ export default function ContactPage() {
                   {/* Business Name */}
                   <div>
                     <label htmlFor="businessName" style={labelStyle}>
-                      Business Name <span style={{ color: "#D4A017" }}>*</span>
+                      Business Name <span style={{ color: "var(--sw-gold-text)" }}>*</span>
                     </label>
                     <input
                       type="text"
@@ -382,7 +382,7 @@ export default function ContactPage() {
                   {/* Business Type */}
                   <div>
                     <label htmlFor="businessType" style={labelStyle}>
-                      Business Type <span style={{ color: "#D4A017" }}>*</span>
+                      Business Type <span style={{ color: "var(--sw-gold-text)" }}>*</span>
                     </label>
                     <select
                       id="businessType"
@@ -412,7 +412,7 @@ export default function ContactPage() {
                   {/* Website URL */}
                   <div>
                     <label htmlFor="websiteUrl" style={labelStyle}>
-                      Website URL <span style={{ color: "#D4A017" }}>*</span>
+                      Website URL <span style={{ color: "var(--sw-gold-text)" }}>*</span>
                     </label>
                     <input
                       type="url"
@@ -438,7 +438,7 @@ export default function ContactPage() {
                   {/* Email */}
                   <div>
                     <label htmlFor="email" style={labelStyle}>
-                      Email <span style={{ color: "#D4A017" }}>*</span>
+                      Email <span style={{ color: "var(--sw-gold-text)" }}>*</span>
                     </label>
                     <input
                       type="email"
@@ -464,7 +464,7 @@ export default function ContactPage() {
                   {/* WhatsApp Number */}
                   <div>
                     <label htmlFor="whatsappNumber" style={labelStyle}>
-                      WhatsApp Number <span style={{ color: "#D4A017" }}>*</span>
+                      WhatsApp Number <span style={{ color: "var(--sw-gold-text)" }}>*</span>
                     </label>
                     <input
                       type="tel"
@@ -649,7 +649,7 @@ export default function ContactPage() {
                 <p>
                   <a
                     href="tel:+2347047381879"
-                    style={{ color: "#D4A017", textDecoration: "none" }}
+                    style={{ color: "var(--sw-gold-text)", textDecoration: "none" }}
                   >
                     +234 704 738 1879
                   </a>
@@ -657,7 +657,7 @@ export default function ContactPage() {
                 <p>
                   <a
                     href="mailto:contact@superwitstech.com"
-                    style={{ color: "#D4A017", textDecoration: "none" }}
+                    style={{ color: "var(--sw-gold-text)", textDecoration: "none" }}
                   >
                     contact@superwitstech.com
                   </a>

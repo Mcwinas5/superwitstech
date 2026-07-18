@@ -8,7 +8,7 @@ export default function NotFound() {
       <Navigation />
       <main className="flex-1 flex items-center justify-center px-4" style={{ paddingTop: "80px", paddingBottom: "80px" }}>
         <div className="text-center max-w-lg mx-auto">
-          <p style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 800, fontSize: "clamp(80px, 20vw, 140px)", color: "#D4A017", lineHeight: 1, marginBottom: "16px" }}>
+          <p style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 800, fontSize: "clamp(80px, 20vw, 140px)", color: "var(--sw-gold-text)", lineHeight: 1, marginBottom: "16px" }}>
             404
           </p>
           <h1 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: "clamp(22px, 5vw, 32px)", color: "var(--sw-text)", marginBottom: "16px" }}>

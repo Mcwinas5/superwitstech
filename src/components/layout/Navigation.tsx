@@ -119,7 +119,7 @@ export default function Navigation() {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2"
-              style={{ color: "#D4A017", background: "none", border: "none", minWidth: "48px", minHeight: "48px", display: "flex", alignItems: "center", justifyContent: "center" }}
+              style={{ color: "var(--sw-gold-text)", background: "none", border: "none", minWidth: "48px", minHeight: "48px", display: "flex", alignItems: "center", justifyContent: "center" }}
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -137,7 +137,7 @@ export default function Navigation() {
           <button
             onClick={() => setMobileMenuOpen(false)}
             className="absolute top-5 right-4 p-2"
-            style={{ color: "#D4A017", background: "none", border: "none" }}
+            style={{ color: "var(--sw-gold-text)", background: "none", border: "none" }}
             aria-label="Close menu"
           >
             <X size={24} />
@@ -152,7 +152,7 @@ export default function Navigation() {
                   fontFamily: "'Inter', sans-serif",
                   fontSize: "20px",
                   fontWeight: 500,
-                  color: isActive(link.path) ? "#D4A017" : "var(--sw-text-muted)",
+                  color: isActive(link.path) ? "var(--sw-gold-text)" : "var(--sw-text-muted)",
                   cursor: "pointer",
                   display: "block",
                 }}

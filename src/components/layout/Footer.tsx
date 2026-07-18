@@ -51,7 +51,7 @@ export default function Footer() {
 
             {/* Services */}
             <div>
-              <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, letterSpacing: "2px", color: "#D4A017", textTransform: "uppercase", marginBottom: "16px" }}>Services</h3>
+              <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, letterSpacing: "2px", color: "var(--sw-gold-text)", textTransform: "uppercase", marginBottom: "16px" }}>Services</h3>
               <ul className="space-y-3">
                 {["Conversion Website Build", "Client Acquisition System", "Free Website Audit"].map((item) => (
                   <li key={item}>
@@ -67,7 +67,7 @@ export default function Footer() {
 
             {/* Company */}
             <div>
-              <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, letterSpacing: "2px", color: "#D4A017", textTransform: "uppercase", marginBottom: "16px" }}>Company</h3>
+              <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, letterSpacing: "2px", color: "var(--sw-gold-text)", textTransform: "uppercase", marginBottom: "16px" }}>Company</h3>
               <ul className="space-y-3">
                 {[{ label: "About", href: "/about" }, { label: "Results", href: "/results" }, { label: "Contact", href: "/contact" }].map((item) => (
                   <li key={item.label}>
@@ -79,7 +79,7 @@ export default function Footer() {
 
             {/* CTA */}
             <div>
-              <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, letterSpacing: "2px", color: "#D4A017", textTransform: "uppercase", marginBottom: "16px" }}>Ready to Convert?</h3>
+              <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, letterSpacing: "2px", color: "var(--sw-gold-text)", textTransform: "uppercase", marginBottom: "16px" }}>Ready to Convert?</h3>
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", color: "var(--sw-text-muted)", marginBottom: "16px", lineHeight: 1.6 }}>Free audit. No commitment. Delivered in 48 hours.</p>
               <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="cta-solid footer-cta block text-center" style={{ width: "100%", padding: "12px 24px", borderRadius: "16px", fontFamily: "'Inter', sans-serif", fontSize: "14px", fontWeight: 600, backgroundColor: "#D4A017", color: "#0A1128", textDecoration: "none", minHeight: "44px", lineHeight: "20px" }}>
                 Get My Free Website Audit

@@ -262,7 +262,7 @@ export default function AboutPage() {
                       fontFamily: "'Outfit', sans-serif",
                       fontSize: "42px",
                       fontWeight: 800,
-                      color: "#D4A017",
+                      color: "var(--sw-gold-text)",
                       lineHeight: 1.2,
                       marginBottom: "12px",
                     }}

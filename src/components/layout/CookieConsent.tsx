@@ -46,7 +46,7 @@ export default function CookieConsent() {
           <p style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: "16px", color: "var(--sw-text)", marginBottom: "8px" }}>We respect your privacy</p>
           <p style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400, fontSize: "14px", color: "var(--sw-text-muted)", lineHeight: 1.6, margin: 0 }}>
             We use cookies to enhance your experience and analyze site traffic. You can accept all, reject all, or customize your preferences.{" "}
-            <Link href="/privacy" style={{ color: "#D4A017", textDecoration: "underline", cursor: "pointer", fontWeight: 500 }}>Learn more</Link>
+            <Link href="/privacy" style={{ color: "var(--sw-gold-text)", textDecoration: "underline", cursor: "pointer", fontWeight: 500 }}>Learn more</Link>
           </p>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: "12px", flexShrink: 0, flexWrap: "wrap" }}>
@@ -56,7 +56,7 @@ export default function CookieConsent() {
       </div>
 
       <div style={{ maxWidth: "1280px", margin: "12px auto 0" }}>
-        <button onClick={() => setCustomizeOpen((o) => !o)} style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: "14px", color: "#D4A017", background: "none", border: "none", cursor: "pointer", padding: "4px 0", display: "flex", alignItems: "center", gap: "6px" }} aria-expanded={customizeOpen}>
+        <button onClick={() => setCustomizeOpen((o) => !o)} style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: "14px", color: "var(--sw-gold-text)", background: "none", border: "none", cursor: "pointer", padding: "4px 0", display: "flex", alignItems: "center", gap: "6px" }} aria-expanded={customizeOpen}>
           <span style={{ display: "inline-block", transition: "transform 0.2s ease", transform: customizeOpen ? "rotate(90deg)" : "rotate(0deg)", fontSize: "12px" }}>&#9654;</span>
           Customize Preferences
         </button>
