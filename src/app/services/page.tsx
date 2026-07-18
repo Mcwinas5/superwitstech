@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
-import { WA_LINK } from "@/lib/constants";
+import { WA_LINK, WA_NUMBER } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Conversion & Credibility Systems for Nigerian Service Businesses",
@@ -192,7 +192,11 @@ export default function ServicesPage() {
 
                   {/* CTA */}
                   <a
-                    href={WA_LINK}
+                    href={
+                      service.cost
+                        ? WA_LINK
+                        : `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(`Hi Marquis, I'd like to get started with the ${service.title}.`)}`
+                    }
                     target="_blank"
                     rel="noopener noreferrer"
                     className="about-cta-btn"
